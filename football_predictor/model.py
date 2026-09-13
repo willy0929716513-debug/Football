@@ -38,13 +38,14 @@ class Prediction:
     home_rating: float
     away_rating: float
     neutral_site: bool
+    context: object = None  # optional SituationalContext, set by AdvancedPredictor
 
     @property
     def favorite(self) -> str:
         return self.home_team if self.home_win_prob >= 0.5 else self.away_team
 
     def to_dict(self) -> dict:
-        return {
+        payload = {
             "home_team": self.home_team,
             "away_team": self.away_team,
             "home_win_prob": round(self.home_win_prob, 4),
@@ -57,6 +58,9 @@ class Prediction:
             "neutral_site": self.neutral_site,
             "favorite": self.favorite,
         }
+        if self.context is not None:
+            payload["context"] = vars(self.context)
+        return payload
 
 
 class FootballPredictor:

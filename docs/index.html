@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NFL 預測中心</title>
+<meta name="description" content="以 Elo 評等結合休息天數、先發QB異動、天氣與市場賠率的 NFL 比賽預測儀表板">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">NFL PREDICTION CENTER</p>
+      <h1>NFL 比賽預測中心</h1>
+      <p class="lede">
+        以 <strong>Elo 戰力評等</strong> 為核心，疊加休息天數、先發QB異動、比賽天氣、主客場與季後賽等
+        情境因子的整合模型，並公開與真實 Vegas 收盤盤口的準確度比較 — 資料透明、方法可回測。
+      </p>
+      <p class="updated" id="updated-at">資料更新中…</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section class="card" id="predictor-section">
+      <h2>互動式對戰預測器</h2>
+      <p class="section-note">選擇任意兩隊，並依需要開啟情境因子，即時試算勝率與預測比分（純瀏覽器端運算，模型與後端訓練所用者完全一致）。</p>
+      <div class="predictor">
+        <div class="predictor-row">
+          <label>客場球隊
+            <select id="away-select"></select>
+          </label>
+          <span class="at-symbol">@</span>
+          <label>主場球隊
+            <select id="home-select"></select>
+          </label>
+        </div>
+        <div class="predictor-toggles">
+          <label class="toggle"><input type="checkbox" id="opt-neutral"> 中立場地</label>
+          <label class="toggle"><input type="checkbox" id="opt-div"> 分區內對戰</label>
+          <label class="toggle"><input type="checkbox" id="opt-playoff"> 季後賽</label>
+          <label class="toggle"><input type="checkbox" id="opt-home-qb"> 主隊先發QB異動</label>
+          <label class="toggle"><input type="checkbox" id="opt-away-qb"> 客隊先發QB異動</label>
+          <label class="toggle"><input type="checkbox" id="opt-cold"> 低溫比賽（戶外 ≤0°C）</label>
+          <label class="toggle"><input type="checkbox" id="opt-windy"> 強風比賽（戶外 ≥15mph）</label>
+        </div>
+        <div class="predictor-rest">
+          <label>主隊休息天數 <input type="number" id="home-rest" value="7" min="3" max="14"></label>
+          <label>客隊休息天數 <input type="number" id="away-rest" value="7" min="3" max="14"></label>
+        </div>
+        <button id="predict-btn" type="button">預測比賽</button>
+      </div>
+      <div class="predictor-result" id="predictor-result" hidden></div>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <h2>本週預測</h2>
+        <label class="week-picker">週次
+          <select id="week-select"></select>
+        </label>
+      </div>
+      <p class="section-note">預測皆使用截至目前的最新戰力評等，並考慮該場比賽已知的休息天數、主客場資訊與（若有）先發QB名單。</p>
+      <div id="games-grid" class="games-grid"></div>
+    </section>
+
+    <section class="card">
+      <h2>戰力排名</h2>
+      <p class="section-note">依 Elo 評等排序，數值愈高代表整體實力愈強（聯盟平均基準為 1500）。</p>
+      <div class="rankings-table-wrap">
+        <table class="rankings-table">
+          <thead><tr><th>#</th><th>球隊</th><th>Elo 評等</th><th></th></tr></thead>
+          <tbody id="rankings-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>模型準確度與市場比較</h2>
+      <p class="section-note">
+        採用「時序回測」(walk-forward)：每場比賽只用當下已知的評等與模型做預測，再更新評等，
+        避免用到未來資訊。同時也列出同期真實 Vegas 收盤盤口的表現作為對照基準 — 長期打敗收盤盤口
+        本身就極為困難，這裡誠實呈現，而非誇大宣稱。
+      </p>
+      <div class="perf-table-wrap">
+        <table class="perf-table" id="perf-table">
+          <thead>
+            <tr><th>模型</th><th>樣本數</th><th>勝負準確率</th><th>Brier Score</th><th>分差 MAE</th></tr>
+          </thead>
+          <tbody id="perf-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card methodology">
+      <h2>方法論：考慮了哪些因素？</h2>
+      <ul class="factor-list">
+        <li><strong>Elo 戰力評等</strong> — 逐場更新，內建勝分差修正（大勝/大敗調整幅度更大）、主場優勢加成、季後賽權重提升、賽季間回歸平均值。</li>
+        <li><strong>休息天數 / 短週賽 / 待命週</strong> — 主客兩隊的休息天數差，反映短週四夜賽的疲勞劣勢與待命週後的體能優勢。</li>
+        <li><strong>先發QB異動</strong> — 追蹤每隊最近已知的先發QB，偵測是否臨時更換（歷史上單一最大的比賽結果擺動因子之一）。</li>
+        <li><strong>天氣與場地</strong> — 戶外比賽的低溫、強風條件，室內/圓頂球場則不受影響。</li>
+        <li><strong>分區內對戰 / 季後賽情境</strong> — 分區對手較熟悉彼此、季後賽強度與變異度不同。</li>
+        <li><strong>市場賠率校驗</strong> — 使用真實歷史 Vegas 收盤盤口（分差與美式賠率）作為獨立比較基準，而非模型輸入，確保評估公正透明。</li>
+      </ul>
+      <p class="section-note">
+        本工具不包含即時傷兵名單細節、比賽當下天氣預報（僅使用比賽日已知資訊）、教練臨場調度等更細緻的訊號；
+        這是一套方法公開、可回測、誠實揭露準確度的統計模型，適合研究與教育用途，<strong>不構成博弈建議</strong>。
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="wrap">
+    <p>
+      資料來源：<a href="https://github.com/nflverse/nfldata" target="_blank" rel="noopener">nflverse/nfldata</a>（公開歷史賽事、賠率與情境資料，1999 年至今）。
+      原始碼：<a href="https://github.com/willy0929716513-debug/football" target="_blank" rel="noopener">GitHub</a>。
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

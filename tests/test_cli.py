@@ -58,7 +58,30 @@ def test_backtest_command_runs(tmp_path, capsys):
             rows.append(f"{season},{week},REG,{season}-09-{week:02d},AAA,BBB,28,14,7,7,0")
     games_csv.write_text("\n".join(rows) + "\n")
 
-    exit_code, out = _run(capsys, ["backtest", "--games", str(games_csv), "--start-season", "2021", "--json"])
+    exit_code, out = _run(capsys, [
+        "backtest", "--games", str(games_csv), "--start-season", "2021", "--model", "elo", "--json",
+    ])
     assert exit_code == 0
     payload = json.loads(out)
-    assert payload["games"] > 0
+    assert payload["elo"]["games"] > 0
+
+
+def test_backtest_command_all_models_reports_per_model_results(tmp_path, capsys):
+    games_csv = tmp_path / "games.csv"
+    rows = ["season,week,game_type,gameday,home_team,away_team,home_score,away_score,home_rest,away_rest,div_game"]
+    # 15 seasons (240 games) before start_season so the advanced model's
+    # walk-forward refit has its required >=200-game warm-up.
+    for season in range(2005, 2023):
+        for week in range(1, 17):
+            rows.append(f"{season},{week},REG,{season}-09-{week:02d},AAA,BBB,28,14,7,7,0")
+    games_csv.write_text("\n".join(rows) + "\n")
+
+    exit_code, out = _run(capsys, [
+        "backtest", "--games", str(games_csv), "--start-season", "2020", "--model", "all", "--json",
+    ])
+    assert exit_code == 0
+    payload = json.loads(out)
+    assert payload["elo"]["games"] > 0
+    assert payload["advanced"]["games"] > 0
+    # this synthetic dataset carries no market odds columns, so market backtest is expected to error out
+    assert "error" in payload["market"]
