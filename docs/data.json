@@ -1,133 +1,165 @@
 {
-  "generated_at": "2026-09-13T10:03:06Z",
+  "generated_at": "2026-09-13T15:25:20Z",
   "teams": [
     {
       "code": "ARI",
-      "name": "Arizona Cardinals"
+      "name": "Arizona Cardinals",
+      "name_zh": "\u4e9e\u5229\u6851\u90a3\u7d05\u96c0"
     },
     {
       "code": "ATL",
-      "name": "Atlanta Falcons"
+      "name": "Atlanta Falcons",
+      "name_zh": "\u4e9e\u7279\u862d\u5927\u7375\u9df9"
     },
     {
       "code": "BAL",
-      "name": "Baltimore Ravens"
+      "name": "Baltimore Ravens",
+      "name_zh": "\u5df4\u723e\u7684\u6469\u70cf\u9d09"
     },
     {
       "code": "BUF",
-      "name": "Buffalo Bills"
+      "name": "Buffalo Bills",
+      "name_zh": "\u6c34\u725b\u57ce\u6bd4\u723e"
     },
     {
       "code": "CAR",
-      "name": "Carolina Panthers"
+      "name": "Carolina Panthers",
+      "name_zh": "\u5361\u7f85\u840a\u7d0d\u9ed1\u8c79"
     },
     {
       "code": "CHI",
-      "name": "Chicago Bears"
+      "name": "Chicago Bears",
+      "name_zh": "\u829d\u52a0\u54e5\u718a"
     },
     {
       "code": "CIN",
-      "name": "Cincinnati Bengals"
+      "name": "Cincinnati Bengals",
+      "name_zh": "\u8f9b\u8f9b\u90a3\u63d0\u5b5f\u52a0\u62c9\u864e"
     },
     {
       "code": "CLE",
-      "name": "Cleveland Browns"
+      "name": "Cleveland Browns",
+      "name_zh": "\u514b\u91cc\u592b\u862d\u5e03\u6717"
     },
     {
       "code": "DAL",
-      "name": "Dallas Cowboys"
+      "name": "Dallas Cowboys",
+      "name_zh": "\u9054\u62c9\u65af\u725b\u4ed4"
     },
     {
       "code": "DEN",
-      "name": "Denver Broncos"
+      "name": "Denver Broncos",
+      "name_zh": "\u4e39\u4f5b\u91ce\u99ac"
     },
     {
       "code": "DET",
-      "name": "Detroit Lions"
+      "name": "Detroit Lions",
+      "name_zh": "\u5e95\u7279\u5f8b\u96c4\u7345"
     },
     {
       "code": "GB",
-      "name": "Green Bay Packers"
+      "name": "Green Bay Packers",
+      "name_zh": "\u7da0\u7063\u5305\u88dd\u5de5"
     },
     {
       "code": "HOU",
-      "name": "Houston Texans"
+      "name": "Houston Texans",
+      "name_zh": "\u4f11\u58eb\u9813\u5fb7\u5dde\u4eba"
     },
     {
       "code": "IND",
-      "name": "Indianapolis Colts"
+      "name": "Indianapolis Colts",
+      "name_zh": "\u5370\u7b2c\u5b89\u7d0d\u6ce2\u5229\u65af\u5c0f\u99ac"
     },
     {
       "code": "JAX",
-      "name": "Jacksonville Jaguars"
+      "name": "Jacksonville Jaguars",
+      "name_zh": "\u5091\u514b\u905c\u7dad\u723e\u7f8e\u6d32\u8c79"
     },
     {
       "code": "KC",
-      "name": "Kansas City Chiefs"
+      "name": "Kansas City Chiefs",
+      "name_zh": "\u582a\u85a9\u65af\u57ce\u914b\u9577"
     },
     {
       "code": "LA",
-      "name": "Los Angeles Rams"
+      "name": "Los Angeles Rams",
+      "name_zh": "\u6d1b\u6749\u78ef\u516c\u7f8a"
     },
     {
       "code": "LAC",
-      "name": "Los Angeles Chargers"
+      "name": "Los Angeles Chargers",
+      "name_zh": "\u6d1b\u6749\u78ef\u96fb\u5149"
     },
     {
       "code": "LV",
-      "name": "Las Vegas Raiders"
+      "name": "Las Vegas Raiders",
+      "name_zh": "\u62c9\u65af\u7dad\u52a0\u65af\u7a81\u8972\u8005"
     },
     {
       "code": "MIA",
-      "name": "Miami Dolphins"
+      "name": "Miami Dolphins",
+      "name_zh": "\u9081\u963f\u5bc6\u6d77\u8c5a"
     },
     {
       "code": "MIN",
-      "name": "Minnesota Vikings"
+      "name": "Minnesota Vikings",
+      "name_zh": "\u660e\u5c3c\u8607\u9054\u7dad\u4eac\u4eba"
     },
     {
       "code": "NE",
-      "name": "New England Patriots"
+      "name": "New England Patriots",
+      "name_zh": "\u65b0\u82f1\u683c\u862d\u611b\u570b\u8005"
     },
     {
       "code": "NO",
-      "name": "New Orleans Saints"
+      "name": "New Orleans Saints",
+      "name_zh": "\u7d10\u5967\u826f\u8056\u5f92"
     },
     {
       "code": "NYG",
-      "name": "New York Giants"
+      "name": "New York Giants",
+      "name_zh": "\u7d10\u7d04\u5de8\u4eba"
     },
     {
       "code": "NYJ",
-      "name": "New York Jets"
+      "name": "New York Jets",
+      "name_zh": "\u7d10\u7d04\u5674\u5c04\u6a5f"
     },
     {
       "code": "PHI",
-      "name": "Philadelphia Eagles"
+      "name": "Philadelphia Eagles",
+      "name_zh": "\u8cbb\u57ce\u8001\u9df9"
     },
     {
       "code": "PIT",
-      "name": "Pittsburgh Steelers"
+      "name": "Pittsburgh Steelers",
+      "name_zh": "\u5339\u8332\u5821\u92fc\u4eba"
     },
     {
       "code": "SEA",
-      "name": "Seattle Seahawks"
+      "name": "Seattle Seahawks",
+      "name_zh": "\u897f\u96c5\u5716\u6d77\u9df9"
     },
     {
       "code": "SF",
-      "name": "San Francisco 49ers"
+      "name": "San Francisco 49ers",
+      "name_zh": "\u820a\u91d1\u5c7149\u4eba"
     },
     {
       "code": "TB",
-      "name": "Tampa Bay Buccaneers"
+      "name": "Tampa Bay Buccaneers",
+      "name_zh": "\u5766\u5e15\u7063\u6d77\u76dc"
     },
     {
       "code": "TEN",
-      "name": "Tennessee Titans"
+      "name": "Tennessee Titans",
+      "name_zh": "\u7530\u7d0d\u897f\u6cf0\u5766"
     },
     {
       "code": "WAS",
-      "name": "Washington Commanders"
+      "name": "Washington Commanders",
+      "name_zh": "\u83ef\u76db\u9813\u6307\u63ee\u5b98"
     }
   ],
   "power_rankings": [
@@ -135,192 +167,224 @@
       "rank": 1,
       "team": "SEA",
       "name": "Seattle Seahawks",
+      "name_zh": "\u897f\u96c5\u5716\u6d77\u9df9",
       "elo": 1690.3
     },
     {
       "rank": 2,
       "team": "DEN",
       "name": "Denver Broncos",
+      "name_zh": "\u4e39\u4f5b\u91ce\u99ac",
       "elo": 1606.3
     },
     {
       "rank": 3,
       "team": "HOU",
       "name": "Houston Texans",
+      "name_zh": "\u4f11\u58eb\u9813\u5fb7\u5dde\u4eba",
       "elo": 1601.5
     },
     {
       "rank": 4,
       "team": "BUF",
       "name": "Buffalo Bills",
+      "name_zh": "\u6c34\u725b\u57ce\u6bd4\u723e",
       "elo": 1601.0
     },
     {
       "rank": 5,
       "team": "SF",
       "name": "San Francisco 49ers",
+      "name_zh": "\u820a\u91d1\u5c7149\u4eba",
       "elo": 1593.9
     },
     {
       "rank": 6,
       "team": "NE",
       "name": "New England Patriots",
+      "name_zh": "\u65b0\u82f1\u683c\u862d\u611b\u570b\u8005",
       "elo": 1588.8
     },
     {
       "rank": 7,
       "team": "LA",
       "name": "Los Angeles Rams",
+      "name_zh": "\u6d1b\u6749\u78ef\u516c\u7f8a",
       "elo": 1567.0
     },
     {
       "rank": 8,
       "team": "JAX",
       "name": "Jacksonville Jaguars",
+      "name_zh": "\u5091\u514b\u905c\u7dad\u723e\u7f8e\u6d32\u8c79",
       "elo": 1564.5
     },
     {
       "rank": 9,
       "team": "PHI",
       "name": "Philadelphia Eagles",
+      "name_zh": "\u8cbb\u57ce\u8001\u9df9",
       "elo": 1553.7
     },
     {
       "rank": 10,
       "team": "DET",
       "name": "Detroit Lions",
+      "name_zh": "\u5e95\u7279\u5f8b\u96c4\u7345",
       "elo": 1551.0
     },
     {
       "rank": 11,
       "team": "MIN",
       "name": "Minnesota Vikings",
+      "name_zh": "\u660e\u5c3c\u8607\u9054\u7dad\u4eac\u4eba",
       "elo": 1550.1
     },
     {
       "rank": 12,
       "team": "BAL",
       "name": "Baltimore Ravens",
+      "name_zh": "\u5df4\u723e\u7684\u6469\u70cf\u9d09",
       "elo": 1540.7
     },
     {
       "rank": 13,
       "team": "CHI",
       "name": "Chicago Bears",
+      "name_zh": "\u829d\u52a0\u54e5\u718a",
       "elo": 1528.3
     },
     {
       "rank": 14,
       "team": "GB",
       "name": "Green Bay Packers",
+      "name_zh": "\u7da0\u7063\u5305\u88dd\u5de5",
       "elo": 1521.9
     },
     {
       "rank": 15,
       "team": "LAC",
       "name": "Los Angeles Chargers",
+      "name_zh": "\u6d1b\u6749\u78ef\u96fb\u5149",
       "elo": 1520.4
     },
     {
       "rank": 16,
       "team": "PIT",
       "name": "Pittsburgh Steelers",
+      "name_zh": "\u5339\u8332\u5821\u92fc\u4eba",
       "elo": 1504.0
     },
     {
       "rank": 17,
       "team": "KC",
       "name": "Kansas City Chiefs",
+      "name_zh": "\u582a\u85a9\u65af\u57ce\u914b\u9577",
       "elo": 1488.4
     },
     {
       "rank": 18,
       "team": "CIN",
       "name": "Cincinnati Bengals",
+      "name_zh": "\u8f9b\u8f9b\u90a3\u63d0\u5b5f\u52a0\u62c9\u864e",
       "elo": 1477.2
     },
     {
       "rank": 19,
       "team": "TB",
       "name": "Tampa Bay Buccaneers",
+      "name_zh": "\u5766\u5e15\u7063\u6d77\u76dc",
       "elo": 1476.4
     },
     {
       "rank": 20,
       "team": "ATL",
       "name": "Atlanta Falcons",
+      "name_zh": "\u4e9e\u7279\u862d\u5927\u7375\u9df9",
       "elo": 1471.5
     },
     {
       "rank": 21,
       "team": "IND",
       "name": "Indianapolis Colts",
+      "name_zh": "\u5370\u7b2c\u5b89\u7d0d\u6ce2\u5229\u65af\u5c0f\u99ac",
       "elo": 1464.3
     },
     {
       "rank": 22,
       "team": "WAS",
       "name": "Washington Commanders",
+      "name_zh": "\u83ef\u76db\u9813\u6307\u63ee\u5b98",
       "elo": 1459.3
     },
     {
       "rank": 23,
       "team": "MIA",
       "name": "Miami Dolphins",
+      "name_zh": "\u9081\u963f\u5bc6\u6d77\u8c5a",
       "elo": 1455.1
     },
     {
       "rank": 24,
       "team": "DAL",
       "name": "Dallas Cowboys",
+      "name_zh": "\u9054\u62c9\u65af\u725b\u4ed4",
       "elo": 1454.5
     },
     {
       "rank": 25,
       "team": "NO",
       "name": "New Orleans Saints",
+      "name_zh": "\u7d10\u5967\u826f\u8056\u5f92",
       "elo": 1437.3
     },
     {
       "rank": 26,
       "team": "CAR",
       "name": "Carolina Panthers",
+      "name_zh": "\u5361\u7f85\u840a\u7d0d\u9ed1\u8c79",
       "elo": 1428.8
     },
     {
       "rank": 27,
       "team": "NYG",
       "name": "New York Giants",
+      "name_zh": "\u7d10\u7d04\u5de8\u4eba",
       "elo": 1424.7
     },
     {
       "rank": 28,
       "team": "CLE",
       "name": "Cleveland Browns",
+      "name_zh": "\u514b\u91cc\u592b\u862d\u5e03\u6717",
       "elo": 1420.6
     },
     {
       "rank": 29,
       "team": "ARI",
       "name": "Arizona Cardinals",
+      "name_zh": "\u4e9e\u5229\u6851\u90a3\u7d05\u96c0",
       "elo": 1391.1
     },
     {
       "rank": 30,
       "team": "NYJ",
       "name": "New York Jets",
+      "name_zh": "\u7d10\u7d04\u5674\u5c04\u6a5f",
       "elo": 1360.4
     },
     {
       "rank": 31,
       "team": "TEN",
       "name": "Tennessee Titans",
+      "name_zh": "\u7530\u7d0d\u897f\u6cf0\u5766",
       "elo": 1357.7
     },
     {
       "rank": 32,
       "team": "LV",
       "name": "Las Vegas Raiders",
+      "name_zh": "\u62c9\u65af\u7dad\u52a0\u65af\u7a81\u8972\u8005",
       "elo": 1349.5
     }
   ],
@@ -352,6 +416,8 @@
       "date": "2026-09-13",
       "home_name": "Carolina Panthers",
       "away_name": "Chicago Bears",
+      "home_name_zh": "\u5361\u7f85\u840a\u7d0d\u9ed1\u8c79",
+      "away_name_zh": "\u829d\u52a0\u54e5\u718a",
       "market_spread": -3.0
     },
     {
@@ -381,6 +447,8 @@
       "date": "2026-09-13",
       "home_name": "Cincinnati Bengals",
       "away_name": "Tampa Bay Buccaneers",
+      "home_name_zh": "\u8f9b\u8f9b\u90a3\u63d0\u5b5f\u52a0\u62c9\u864e",
+      "away_name_zh": "\u5766\u5e15\u7063\u6d77\u76dc",
       "market_spread": 3.5
     },
     {
@@ -410,6 +478,8 @@
       "date": "2026-09-13",
       "home_name": "Detroit Lions",
       "away_name": "New Orleans Saints",
+      "home_name_zh": "\u5e95\u7279\u5f8b\u96c4\u7345",
+      "away_name_zh": "\u7d10\u5967\u826f\u8056\u5f92",
       "market_spread": 7.0
     },
     {
@@ -439,6 +509,8 @@
       "date": "2026-09-13",
       "home_name": "Houston Texans",
       "away_name": "Buffalo Bills",
+      "home_name_zh": "\u4f11\u58eb\u9813\u5fb7\u5dde\u4eba",
+      "away_name_zh": "\u6c34\u725b\u57ce\u6bd4\u723e",
       "market_spread": -1.5
     },
     {
@@ -468,6 +540,8 @@
       "date": "2026-09-13",
       "home_name": "Indianapolis Colts",
       "away_name": "Baltimore Ravens",
+      "home_name_zh": "\u5370\u7b2c\u5b89\u7d0d\u6ce2\u5229\u65af\u5c0f\u99ac",
+      "away_name_zh": "\u5df4\u723e\u7684\u6469\u70cf\u9d09",
       "market_spread": -3.5
     },
     {
@@ -497,6 +571,8 @@
       "date": "2026-09-13",
       "home_name": "Jacksonville Jaguars",
       "away_name": "Cleveland Browns",
+      "home_name_zh": "\u5091\u514b\u905c\u7dad\u723e\u7f8e\u6d32\u8c79",
+      "away_name_zh": "\u514b\u91cc\u592b\u862d\u5e03\u6717",
       "market_spread": 8.5
     },
     {
@@ -526,6 +602,8 @@
       "date": "2026-09-13",
       "home_name": "Pittsburgh Steelers",
       "away_name": "Atlanta Falcons",
+      "home_name_zh": "\u5339\u8332\u5821\u92fc\u4eba",
+      "away_name_zh": "\u4e9e\u7279\u862d\u5927\u7375\u9df9",
       "market_spread": 6.0
     },
     {
@@ -555,6 +633,8 @@
       "date": "2026-09-13",
       "home_name": "Tennessee Titans",
       "away_name": "New York Jets",
+      "home_name_zh": "\u7530\u7d0d\u897f\u6cf0\u5766",
+      "away_name_zh": "\u7d10\u7d04\u5674\u5c04\u6a5f",
       "market_spread": 1.5
     },
     {
@@ -584,6 +664,8 @@
       "date": "2026-09-13",
       "home_name": "Los Angeles Chargers",
       "away_name": "Arizona Cardinals",
+      "home_name_zh": "\u6d1b\u6749\u78ef\u96fb\u5149",
+      "away_name_zh": "\u4e9e\u5229\u6851\u90a3\u7d05\u96c0",
       "market_spread": 9.5
     },
     {
@@ -613,6 +695,8 @@
       "date": "2026-09-13",
       "home_name": "Las Vegas Raiders",
       "away_name": "Miami Dolphins",
+      "home_name_zh": "\u62c9\u65af\u7dad\u52a0\u65af\u7a81\u8972\u8005",
+      "away_name_zh": "\u9081\u963f\u5bc6\u6d77\u8c5a",
       "market_spread": 3.0
     },
     {
@@ -642,6 +726,8 @@
       "date": "2026-09-13",
       "home_name": "Minnesota Vikings",
       "away_name": "Green Bay Packers",
+      "home_name_zh": "\u660e\u5c3c\u8607\u9054\u7dad\u4eac\u4eba",
+      "away_name_zh": "\u7da0\u7063\u5305\u88dd\u5de5",
       "market_spread": 2.5
     },
     {
@@ -671,6 +757,8 @@
       "date": "2026-09-13",
       "home_name": "Philadelphia Eagles",
       "away_name": "Washington Commanders",
+      "home_name_zh": "\u8cbb\u57ce\u8001\u9df9",
+      "away_name_zh": "\u83ef\u76db\u9813\u6307\u63ee\u5b98",
       "market_spread": 6.0
     },
     {
@@ -700,6 +788,8 @@
       "date": "2026-09-13",
       "home_name": "New York Giants",
       "away_name": "Dallas Cowboys",
+      "home_name_zh": "\u7d10\u7d04\u5de8\u4eba",
+      "away_name_zh": "\u9054\u62c9\u65af\u725b\u4ed4",
       "market_spread": -3.0
     },
     {
@@ -729,6 +819,8 @@
       "date": "2026-09-14",
       "home_name": "Kansas City Chiefs",
       "away_name": "Denver Broncos",
+      "home_name_zh": "\u582a\u85a9\u65af\u57ce\u914b\u9577",
+      "away_name_zh": "\u4e39\u4f5b\u91ce\u99ac",
       "market_spread": 2.5
     },
     {
@@ -758,6 +850,8 @@
       "date": "2026-09-17",
       "home_name": "Buffalo Bills",
       "away_name": "Detroit Lions",
+      "home_name_zh": "\u6c34\u725b\u57ce\u6bd4\u723e",
+      "away_name_zh": "\u5e95\u7279\u5f8b\u96c4\u7345",
       "market_spread": 3.0
     },
     {
@@ -787,6 +881,8 @@
       "date": "2026-09-20",
       "home_name": "Atlanta Falcons",
       "away_name": "Carolina Panthers",
+      "home_name_zh": "\u4e9e\u7279\u862d\u5927\u7375\u9df9",
+      "away_name_zh": "\u5361\u7f85\u840a\u7d0d\u9ed1\u8c79",
       "market_spread": 1.5
     },
     {
@@ -816,6 +912,8 @@
       "date": "2026-09-20",
       "home_name": "Baltimore Ravens",
       "away_name": "New Orleans Saints",
+      "home_name_zh": "\u5df4\u723e\u7684\u6469\u70cf\u9d09",
+      "away_name_zh": "\u7d10\u5967\u826f\u8056\u5f92",
       "market_spread": 7.5
     },
     {
@@ -845,6 +943,8 @@
       "date": "2026-09-20",
       "home_name": "Chicago Bears",
       "away_name": "Minnesota Vikings",
+      "home_name_zh": "\u829d\u52a0\u54e5\u718a",
+      "away_name_zh": "\u660e\u5c3c\u8607\u9054\u7dad\u4eac\u4eba",
       "market_spread": 3.0
     },
     {
@@ -874,6 +974,8 @@
       "date": "2026-09-20",
       "home_name": "Houston Texans",
       "away_name": "Cincinnati Bengals",
+      "home_name_zh": "\u4f11\u58eb\u9813\u5fb7\u5dde\u4eba",
+      "away_name_zh": "\u8f9b\u8f9b\u90a3\u63d0\u5b5f\u52a0\u62c9\u864e",
       "market_spread": 2.5
     },
     {
@@ -903,6 +1005,8 @@
       "date": "2026-09-20",
       "home_name": "New England Patriots",
       "away_name": "Pittsburgh Steelers",
+      "home_name_zh": "\u65b0\u82f1\u683c\u862d\u611b\u570b\u8005",
+      "away_name_zh": "\u5339\u8332\u5821\u92fc\u4eba",
       "market_spread": 4.5
     },
     {
@@ -932,6 +1036,8 @@
       "date": "2026-09-20",
       "home_name": "New York Jets",
       "away_name": "Green Bay Packers",
+      "home_name_zh": "\u7d10\u7d04\u5674\u5c04\u6a5f",
+      "away_name_zh": "\u7da0\u7063\u5305\u88dd\u5de5",
       "market_spread": -5.5
     },
     {
@@ -961,6 +1067,8 @@
       "date": "2026-09-20",
       "home_name": "Tampa Bay Buccaneers",
       "away_name": "Cleveland Browns",
+      "home_name_zh": "\u5766\u5e15\u7063\u6d77\u76dc",
+      "away_name_zh": "\u514b\u91cc\u592b\u862d\u5e03\u6717",
       "market_spread": 6.5
     },
     {
@@ -990,6 +1098,8 @@
       "date": "2026-09-20",
       "home_name": "Tennessee Titans",
       "away_name": "Philadelphia Eagles",
+      "home_name_zh": "\u7530\u7d0d\u897f\u6cf0\u5766",
+      "away_name_zh": "\u8cbb\u57ce\u8001\u9df9",
       "market_spread": -5.5
     },
     {
@@ -1019,6 +1129,8 @@
       "date": "2026-09-20",
       "home_name": "Denver Broncos",
       "away_name": "Jacksonville Jaguars",
+      "home_name_zh": "\u4e39\u4f5b\u91ce\u99ac",
+      "away_name_zh": "\u5091\u514b\u905c\u7dad\u723e\u7f8e\u6d32\u8c79",
       "market_spread": 3.0
     },
     {
@@ -1048,6 +1160,8 @@
       "date": "2026-09-20",
       "home_name": "Los Angeles Chargers",
       "away_name": "Las Vegas Raiders",
+      "home_name_zh": "\u6d1b\u6749\u78ef\u96fb\u5149",
+      "away_name_zh": "\u62c9\u65af\u7dad\u52a0\u65af\u7a81\u8972\u8005",
       "market_spread": 9.5
     },
     {
@@ -1076,7 +1190,9 @@
       "game_type": "REG",
       "date": "2026-09-20",
       "home_name": "Arizona Cardinals",
-      "away_name": "Seattle Seahawks"
+      "away_name": "Seattle Seahawks",
+      "home_name_zh": "\u4e9e\u5229\u6851\u90a3\u7d05\u96c0",
+      "away_name_zh": "\u897f\u96c5\u5716\u6d77\u9df9"
     },
     {
       "home_team": "DAL",
@@ -1105,6 +1221,8 @@
       "date": "2026-09-20",
       "home_name": "Dallas Cowboys",
       "away_name": "Washington Commanders",
+      "home_name_zh": "\u9054\u62c9\u65af\u725b\u4ed4",
+      "away_name_zh": "\u83ef\u76db\u9813\u6307\u63ee\u5b98",
       "market_spread": 4.5
     },
     {
@@ -1134,6 +1252,8 @@
       "date": "2026-09-20",
       "home_name": "San Francisco 49ers",
       "away_name": "Miami Dolphins",
+      "home_name_zh": "\u820a\u91d1\u5c7149\u4eba",
+      "away_name_zh": "\u9081\u963f\u5bc6\u6d77\u8c5a",
       "market_spread": 12.5
     },
     {
@@ -1163,6 +1283,8 @@
       "date": "2026-09-20",
       "home_name": "Kansas City Chiefs",
       "away_name": "Indianapolis Colts",
+      "home_name_zh": "\u582a\u85a9\u65af\u57ce\u914b\u9577",
+      "away_name_zh": "\u5370\u7b2c\u5b89\u7d0d\u6ce2\u5229\u65af\u5c0f\u99ac",
       "market_spread": 6.5
     },
     {
@@ -1191,7 +1313,9 @@
       "game_type": "REG",
       "date": "2026-09-21",
       "home_name": "Los Angeles Rams",
-      "away_name": "New York Giants"
+      "away_name": "New York Giants",
+      "home_name_zh": "\u6d1b\u6749\u78ef\u516c\u7f8a",
+      "away_name_zh": "\u7d10\u7d04\u5de8\u4eba"
     },
     {
       "home_team": "GB",
@@ -1220,6 +1344,8 @@
       "date": "2026-09-24",
       "home_name": "Green Bay Packers",
       "away_name": "Atlanta Falcons",
+      "home_name_zh": "\u7da0\u7063\u5305\u88dd\u5de5",
+      "away_name_zh": "\u4e9e\u7279\u862d\u5927\u7375\u9df9",
       "market_spread": 7.5
     },
     {
@@ -1249,6 +1375,8 @@
       "date": "2026-09-27",
       "home_name": "Buffalo Bills",
       "away_name": "Los Angeles Chargers",
+      "home_name_zh": "\u6c34\u725b\u57ce\u6bd4\u723e",
+      "away_name_zh": "\u6d1b\u6749\u78ef\u96fb\u5149",
       "market_spread": 3.0
     },
     {
@@ -1278,6 +1406,8 @@
       "date": "2026-09-27",
       "home_name": "Cleveland Browns",
       "away_name": "Carolina Panthers",
+      "home_name_zh": "\u514b\u91cc\u592b\u862d\u5e03\u6717",
+      "away_name_zh": "\u5361\u7f85\u840a\u7d0d\u9ed1\u8c79",
       "market_spread": -1.5
     },
     {
@@ -1307,6 +1437,8 @@
       "date": "2026-09-27",
       "home_name": "Detroit Lions",
       "away_name": "New York Jets",
+      "home_name_zh": "\u5e95\u7279\u5f8b\u96c4\u7345",
+      "away_name_zh": "\u7d10\u7d04\u5674\u5c04\u6a5f",
       "market_spread": 9.5
     },
     {
@@ -1336,6 +1468,8 @@
       "date": "2026-09-27",
       "home_name": "Indianapolis Colts",
       "away_name": "Houston Texans",
+      "home_name_zh": "\u5370\u7b2c\u5b89\u7d0d\u6ce2\u5229\u65af\u5c0f\u99ac",
+      "away_name_zh": "\u4f11\u58eb\u9813\u5fb7\u5dde\u4eba",
       "market_spread": -1.5
     },
     {
@@ -1364,7 +1498,9 @@
       "game_type": "REG",
       "date": "2026-09-27",
       "home_name": "Jacksonville Jaguars",
-      "away_name": "New England Patriots"
+      "away_name": "New England Patriots",
+      "home_name_zh": "\u5091\u514b\u905c\u7dad\u723e\u7f8e\u6d32\u8c79",
+      "away_name_zh": "\u65b0\u82f1\u683c\u862d\u611b\u570b\u8005"
     },
     {
       "home_team": "MIA",
@@ -1393,6 +1529,8 @@
       "date": "2026-09-27",
       "home_name": "Miami Dolphins",
       "away_name": "Kansas City Chiefs",
+      "home_name_zh": "\u9081\u963f\u5bc6\u6d77\u8c5a",
+      "away_name_zh": "\u582a\u85a9\u65af\u57ce\u914b\u9577",
       "market_spread": -7.5
     },
     {
@@ -1422,6 +1560,8 @@
       "date": "2026-09-27",
       "home_name": "New York Giants",
       "away_name": "Tennessee Titans",
+      "home_name_zh": "\u7d10\u7d04\u5de8\u4eba",
+      "away_name_zh": "\u7530\u7d0d\u897f\u6cf0\u5766",
       "market_spread": 3.0
     },
     {
@@ -1451,6 +1591,8 @@
       "date": "2026-09-27",
       "home_name": "Pittsburgh Steelers",
       "away_name": "Cincinnati Bengals",
+      "home_name_zh": "\u5339\u8332\u5821\u92fc\u4eba",
+      "away_name_zh": "\u8f9b\u8f9b\u90a3\u63d0\u5b5f\u52a0\u62c9\u864e",
       "market_spread": -1.5
     },
     {
@@ -1479,7 +1621,9 @@
       "game_type": "REG",
       "date": "2026-09-27",
       "home_name": "Washington Commanders",
-      "away_name": "Seattle Seahawks"
+      "away_name": "Seattle Seahawks",
+      "home_name_zh": "\u83ef\u76db\u9813\u6307\u63ee\u5b98",
+      "away_name_zh": "\u897f\u96c5\u5716\u6d77\u9df9"
     },
     {
       "home_team": "SF",
@@ -1507,7 +1651,9 @@
       "game_type": "REG",
       "date": "2026-09-27",
       "home_name": "San Francisco 49ers",
-      "away_name": "Arizona Cardinals"
+      "away_name": "Arizona Cardinals",
+      "home_name_zh": "\u820a\u91d1\u5c7149\u4eba",
+      "away_name_zh": "\u4e9e\u5229\u6851\u90a3\u7d05\u96c0"
     },
     {
       "home_team": "TB",
@@ -1536,6 +1682,8 @@
       "date": "2026-09-27",
       "home_name": "Tampa Bay Buccaneers",
       "away_name": "Minnesota Vikings",
+      "home_name_zh": "\u5766\u5e15\u7063\u6d77\u76dc",
+      "away_name_zh": "\u660e\u5c3c\u8607\u9054\u7dad\u4eac\u4eba",
       "market_spread": 1.5
     },
     {
@@ -1565,6 +1713,8 @@
       "date": "2026-09-27",
       "home_name": "Dallas Cowboys",
       "away_name": "Baltimore Ravens",
+      "home_name_zh": "\u9054\u62c9\u65af\u725b\u4ed4",
+      "away_name_zh": "\u5df4\u723e\u7684\u6469\u70cf\u9d09",
       "market_spread": -2.5
     },
     {
@@ -1594,6 +1744,8 @@
       "date": "2026-09-27",
       "home_name": "New Orleans Saints",
       "away_name": "Las Vegas Raiders",
+      "home_name_zh": "\u7d10\u5967\u826f\u8056\u5f92",
+      "away_name_zh": "\u62c9\u65af\u7dad\u52a0\u65af\u7a81\u8972\u8005",
       "market_spread": 3.5
     },
     {
@@ -1622,7 +1774,9 @@
       "game_type": "REG",
       "date": "2026-09-27",
       "home_name": "Denver Broncos",
-      "away_name": "Los Angeles Rams"
+      "away_name": "Los Angeles Rams",
+      "home_name_zh": "\u4e39\u4f5b\u91ce\u99ac",
+      "away_name_zh": "\u6d1b\u6749\u78ef\u516c\u7f8a"
     },
     {
       "home_team": "CHI",
@@ -1651,6 +1805,8 @@
       "date": "2026-09-28",
       "home_name": "Chicago Bears",
       "away_name": "Philadelphia Eagles",
+      "home_name_zh": "\u829d\u52a0\u54e5\u718a",
+      "away_name_zh": "\u8cbb\u57ce\u8001\u9df9",
       "market_spread": 1.5
     },
     {
@@ -1680,6 +1836,8 @@
       "date": "2026-10-01",
       "home_name": "Cleveland Browns",
       "away_name": "Pittsburgh Steelers",
+      "home_name_zh": "\u514b\u91cc\u592b\u862d\u5e03\u6717",
+      "away_name_zh": "\u5339\u8332\u5821\u92fc\u4eba",
       "market_spread": -2.5
     },
     {
@@ -1709,6 +1867,8 @@
       "date": "2026-10-04",
       "home_name": "Washington Commanders",
       "away_name": "Indianapolis Colts",
+      "home_name_zh": "\u83ef\u76db\u9813\u6307\u63ee\u5b98",
+      "away_name_zh": "\u5370\u7b2c\u5b89\u7d0d\u6ce2\u5229\u65af\u5c0f\u99ac",
       "market_spread": 1.5
     },
     {
@@ -1738,6 +1898,8 @@
       "date": "2026-10-04",
       "home_name": "Baltimore Ravens",
       "away_name": "Tennessee Titans",
+      "home_name_zh": "\u5df4\u723e\u7684\u6469\u70cf\u9d09",
+      "away_name_zh": "\u7530\u7d0d\u897f\u6cf0\u5766",
       "market_spread": 8.5
     },
     {
@@ -1766,7 +1928,9 @@
       "game_type": "REG",
       "date": "2026-10-04",
       "home_name": "Buffalo Bills",
-      "away_name": "New England Patriots"
+      "away_name": "New England Patriots",
+      "home_name_zh": "\u6c34\u725b\u57ce\u6bd4\u723e",
+      "away_name_zh": "\u65b0\u82f1\u683c\u862d\u611b\u570b\u8005"
     },
     {
       "home_team": "CHI",
@@ -1795,6 +1959,8 @@
       "date": "2026-10-04",
       "home_name": "Chicago Bears",
       "away_name": "New York Jets",
+      "home_name_zh": "\u829d\u52a0\u54e5\u718a",
+      "away_name_zh": "\u7d10\u7d04\u5674\u5c04\u6a5f",
       "market_spread": 8.5
     },
     {
@@ -1824,6 +1990,8 @@
       "date": "2026-10-04",
       "home_name": "Cincinnati Bengals",
       "away_name": "Jacksonville Jaguars",
+      "home_name_zh": "\u8f9b\u8f9b\u90a3\u63d0\u5b5f\u52a0\u62c9\u864e",
+      "away_name_zh": "\u5091\u514b\u905c\u7dad\u723e\u7f8e\u6d32\u8c79",
       "market_spread": 2.5
     },
     {
@@ -1853,6 +2021,8 @@
       "date": "2026-10-04",
       "home_name": "Houston Texans",
       "away_name": "Dallas Cowboys",
+      "home_name_zh": "\u4f11\u58eb\u9813\u5fb7\u5dde\u4eba",
+      "away_name_zh": "\u9054\u62c9\u65af\u725b\u4ed4",
       "market_spread": 2.5
     },
     {
@@ -1882,6 +2052,8 @@
       "date": "2026-10-04",
       "home_name": "New York Giants",
       "away_name": "Arizona Cardinals",
+      "home_name_zh": "\u7d10\u7d04\u5de8\u4eba",
+      "away_name_zh": "\u4e9e\u5229\u6851\u90a3\u7d05\u96c0",
       "market_spread": 7.0
     },
     {
@@ -1910,7 +2082,9 @@
       "game_type": "REG",
       "date": "2026-10-04",
       "home_name": "Philadelphia Eagles",
-      "away_name": "Los Angeles Rams"
+      "away_name": "Los Angeles Rams",
+      "home_name_zh": "\u8cbb\u57ce\u8001\u9df9",
+      "away_name_zh": "\u6d1b\u6749\u78ef\u516c\u7f8a"
     },
     {
       "home_team": "TB",
@@ -1939,6 +2113,8 @@
       "date": "2026-10-04",
       "home_name": "Tampa Bay Buccaneers",
       "away_name": "Green Bay Packers",
+      "home_name_zh": "\u5766\u5e15\u7063\u6d77\u76dc",
+      "away_name_zh": "\u7da0\u7063\u5305\u88dd\u5de5",
       "market_spread": -1.5
     },
     {
@@ -1968,6 +2144,8 @@
       "date": "2026-10-04",
       "home_name": "Minnesota Vikings",
       "away_name": "Miami Dolphins",
+      "home_name_zh": "\u660e\u5c3c\u8607\u9054\u7dad\u4eac\u4eba",
+      "away_name_zh": "\u9081\u963f\u5bc6\u6d77\u8c5a",
       "market_spread": 7.5
     },
     {
@@ -1997,6 +2175,8 @@
       "date": "2026-10-04",
       "home_name": "Las Vegas Raiders",
       "away_name": "Kansas City Chiefs",
+      "home_name_zh": "\u62c9\u65af\u7dad\u52a0\u65af\u7a81\u8972\u8005",
+      "away_name_zh": "\u582a\u85a9\u65af\u57ce\u914b\u9577",
       "market_spread": -5.5
     },
     {
@@ -2025,7 +2205,9 @@
       "game_type": "REG",
       "date": "2026-10-04",
       "home_name": "Seattle Seahawks",
-      "away_name": "Los Angeles Chargers"
+      "away_name": "Los Angeles Chargers",
+      "home_name_zh": "\u897f\u96c5\u5716\u6d77\u9df9",
+      "away_name_zh": "\u6d1b\u6749\u78ef\u96fb\u5149"
     },
     {
       "home_team": "SF",
@@ -2053,7 +2235,9 @@
       "game_type": "REG",
       "date": "2026-10-04",
       "home_name": "San Francisco 49ers",
-      "away_name": "Denver Broncos"
+      "away_name": "Denver Broncos",
+      "home_name_zh": "\u820a\u91d1\u5c7149\u4eba",
+      "away_name_zh": "\u4e39\u4f5b\u91ce\u99ac"
     },
     {
       "home_team": "CAR",
@@ -2082,6 +2266,8 @@
       "date": "2026-10-04",
       "home_name": "Carolina Panthers",
       "away_name": "Detroit Lions",
+      "home_name_zh": "\u5361\u7f85\u840a\u7d0d\u9ed1\u8c79",
+      "away_name_zh": "\u5e95\u7279\u5f8b\u96c4\u7345",
       "market_spread": -3.0
     },
     {
@@ -2111,6 +2297,8 @@
       "date": "2026-10-05",
       "home_name": "New Orleans Saints",
       "away_name": "Atlanta Falcons",
+      "home_name_zh": "\u7d10\u5967\u826f\u8056\u5f92",
+      "away_name_zh": "\u4e9e\u7279\u862d\u5927\u7375\u9df9",
       "market_spread": 2.5
     },
     {
@@ -2140,6 +2328,8 @@
       "date": "2026-10-08",
       "home_name": "Dallas Cowboys",
       "away_name": "Tampa Bay Buccaneers",
+      "home_name_zh": "\u9054\u62c9\u65af\u725b\u4ed4",
+      "away_name_zh": "\u5766\u5e15\u7063\u6d77\u76dc",
       "market_spread": 3.5
     },
     {
@@ -2169,6 +2359,8 @@
       "date": "2026-10-11",
       "home_name": "Jacksonville Jaguars",
       "away_name": "Philadelphia Eagles",
+      "home_name_zh": "\u5091\u514b\u905c\u7dad\u723e\u7f8e\u6d32\u8c79",
+      "away_name_zh": "\u8cbb\u57ce\u8001\u9df9",
       "market_spread": -1.5
     },
     {
@@ -2198,6 +2390,8 @@
       "date": "2026-10-11",
       "home_name": "Miami Dolphins",
       "away_name": "Cincinnati Bengals",
+      "home_name_zh": "\u9081\u963f\u5bc6\u6d77\u8c5a",
+      "away_name_zh": "\u8f9b\u8f9b\u90a3\u63d0\u5b5f\u52a0\u62c9\u864e",
       "market_spread": -6.0
     },
     {
@@ -2226,7 +2420,9 @@
       "game_type": "REG",
       "date": "2026-10-11",
       "home_name": "New England Patriots",
-      "away_name": "Las Vegas Raiders"
+      "away_name": "Las Vegas Raiders",
+      "home_name_zh": "\u65b0\u82f1\u683c\u862d\u611b\u570b\u8005",
+      "away_name_zh": "\u62c9\u65af\u7dad\u52a0\u65af\u7a81\u8972\u8005"
     },
     {
       "home_team": "NO",
@@ -2255,6 +2451,8 @@
       "date": "2026-10-11",
       "home_name": "New Orleans Saints",
       "away_name": "Minnesota Vikings",
+      "home_name_zh": "\u7d10\u5967\u826f\u8056\u5f92",
+      "away_name_zh": "\u660e\u5c3c\u8607\u9054\u7dad\u4eac\u4eba",
       "market_spread": -1.5
     },
     {
@@ -2284,6 +2482,8 @@
       "date": "2026-10-11",
       "home_name": "New York Jets",
       "away_name": "Cleveland Browns",
+      "home_name_zh": "\u7d10\u7d04\u5674\u5c04\u6a5f",
+      "away_name_zh": "\u514b\u91cc\u592b\u862d\u5e03\u6717",
       "market_spread": 1.5
     },
     {
@@ -2313,6 +2513,8 @@
       "date": "2026-10-11",
       "home_name": "Pittsburgh Steelers",
       "away_name": "Indianapolis Colts",
+      "home_name_zh": "\u5339\u8332\u5821\u92fc\u4eba",
+      "away_name_zh": "\u5370\u7b2c\u5b89\u7d0d\u6ce2\u5229\u65af\u5c0f\u99ac",
       "market_spread": 2.5
     },
     {
@@ -2342,6 +2544,8 @@
       "date": "2026-10-11",
       "home_name": "Tennessee Titans",
       "away_name": "Houston Texans",
+      "home_name_zh": "\u7530\u7d0d\u897f\u6cf0\u5766",
+      "away_name_zh": "\u4f11\u58eb\u9813\u5fb7\u5dde\u4eba",
       "market_spread": -3.5
     },
     {
@@ -2371,6 +2575,8 @@
       "date": "2026-10-11",
       "home_name": "Washington Commanders",
       "away_name": "New York Giants",
+      "home_name_zh": "\u83ef\u76db\u9813\u6307\u63ee\u5b98",
+      "away_name_zh": "\u7d10\u7d04\u5de8\u4eba",
       "market_spread": 2.5
     },
     {
@@ -2400,6 +2606,8 @@
       "date": "2026-10-11",
       "home_name": "Los Angeles Chargers",
       "away_name": "Denver Broncos",
+      "home_name_zh": "\u6d1b\u6749\u78ef\u96fb\u5149",
+      "away_name_zh": "\u4e39\u4f5b\u91ce\u99ac",
       "market_spread": 2.5
     },
     {
@@ -2429,6 +2637,8 @@
       "date": "2026-10-11",
       "home_name": "Arizona Cardinals",
       "away_name": "Detroit Lions",
+      "home_name_zh": "\u4e9e\u5229\u6851\u90a3\u7d05\u96c0",
+      "away_name_zh": "\u5e95\u7279\u5f8b\u96c4\u7345",
       "market_spread": -8.5
     },
     {
@@ -2458,6 +2668,8 @@
       "date": "2026-10-11",
       "home_name": "Green Bay Packers",
       "away_name": "Chicago Bears",
+      "home_name_zh": "\u7da0\u7063\u5305\u88dd\u5de5",
+      "away_name_zh": "\u829d\u52a0\u54e5\u718a",
       "market_spread": 3.0
     },
     {
@@ -2486,7 +2698,9 @@
       "game_type": "REG",
       "date": "2026-10-11",
       "home_name": "Seattle Seahawks",
-      "away_name": "San Francisco 49ers"
+      "away_name": "San Francisco 49ers",
+      "home_name_zh": "\u897f\u96c5\u5716\u6d77\u9df9",
+      "away_name_zh": "\u820a\u91d1\u5c7149\u4eba"
     },
     {
       "home_team": "ATL",
@@ -2515,6 +2729,8 @@
       "date": "2026-10-11",
       "home_name": "Atlanta Falcons",
       "away_name": "Baltimore Ravens",
+      "home_name_zh": "\u4e9e\u7279\u862d\u5927\u7375\u9df9",
+      "away_name_zh": "\u5df4\u723e\u7684\u6469\u70cf\u9d09",
       "market_spread": -4.5
     },
     {
@@ -2543,7 +2759,9 @@
       "game_type": "REG",
       "date": "2026-10-12",
       "home_name": "Los Angeles Rams",
-      "away_name": "Buffalo Bills"
+      "away_name": "Buffalo Bills",
+      "home_name_zh": "\u6d1b\u6749\u78ef\u516c\u7f8a",
+      "away_name_zh": "\u6c34\u725b\u57ce\u6bd4\u723e"
     },
     {
       "home_team": "DEN",
@@ -2571,7 +2789,9 @@
       "game_type": "REG",
       "date": "2026-10-15",
       "home_name": "Denver Broncos",
-      "away_name": "Seattle Seahawks"
+      "away_name": "Seattle Seahawks",
+      "home_name_zh": "\u4e39\u4f5b\u91ce\u99ac",
+      "away_name_zh": "\u897f\u96c5\u5716\u6d77\u9df9"
     },
     {
       "home_team": "JAX",
@@ -2600,6 +2820,8 @@
       "date": "2026-10-18",
       "home_name": "Jacksonville Jaguars",
       "away_name": "Houston Texans",
+      "home_name_zh": "\u5091\u514b\u905c\u7dad\u723e\u7f8e\u6d32\u8c79",
+      "away_name_zh": "\u4f11\u58eb\u9813\u5fb7\u5dde\u4eba",
       "market_spread": 1.5
     },
     {
@@ -2629,6 +2851,8 @@
       "date": "2026-10-18",
       "home_name": "Atlanta Falcons",
       "away_name": "Chicago Bears",
+      "home_name_zh": "\u4e9e\u7279\u862d\u5927\u7375\u9df9",
+      "away_name_zh": "\u829d\u52a0\u54e5\u718a",
       "market_spread": -3.0
     },
     {
@@ -2658,6 +2882,8 @@
       "date": "2026-10-18",
       "home_name": "Cleveland Browns",
       "away_name": "Baltimore Ravens",
+      "home_name_zh": "\u514b\u91cc\u592b\u862d\u5e03\u6717",
+      "away_name_zh": "\u5df4\u723e\u7684\u6469\u70cf\u9d09",
       "market_spread": -6.5
     },
     {
@@ -2687,6 +2913,8 @@
       "date": "2026-10-18",
       "home_name": "Indianapolis Colts",
       "away_name": "Tennessee Titans",
+      "home_name_zh": "\u5370\u7b2c\u5b89\u7d0d\u6ce2\u5229\u65af\u5c0f\u99ac",
+      "away_name_zh": "\u7530\u7d0d\u897f\u6cf0\u5766",
       "market_spread": 3.5
     },
     {
@@ -2715,7 +2943,9 @@
       "game_type": "REG",
       "date": "2026-10-18",
       "home_name": "New England Patriots",
-      "away_name": "New York Jets"
+      "away_name": "New York Jets",
+      "home_name_zh": "\u65b0\u82f1\u683c\u862d\u611b\u570b\u8005",
+      "away_name_zh": "\u7d10\u7d04\u5674\u5c04\u6a5f"
     },
     {
       "home_team": "NYG",
@@ -2744,6 +2974,8 @@
       "date": "2026-10-18",
       "home_name": "New York Giants",
       "away_name": "New Orleans Saints",
+      "home_name_zh": "\u7d10\u7d04\u5de8\u4eba",
+      "away_name_zh": "\u7d10\u5967\u826f\u8056\u5f92",
       "market_spread": 2.5
     },
     {
@@ -2773,6 +3005,8 @@
       "date": "2026-10-18",
       "home_name": "Philadelphia Eagles",
       "away_name": "Carolina Panthers",
+      "home_name_zh": "\u8cbb\u57ce\u8001\u9df9",
+      "away_name_zh": "\u5361\u7f85\u840a\u7d0d\u9ed1\u8c79",
       "market_spread": 6.5
     },
     {
@@ -2802,6 +3036,8 @@
       "date": "2026-10-18",
       "home_name": "Tampa Bay Buccaneers",
       "away_name": "Pittsburgh Steelers",
+      "home_name_zh": "\u5766\u5e15\u7063\u6d77\u76dc",
+      "away_name_zh": "\u5339\u8332\u5821\u92fc\u4eba",
       "market_spread": 1.5
     },
     {
@@ -2830,7 +3066,9 @@
       "game_type": "REG",
       "date": "2026-10-18",
       "home_name": "Los Angeles Rams",
-      "away_name": "Arizona Cardinals"
+      "away_name": "Arizona Cardinals",
+      "home_name_zh": "\u6d1b\u6749\u78ef\u516c\u7f8a",
+      "away_name_zh": "\u4e9e\u5229\u6851\u90a3\u7d05\u96c0"
     },
     {
       "home_team": "KC",
@@ -2859,6 +3097,8 @@
       "date": "2026-10-18",
       "home_name": "Kansas City Chiefs",
       "away_name": "Los Angeles Chargers",
+      "home_name_zh": "\u582a\u85a9\u65af\u57ce\u914b\u9577",
+      "away_name_zh": "\u6d1b\u6749\u78ef\u96fb\u5149",
       "market_spread": 2.5
     },
     {
@@ -2888,6 +3128,8 @@
       "date": "2026-10-18",
       "home_name": "Las Vegas Raiders",
       "away_name": "Buffalo Bills",
+      "home_name_zh": "\u62c9\u65af\u7dad\u52a0\u65af\u7a81\u8972\u8005",
+      "away_name_zh": "\u6c34\u725b\u57ce\u6bd4\u723e",
       "market_spread": -6.5
     },
     {
@@ -2917,6 +3159,8 @@
       "date": "2026-10-18",
       "home_name": "Green Bay Packers",
       "away_name": "Dallas Cowboys",
+      "home_name_zh": "\u7da0\u7063\u5305\u88dd\u5de5",
+      "away_name_zh": "\u9054\u62c9\u65af\u725b\u4ed4",
       "market_spread": 3.0
     },
     {
@@ -2945,7 +3189,9 @@
       "game_type": "REG",
       "date": "2026-10-19",
       "home_name": "San Francisco 49ers",
-      "away_name": "Washington Commanders"
+      "away_name": "Washington Commanders",
+      "home_name_zh": "\u820a\u91d1\u5c7149\u4eba",
+      "away_name_zh": "\u83ef\u76db\u9813\u6307\u63ee\u5b98"
     },
     {
       "home_team": "CHI",
@@ -2973,7 +3219,9 @@
       "game_type": "REG",
       "date": "2026-10-22",
       "home_name": "Chicago Bears",
-      "away_name": "New England Patriots"
+      "away_name": "New England Patriots",
+      "home_name_zh": "\u829d\u52a0\u54e5\u718a",
+      "away_name_zh": "\u65b0\u82f1\u683c\u862d\u611b\u570b\u8005"
     },
     {
       "home_team": "NO",
@@ -3002,6 +3250,8 @@
       "date": "2026-10-25",
       "home_name": "New Orleans Saints",
       "away_name": "Pittsburgh Steelers",
+      "home_name_zh": "\u7d10\u5967\u826f\u8056\u5f92",
+      "away_name_zh": "\u5339\u8332\u5821\u92fc\u4eba",
       "market_spread": -2.5
     },
     {
@@ -3030,7 +3280,9 @@
       "game_type": "REG",
       "date": "2026-10-25",
       "home_name": "Atlanta Falcons",
-      "away_name": "San Francisco 49ers"
+      "away_name": "San Francisco 49ers",
+      "home_name_zh": "\u4e9e\u7279\u862d\u5927\u7375\u9df9",
+      "away_name_zh": "\u820a\u91d1\u5c7149\u4eba"
     },
     {
       "home_team": "BAL",
@@ -3059,6 +3311,8 @@
       "date": "2026-10-25",
       "home_name": "Baltimore Ravens",
       "away_name": "Cincinnati Bengals",
+      "home_name_zh": "\u5df4\u723e\u7684\u6469\u70cf\u9d09",
+      "away_name_zh": "\u8f9b\u8f9b\u90a3\u63d0\u5b5f\u52a0\u62c9\u864e",
       "market_spread": 3.5
     },
     {
@@ -3088,6 +3342,8 @@
       "date": "2026-10-25",
       "home_name": "Carolina Panthers",
       "away_name": "Tampa Bay Buccaneers",
+      "home_name_zh": "\u5361\u7f85\u840a\u7d0d\u9ed1\u8c79",
+      "away_name_zh": "\u5766\u5e15\u7063\u6d77\u76dc",
       "market_spread": -1.5
     },
     {
@@ -3117,6 +3373,8 @@
       "date": "2026-10-25",
       "home_name": "Houston Texans",
       "away_name": "New York Giants",
+      "home_name_zh": "\u4f11\u58eb\u9813\u5fb7\u5dde\u4eba",
+      "away_name_zh": "\u7d10\u7d04\u5de8\u4eba",
       "market_spread": 5.5
     },
     {
@@ -3146,6 +3404,8 @@
       "date": "2026-10-25",
       "home_name": "Minnesota Vikings",
       "away_name": "Indianapolis Colts",
+      "home_name_zh": "\u660e\u5c3c\u8607\u9054\u7dad\u4eac\u4eba",
+      "away_name_zh": "\u5370\u7b2c\u5b89\u7d0d\u6ce2\u5229\u65af\u5c0f\u99ac",
       "market_spread": 2.5
     },
     {
@@ -3175,6 +3435,8 @@
       "date": "2026-10-25",
       "home_name": "New York Jets",
       "away_name": "Miami Dolphins",
+      "home_name_zh": "\u7d10\u7d04\u5674\u5c04\u6a5f",
+      "away_name_zh": "\u9081\u963f\u5bc6\u6d77\u8c5a",
       "market_spread": 2.5
     },
     {
@@ -3204,6 +3466,8 @@
       "date": "2026-10-25",
       "home_name": "Tennessee Titans",
       "away_name": "Cleveland Browns",
+      "home_name_zh": "\u7530\u7d0d\u897f\u6cf0\u5766",
+      "away_name_zh": "\u514b\u91cc\u592b\u862d\u5e03\u6717",
       "market_spread": 2.5
     },
     {
@@ -3233,6 +3497,8 @@
       "date": "2026-10-25",
       "home_name": "Arizona Cardinals",
       "away_name": "Denver Broncos",
+      "home_name_zh": "\u4e9e\u5229\u6851\u90a3\u7d05\u96c0",
+      "away_name_zh": "\u4e39\u4f5b\u91ce\u99ac",
       "market_spread": -7.5
     },
     {
@@ -3262,6 +3528,8 @@
       "date": "2026-10-25",
       "home_name": "Detroit Lions",
       "away_name": "Green Bay Packers",
+      "home_name_zh": "\u5e95\u7279\u5f8b\u96c4\u7345",
+      "away_name_zh": "\u7da0\u7063\u5305\u88dd\u5de5",
       "market_spread": 2.5
     },
     {
@@ -3290,7 +3558,9 @@
       "game_type": "REG",
       "date": "2026-10-25",
       "home_name": "Las Vegas Raiders",
-      "away_name": "Los Angeles Rams"
+      "away_name": "Los Angeles Rams",
+      "home_name_zh": "\u62c9\u65af\u7dad\u52a0\u65af\u7a81\u8972\u8005",
+      "away_name_zh": "\u6d1b\u6749\u78ef\u516c\u7f8a"
     },
     {
       "home_team": "SEA",
@@ -3318,7 +3588,9 @@
       "game_type": "REG",
       "date": "2026-10-25",
       "home_name": "Seattle Seahawks",
-      "away_name": "Kansas City Chiefs"
+      "away_name": "Kansas City Chiefs",
+      "home_name_zh": "\u897f\u96c5\u5716\u6d77\u9df9",
+      "away_name_zh": "\u582a\u85a9\u65af\u57ce\u914b\u9577"
     },
     {
       "home_team": "PHI",
@@ -3347,6 +3619,8 @@
       "date": "2026-10-26",
       "home_name": "Philadelphia Eagles",
       "away_name": "Dallas Cowboys",
+      "home_name_zh": "\u8cbb\u57ce\u8001\u9df9",
+      "away_name_zh": "\u9054\u62c9\u65af\u725b\u4ed4",
       "market_spread": 3.0
     },
     {
@@ -3376,6 +3650,8 @@
       "date": "2026-10-29",
       "home_name": "Green Bay Packers",
       "away_name": "Carolina Panthers",
+      "home_name_zh": "\u7da0\u7063\u5305\u88dd\u5de5",
+      "away_name_zh": "\u5361\u7f85\u840a\u7d0d\u9ed1\u8c79",
       "market_spread": 7.0
     },
     {
@@ -3405,6 +3681,8 @@
       "date": "2026-11-01",
       "home_name": "Buffalo Bills",
       "away_name": "Baltimore Ravens",
+      "home_name_zh": "\u6c34\u725b\u57ce\u6bd4\u723e",
+      "away_name_zh": "\u5df4\u723e\u7684\u6469\u70cf\u9d09",
       "market_spread": 2.5
     },
     {
@@ -3434,6 +3712,8 @@
       "date": "2026-11-01",
       "home_name": "Cincinnati Bengals",
       "away_name": "Tennessee Titans",
+      "home_name_zh": "\u8f9b\u8f9b\u90a3\u63d0\u5b5f\u52a0\u62c9\u864e",
+      "away_name_zh": "\u7530\u7d0d\u897f\u6cf0\u5766",
       "market_spread": 6.5
     },
     {
@@ -3463,6 +3743,8 @@
       "date": "2026-11-01",
       "home_name": "Dallas Cowboys",
       "away_name": "Arizona Cardinals",
+      "home_name_zh": "\u9054\u62c9\u65af\u725b\u4ed4",
+      "away_name_zh": "\u4e9e\u5229\u6851\u90a3\u7d05\u96c0",
       "market_spread": 10.5
     },
     {
@@ -3492,6 +3774,8 @@
       "date": "2026-11-01",
       "home_name": "Detroit Lions",
       "away_name": "Minnesota Vikings",
+      "home_name_zh": "\u5e95\u7279\u5f8b\u96c4\u7345",
+      "away_name_zh": "\u660e\u5c3c\u8607\u9054\u7dad\u4eac\u4eba",
       "market_spread": 4.5
     },
     {
@@ -3521,6 +3805,8 @@
       "date": "2026-11-01",
       "home_name": "Jacksonville Jaguars",
       "away_name": "Indianapolis Colts",
+      "home_name_zh": "\u5091\u514b\u905c\u7dad\u723e\u7f8e\u6d32\u8c79",
+      "away_name_zh": "\u5370\u7b2c\u5b89\u7d0d\u6ce2\u5229\u65af\u5c0f\u99ac",
       "market_spread": 4.5
     },
     {
@@ -3550,6 +3836,8 @@
       "date": "2026-11-01",
       "home_name": "New York Jets",
       "away_name": "Las Vegas Raiders",
+      "home_name_zh": "\u7d10\u7d04\u5674\u5c04\u6a5f",
+      "away_name_zh": "\u62c9\u65af\u7dad\u52a0\u65af\u7a81\u8972\u8005",
       "market_spread": 1.5
     },
     {
@@ -3579,6 +3867,8 @@
       "date": "2026-11-01",
       "home_name": "Pittsburgh Steelers",
       "away_name": "Cleveland Browns",
+      "home_name_zh": "\u5339\u8332\u5821\u92fc\u4eba",
+      "away_name_zh": "\u514b\u91cc\u592b\u862d\u5e03\u6717",
       "market_spread": 6.0
     },
     {
@@ -3608,6 +3898,8 @@
       "date": "2026-11-01",
       "home_name": "Tampa Bay Buccaneers",
       "away_name": "Atlanta Falcons",
+      "home_name_zh": "\u5766\u5e15\u7063\u6d77\u76dc",
+      "away_name_zh": "\u4e9e\u7279\u862d\u5927\u7375\u9df9",
       "market_spread": 4.5
     },
     {
@@ -3636,7 +3928,9 @@
       "game_type": "REG",
       "date": "2026-11-01",
       "home_name": "Los Angeles Rams",
-      "away_name": "Los Angeles Chargers"
+      "away_name": "Los Angeles Chargers",
+      "home_name_zh": "\u6d1b\u6749\u78ef\u516c\u7f8a",
+      "away_name_zh": "\u6d1b\u6749\u78ef\u96fb\u5149"
     },
     {
       "home_team": "DEN",
@@ -3665,6 +3959,8 @@
       "date": "2026-11-01",
       "home_name": "Denver Broncos",
       "away_name": "Kansas City Chiefs",
+      "home_name_zh": "\u4e39\u4f5b\u91ce\u99ac",
+      "away_name_zh": "\u582a\u85a9\u65af\u57ce\u914b\u9577",
       "market_spread": 1.5
     },
     {
@@ -3693,7 +3989,9 @@
       "game_type": "REG",
       "date": "2026-11-01",
       "home_name": "Miami Dolphins",
-      "away_name": "New England Patriots"
+      "away_name": "New England Patriots",
+      "home_name_zh": "\u9081\u963f\u5bc6\u6d77\u8c5a",
+      "away_name_zh": "\u65b0\u82f1\u683c\u862d\u611b\u570b\u8005"
     },
     {
       "home_team": "WAS",
@@ -3722,6 +4020,8 @@
       "date": "2026-11-01",
       "home_name": "Washington Commanders",
       "away_name": "Philadelphia Eagles",
+      "home_name_zh": "\u83ef\u76db\u9813\u6307\u63ee\u5b98",
+      "away_name_zh": "\u8cbb\u57ce\u8001\u9df9",
       "market_spread": -1.5
     },
     {
@@ -3750,7 +4050,9 @@
       "game_type": "REG",
       "date": "2026-11-02",
       "home_name": "Seattle Seahawks",
-      "away_name": "Chicago Bears"
+      "away_name": "Chicago Bears",
+      "home_name_zh": "\u897f\u96c5\u5716\u6d77\u9df9",
+      "away_name_zh": "\u829d\u52a0\u54e5\u718a"
     },
     {
       "home_team": "BAL",
@@ -3779,6 +4081,8 @@
       "date": "2026-11-05",
       "home_name": "Baltimore Ravens",
       "away_name": "Jacksonville Jaguars",
+      "home_name_zh": "\u5df4\u723e\u7684\u6469\u70cf\u9d09",
+      "away_name_zh": "\u5091\u514b\u905c\u7dad\u723e\u7f8e\u6d32\u8c79",
       "market_spread": 4.5
     },
     {
@@ -3808,6 +4112,8 @@
       "date": "2026-11-08",
       "home_name": "Atlanta Falcons",
       "away_name": "Cincinnati Bengals",
+      "home_name_zh": "\u4e9e\u7279\u862d\u5927\u7375\u9df9",
+      "away_name_zh": "\u8f9b\u8f9b\u90a3\u63d0\u5b5f\u52a0\u62c9\u864e",
       "market_spread": -5.5
     },
     {
@@ -3836,7 +4142,9 @@
       "game_type": "REG",
       "date": "2026-11-08",
       "home_name": "Carolina Panthers",
-      "away_name": "Denver Broncos"
+      "away_name": "Denver Broncos",
+      "home_name_zh": "\u5361\u7f85\u840a\u7d0d\u9ed1\u8c79",
+      "away_name_zh": "\u4e39\u4f5b\u91ce\u99ac"
     },
     {
       "home_team": "IND",
@@ -3865,6 +4173,8 @@
       "date": "2026-11-08",
       "home_name": "Indianapolis Colts",
       "away_name": "Dallas Cowboys",
+      "home_name_zh": "\u5370\u7b2c\u5b89\u7d0d\u6ce2\u5229\u65af\u5c0f\u99ac",
+      "away_name_zh": "\u9054\u62c9\u65af\u725b\u4ed4",
       "market_spread": -1.5
     },
     {
@@ -3893,7 +4203,9 @@
       "game_type": "REG",
       "date": "2026-11-08",
       "home_name": "Kansas City Chiefs",
-      "away_name": "New York Jets"
+      "away_name": "New York Jets",
+      "home_name_zh": "\u582a\u85a9\u65af\u57ce\u914b\u9577",
+      "away_name_zh": "\u7d10\u7d04\u5674\u5c04\u6a5f"
     },
     {
       "home_team": "MIA",
@@ -3922,6 +4234,8 @@
       "date": "2026-11-08",
       "home_name": "Miami Dolphins",
       "away_name": "Detroit Lions",
+      "home_name_zh": "\u9081\u963f\u5bc6\u6d77\u8c5a",
+      "away_name_zh": "\u5e95\u7279\u5f8b\u96c4\u7345",
       "market_spread": -6.5
     },
     {
@@ -3951,6 +4265,8 @@
       "date": "2026-11-08",
       "home_name": "New Orleans Saints",
       "away_name": "Cleveland Browns",
+      "home_name_zh": "\u7d10\u5967\u826f\u8056\u5f92",
+      "away_name_zh": "\u514b\u91cc\u592b\u862d\u5e03\u6717",
       "market_spread": 3.5
     },
     {
@@ -3980,6 +4296,8 @@
       "date": "2026-11-08",
       "home_name": "Philadelphia Eagles",
       "away_name": "New York Giants",
+      "home_name_zh": "\u8cbb\u57ce\u8001\u9df9",
+      "away_name_zh": "\u7d10\u7d04\u5de8\u4eba",
       "market_spread": 5.5
     },
     {
@@ -4008,7 +4326,9 @@
       "game_type": "REG",
       "date": "2026-11-08",
       "home_name": "Washington Commanders",
-      "away_name": "Los Angeles Rams"
+      "away_name": "Los Angeles Rams",
+      "home_name_zh": "\u83ef\u76db\u9813\u6307\u63ee\u5b98",
+      "away_name_zh": "\u6d1b\u6749\u78ef\u516c\u7f8a"
     },
     {
       "home_team": "LAC",
@@ -4036,7 +4356,9 @@
       "game_type": "REG",
       "date": "2026-11-08",
       "home_name": "Los Angeles Chargers",
-      "away_name": "Houston Texans"
+      "away_name": "Houston Texans",
+      "home_name_zh": "\u6d1b\u6749\u78ef\u96fb\u5149",
+      "away_name_zh": "\u4f11\u58eb\u9813\u5fb7\u5dde\u4eba"
     },
     {
       "home_team": "SF",
@@ -4064,7 +4386,9 @@
       "game_type": "REG",
       "date": "2026-11-08",
       "home_name": "San Francisco 49ers",
-      "away_name": "Las Vegas Raiders"
+      "away_name": "Las Vegas Raiders",
+      "home_name_zh": "\u820a\u91d1\u5c7149\u4eba",
+      "away_name_zh": "\u62c9\u65af\u7dad\u52a0\u65af\u7a81\u8972\u8005"
     },
     {
       "home_team": "NE",
@@ -4092,7 +4416,9 @@
       "game_type": "REG",
       "date": "2026-11-08",
       "home_name": "New England Patriots",
-      "away_name": "Green Bay Packers"
+      "away_name": "Green Bay Packers",
+      "home_name_zh": "\u65b0\u82f1\u683c\u862d\u611b\u570b\u8005",
+      "away_name_zh": "\u7da0\u7063\u5305\u88dd\u5de5"
     },
     {
       "home_team": "SEA",
@@ -4120,7 +4446,9 @@
       "game_type": "REG",
       "date": "2026-11-08",
       "home_name": "Seattle Seahawks",
-      "away_name": "Arizona Cardinals"
+      "away_name": "Arizona Cardinals",
+      "home_name_zh": "\u897f\u96c5\u5716\u6d77\u9df9",
+      "away_name_zh": "\u4e9e\u5229\u6851\u90a3\u7d05\u96c0"
     },
     {
       "home_team": "CHI",
@@ -4148,7 +4476,9 @@
       "game_type": "REG",
       "date": "2026-11-08",
       "home_name": "Chicago Bears",
-      "away_name": "Tampa Bay Buccaneers"
+      "away_name": "Tampa Bay Buccaneers",
+      "home_name_zh": "\u829d\u52a0\u54e5\u718a",
+      "away_name_zh": "\u5766\u5e15\u7063\u6d77\u76dc"
     },
     {
       "home_team": "MIN",
@@ -4176,7 +4506,9 @@
       "game_type": "REG",
       "date": "2026-11-09",
       "home_name": "Minnesota Vikings",
-      "away_name": "Buffalo Bills"
+      "away_name": "Buffalo Bills",
+      "home_name_zh": "\u660e\u5c3c\u8607\u9054\u7dad\u4eac\u4eba",
+      "away_name_zh": "\u6c34\u725b\u57ce\u6bd4\u723e"
     },
     {
       "home_team": "NYG",
@@ -4204,7 +4536,9 @@
       "game_type": "REG",
       "date": "2026-11-12",
       "home_name": "New York Giants",
-      "away_name": "Washington Commanders"
+      "away_name": "Washington Commanders",
+      "home_name_zh": "\u7d10\u7d04\u5de8\u4eba",
+      "away_name_zh": "\u83ef\u76db\u9813\u6307\u63ee\u5b98"
     },
     {
       "home_team": "DET",
@@ -4232,7 +4566,9 @@
       "game_type": "REG",
       "date": "2026-11-15",
       "home_name": "Detroit Lions",
-      "away_name": "New England Patriots"
+      "away_name": "New England Patriots",
+      "home_name_zh": "\u5e95\u7279\u5f8b\u96c4\u7345",
+      "away_name_zh": "\u65b0\u82f1\u683c\u862d\u611b\u570b\u8005"
     },
     {
       "home_team": "ATL",
@@ -4260,7 +4596,9 @@
       "game_type": "REG",
       "date": "2026-11-15",
       "home_name": "Atlanta Falcons",
-      "away_name": "Kansas City Chiefs"
+      "away_name": "Kansas City Chiefs",
+      "home_name_zh": "\u4e9e\u7279\u862d\u5927\u7375\u9df9",
+      "away_name_zh": "\u582a\u85a9\u65af\u57ce\u914b\u9577"
     },
     {
       "home_team": "CLE",
@@ -4288,7 +4626,9 @@
       "game_type": "REG",
       "date": "2026-11-15",
       "home_name": "Cleveland Browns",
-      "away_name": "Houston Texans"
+      "away_name": "Houston Texans",
+      "home_name_zh": "\u514b\u91cc\u592b\u862d\u5e03\u6717",
+      "away_name_zh": "\u4f11\u58eb\u9813\u5fb7\u5dde\u4eba"
     },
     {
       "home_team": "GB",
@@ -4316,7 +4656,9 @@
       "game_type": "REG",
       "date": "2026-11-15",
       "home_name": "Green Bay Packers",
-      "away_name": "Minnesota Vikings"
+      "away_name": "Minnesota Vikings",
+      "home_name_zh": "\u7da0\u7063\u5305\u88dd\u5de5",
+      "away_name_zh": "\u660e\u5c3c\u8607\u9054\u7dad\u4eac\u4eba"
     },
     {
       "home_team": "IND",
@@ -4344,7 +4686,9 @@
       "game_type": "REG",
       "date": "2026-11-15",
       "home_name": "Indianapolis Colts",
-      "away_name": "Miami Dolphins"
+      "away_name": "Miami Dolphins",
+      "home_name_zh": "\u5370\u7b2c\u5b89\u7d0d\u6ce2\u5229\u65af\u5c0f\u99ac",
+      "away_name_zh": "\u9081\u963f\u5bc6\u6d77\u8c5a"
     },
     {
       "home_team": "NO",
@@ -4372,7 +4716,9 @@
       "game_type": "REG",
       "date": "2026-11-15",
       "home_name": "New Orleans Saints",
-      "away_name": "Carolina Panthers"
+      "away_name": "Carolina Panthers",
+      "home_name_zh": "\u7d10\u5967\u826f\u8056\u5f92",
+      "away_name_zh": "\u5361\u7f85\u840a\u7d0d\u9ed1\u8c79"
     },
     {
       "home_team": "NYJ",
@@ -4400,7 +4746,9 @@
       "game_type": "REG",
       "date": "2026-11-15",
       "home_name": "New York Jets",
-      "away_name": "Buffalo Bills"
+      "away_name": "Buffalo Bills",
+      "home_name_zh": "\u7d10\u7d04\u5674\u5c04\u6a5f",
+      "away_name_zh": "\u6c34\u725b\u57ce\u6bd4\u723e"
     },
     {
       "home_team": "TEN",
@@ -4428,7 +4776,9 @@
       "game_type": "REG",
       "date": "2026-11-15",
       "home_name": "Tennessee Titans",
-      "away_name": "Jacksonville Jaguars"
+      "away_name": "Jacksonville Jaguars",
+      "home_name_zh": "\u7530\u7d0d\u897f\u6cf0\u5766",
+      "away_name_zh": "\u5091\u514b\u905c\u7dad\u723e\u7f8e\u6d32\u8c79"
     },
     {
       "home_team": "ARI",
@@ -4456,7 +4806,9 @@
       "game_type": "REG",
       "date": "2026-11-15",
       "home_name": "Arizona Cardinals",
-      "away_name": "Los Angeles Rams"
+      "away_name": "Los Angeles Rams",
+      "home_name_zh": "\u4e9e\u5229\u6851\u90a3\u7d05\u96c0",
+      "away_name_zh": "\u6d1b\u6749\u78ef\u516c\u7f8a"
     },
     {
       "home_team": "LV",
@@ -4484,7 +4836,9 @@
       "game_type": "REG",
       "date": "2026-11-15",
       "home_name": "Las Vegas Raiders",
-      "away_name": "Seattle Seahawks"
+      "away_name": "Seattle Seahawks",
+      "home_name_zh": "\u62c9\u65af\u7dad\u52a0\u65af\u7a81\u8972\u8005",
+      "away_name_zh": "\u897f\u96c5\u5716\u6d77\u9df9"
     },
     {
       "home_team": "DAL",
@@ -4512,7 +4866,9 @@
       "game_type": "REG",
       "date": "2026-11-15",
       "home_name": "Dallas Cowboys",
-      "away_name": "San Francisco 49ers"
+      "away_name": "San Francisco 49ers",
+      "home_name_zh": "\u9054\u62c9\u65af\u725b\u4ed4",
+      "away_name_zh": "\u820a\u91d1\u5c7149\u4eba"
     },
     {
       "home_team": "CIN",
@@ -4540,7 +4896,9 @@
       "game_type": "REG",
       "date": "2026-11-15",
       "home_name": "Cincinnati Bengals",
-      "away_name": "Pittsburgh Steelers"
+      "away_name": "Pittsburgh Steelers",
+      "home_name_zh": "\u8f9b\u8f9b\u90a3\u63d0\u5b5f\u52a0\u62c9\u864e",
+      "away_name_zh": "\u5339\u8332\u5821\u92fc\u4eba"
     },
     {
       "home_team": "BAL",
@@ -4568,7 +4926,9 @@
       "game_type": "REG",
       "date": "2026-11-16",
       "home_name": "Baltimore Ravens",
-      "away_name": "Los Angeles Chargers"
+      "away_name": "Los Angeles Chargers",
+      "home_name_zh": "\u5df4\u723e\u7684\u6469\u70cf\u9d09",
+      "away_name_zh": "\u6d1b\u6749\u78ef\u96fb\u5149"
     },
     {
       "home_team": "HOU",
@@ -4596,7 +4956,9 @@
       "game_type": "REG",
       "date": "2026-11-19",
       "home_name": "Houston Texans",
-      "away_name": "Indianapolis Colts"
+      "away_name": "Indianapolis Colts",
+      "home_name_zh": "\u4f11\u58eb\u9813\u5fb7\u5dde\u4eba",
+      "away_name_zh": "\u5370\u7b2c\u5b89\u7d0d\u6ce2\u5229\u65af\u5c0f\u99ac"
     },
     {
       "home_team": "BUF",
@@ -4624,7 +4986,9 @@
       "game_type": "REG",
       "date": "2026-11-22",
       "home_name": "Buffalo Bills",
-      "away_name": "Miami Dolphins"
+      "away_name": "Miami Dolphins",
+      "home_name_zh": "\u6c34\u725b\u57ce\u6bd4\u723e",
+      "away_name_zh": "\u9081\u963f\u5bc6\u6d77\u8c5a"
     },
     {
       "home_team": "CAR",
@@ -4652,7 +5016,9 @@
       "game_type": "REG",
       "date": "2026-11-22",
       "home_name": "Carolina Panthers",
-      "away_name": "Baltimore Ravens"
+      "away_name": "Baltimore Ravens",
+      "home_name_zh": "\u5361\u7f85\u840a\u7d0d\u9ed1\u8c79",
+      "away_name_zh": "\u5df4\u723e\u7684\u6469\u70cf\u9d09"
     },
     {
       "home_team": "CHI",
@@ -4680,7 +5046,9 @@
       "game_type": "REG",
       "date": "2026-11-22",
       "home_name": "Chicago Bears",
-      "away_name": "New Orleans Saints"
+      "away_name": "New Orleans Saints",
+      "home_name_zh": "\u829d\u52a0\u54e5\u718a",
+      "away_name_zh": "\u7d10\u5967\u826f\u8056\u5f92"
     },
     {
       "home_team": "DAL",
@@ -4708,7 +5076,9 @@
       "game_type": "REG",
       "date": "2026-11-22",
       "home_name": "Dallas Cowboys",
-      "away_name": "Tennessee Titans"
+      "away_name": "Tennessee Titans",
+      "home_name_zh": "\u9054\u62c9\u65af\u725b\u4ed4",
+      "away_name_zh": "\u7530\u7d0d\u897f\u6cf0\u5766"
     },
     {
       "home_team": "DET",
@@ -4736,7 +5106,9 @@
       "game_type": "REG",
       "date": "2026-11-22",
       "home_name": "Detroit Lions",
-      "away_name": "Tampa Bay Buccaneers"
+      "away_name": "Tampa Bay Buccaneers",
+      "home_name_zh": "\u5e95\u7279\u5f8b\u96c4\u7345",
+      "away_name_zh": "\u5766\u5e15\u7063\u6d77\u76dc"
     },
     {
       "home_team": "KC",
@@ -4764,7 +5136,9 @@
       "game_type": "REG",
       "date": "2026-11-22",
       "home_name": "Kansas City Chiefs",
-      "away_name": "Arizona Cardinals"
+      "away_name": "Arizona Cardinals",
+      "home_name_zh": "\u582a\u85a9\u65af\u57ce\u914b\u9577",
+      "away_name_zh": "\u4e9e\u5229\u6851\u90a3\u7d05\u96c0"
     },
     {
       "home_team": "NYG",
@@ -4792,7 +5166,9 @@
       "game_type": "REG",
       "date": "2026-11-22",
       "home_name": "New York Giants",
-      "away_name": "Jacksonville Jaguars"
+      "away_name": "Jacksonville Jaguars",
+      "home_name_zh": "\u7d10\u7d04\u5de8\u4eba",
+      "away_name_zh": "\u5091\u514b\u905c\u7dad\u723e\u7f8e\u6d32\u8c79"
     },
     {
       "home_team": "LAC",
@@ -4820,7 +5196,9 @@
       "game_type": "REG",
       "date": "2026-11-22",
       "home_name": "Los Angeles Chargers",
-      "away_name": "New York Jets"
+      "away_name": "New York Jets",
+      "home_name_zh": "\u6d1b\u6749\u78ef\u96fb\u5149",
+      "away_name_zh": "\u7d10\u7d04\u5674\u5c04\u6a5f"
     },
     {
       "home_team": "DEN",
@@ -4848,7 +5226,9 @@
       "game_type": "REG",
       "date": "2026-11-22",
       "home_name": "Denver Broncos",
-      "away_name": "Las Vegas Raiders"
+      "away_name": "Las Vegas Raiders",
+      "home_name_zh": "\u4e39\u4f5b\u91ce\u99ac",
+      "away_name_zh": "\u62c9\u65af\u7dad\u52a0\u65af\u7a81\u8972\u8005"
     },
     {
       "home_team": "PHI",
@@ -4876,7 +5256,9 @@
       "game_type": "REG",
       "date": "2026-11-22",
       "home_name": "Philadelphia Eagles",
-      "away_name": "Pittsburgh Steelers"
+      "away_name": "Pittsburgh Steelers",
+      "home_name_zh": "\u8cbb\u57ce\u8001\u9df9",
+      "away_name_zh": "\u5339\u8332\u5821\u92fc\u4eba"
     },
     {
       "home_team": "SF",
@@ -4904,7 +5286,9 @@
       "game_type": "REG",
       "date": "2026-11-22",
       "home_name": "San Francisco 49ers",
-      "away_name": "Minnesota Vikings"
+      "away_name": "Minnesota Vikings",
+      "home_name_zh": "\u820a\u91d1\u5c7149\u4eba",
+      "away_name_zh": "\u660e\u5c3c\u8607\u9054\u7dad\u4eac\u4eba"
     },
     {
       "home_team": "WAS",
@@ -4932,7 +5316,9 @@
       "game_type": "REG",
       "date": "2026-11-23",
       "home_name": "Washington Commanders",
-      "away_name": "Cincinnati Bengals"
+      "away_name": "Cincinnati Bengals",
+      "home_name_zh": "\u83ef\u76db\u9813\u6307\u63ee\u5b98",
+      "away_name_zh": "\u8f9b\u8f9b\u90a3\u63d0\u5b5f\u52a0\u62c9\u864e"
     },
     {
       "home_team": "LA",
@@ -4960,7 +5346,9 @@
       "game_type": "REG",
       "date": "2026-11-25",
       "home_name": "Los Angeles Rams",
-      "away_name": "Green Bay Packers"
+      "away_name": "Green Bay Packers",
+      "home_name_zh": "\u6d1b\u6749\u78ef\u516c\u7f8a",
+      "away_name_zh": "\u7da0\u7063\u5305\u88dd\u5de5"
     },
     {
       "home_team": "DET",
@@ -4988,7 +5376,9 @@
       "game_type": "REG",
       "date": "2026-11-26",
       "home_name": "Detroit Lions",
-      "away_name": "Chicago Bears"
+      "away_name": "Chicago Bears",
+      "home_name_zh": "\u5e95\u7279\u5f8b\u96c4\u7345",
+      "away_name_zh": "\u829d\u52a0\u54e5\u718a"
     },
     {
       "home_team": "DAL",
@@ -5016,7 +5406,9 @@
       "game_type": "REG",
       "date": "2026-11-26",
       "home_name": "Dallas Cowboys",
-      "away_name": "Philadelphia Eagles"
+      "away_name": "Philadelphia Eagles",
+      "home_name_zh": "\u9054\u62c9\u65af\u725b\u4ed4",
+      "away_name_zh": "\u8cbb\u57ce\u8001\u9df9"
     },
     {
       "home_team": "BUF",
@@ -5044,7 +5436,9 @@
       "game_type": "REG",
       "date": "2026-11-26",
       "home_name": "Buffalo Bills",
-      "away_name": "Kansas City Chiefs"
+      "away_name": "Kansas City Chiefs",
+      "home_name_zh": "\u6c34\u725b\u57ce\u6bd4\u723e",
+      "away_name_zh": "\u582a\u85a9\u65af\u57ce\u914b\u9577"
     },
     {
       "home_team": "PIT",
@@ -5072,7 +5466,9 @@
       "game_type": "REG",
       "date": "2026-11-27",
       "home_name": "Pittsburgh Steelers",
-      "away_name": "Denver Broncos"
+      "away_name": "Denver Broncos",
+      "home_name_zh": "\u5339\u8332\u5821\u92fc\u4eba",
+      "away_name_zh": "\u4e39\u4f5b\u91ce\u99ac"
     },
     {
       "home_team": "CIN",
@@ -5100,7 +5496,9 @@
       "game_type": "REG",
       "date": "2026-11-29",
       "home_name": "Cincinnati Bengals",
-      "away_name": "New Orleans Saints"
+      "away_name": "New Orleans Saints",
+      "home_name_zh": "\u8f9b\u8f9b\u90a3\u63d0\u5b5f\u52a0\u62c9\u864e",
+      "away_name_zh": "\u7d10\u5967\u826f\u8056\u5f92"
     },
     {
       "home_team": "CLE",
@@ -5128,7 +5526,9 @@
       "game_type": "REG",
       "date": "2026-11-29",
       "home_name": "Cleveland Browns",
-      "away_name": "Las Vegas Raiders"
+      "away_name": "Las Vegas Raiders",
+      "home_name_zh": "\u514b\u91cc\u592b\u862d\u5e03\u6717",
+      "away_name_zh": "\u62c9\u65af\u7dad\u52a0\u65af\u7a81\u8972\u8005"
     },
     {
       "home_team": "HOU",
@@ -5156,7 +5556,9 @@
       "game_type": "REG",
       "date": "2026-11-29",
       "home_name": "Houston Texans",
-      "away_name": "Baltimore Ravens"
+      "away_name": "Baltimore Ravens",
+      "home_name_zh": "\u4f11\u58eb\u9813\u5fb7\u5dde\u4eba",
+      "away_name_zh": "\u5df4\u723e\u7684\u6469\u70cf\u9d09"
     },
     {
       "home_team": "IND",
@@ -5184,7 +5586,9 @@
       "game_type": "REG",
       "date": "2026-11-29",
       "home_name": "Indianapolis Colts",
-      "away_name": "New York Giants"
+      "away_name": "New York Giants",
+      "home_name_zh": "\u5370\u7b2c\u5b89\u7d0d\u6ce2\u5229\u65af\u5c0f\u99ac",
+      "away_name_zh": "\u7d10\u7d04\u5de8\u4eba"
     },
     {
       "home_team": "MIA",
@@ -5212,7 +5616,9 @@
       "game_type": "REG",
       "date": "2026-11-29",
       "home_name": "Miami Dolphins",
-      "away_name": "New York Jets"
+      "away_name": "New York Jets",
+      "home_name_zh": "\u9081\u963f\u5bc6\u6d77\u8c5a",
+      "away_name_zh": "\u7d10\u7d04\u5674\u5c04\u6a5f"
     },
     {
       "home_team": "MIN",
@@ -5240,7 +5646,9 @@
       "game_type": "REG",
       "date": "2026-11-29",
       "home_name": "Minnesota Vikings",
-      "away_name": "Atlanta Falcons"
+      "away_name": "Atlanta Falcons",
+      "home_name_zh": "\u660e\u5c3c\u8607\u9054\u7dad\u4eac\u4eba",
+      "away_name_zh": "\u4e9e\u7279\u862d\u5927\u7375\u9df9"
     },
     {
       "home_team": "JAX",
@@ -5268,7 +5676,9 @@
       "game_type": "REG",
       "date": "2026-11-29",
       "home_name": "Jacksonville Jaguars",
-      "away_name": "Tennessee Titans"
+      "away_name": "Tennessee Titans",
+      "home_name_zh": "\u5091\u514b\u905c\u7dad\u723e\u7f8e\u6d32\u8c79",
+      "away_name_zh": "\u7530\u7d0d\u897f\u6cf0\u5766"
     },
     {
       "home_team": "ARI",
@@ -5296,7 +5706,9 @@
       "game_type": "REG",
       "date": "2026-11-29",
       "home_name": "Arizona Cardinals",
-      "away_name": "Washington Commanders"
+      "away_name": "Washington Commanders",
+      "home_name_zh": "\u4e9e\u5229\u6851\u90a3\u7d05\u96c0",
+      "away_name_zh": "\u83ef\u76db\u9813\u6307\u63ee\u5b98"
     },
     {
       "home_team": "SF",
@@ -5324,7 +5736,9 @@
       "game_type": "REG",
       "date": "2026-11-29",
       "home_name": "San Francisco 49ers",
-      "away_name": "Seattle Seahawks"
+      "away_name": "Seattle Seahawks",
+      "home_name_zh": "\u820a\u91d1\u5c7149\u4eba",
+      "away_name_zh": "\u897f\u96c5\u5716\u6d77\u9df9"
     },
     {
       "home_team": "LAC",
@@ -5352,7 +5766,9 @@
       "game_type": "REG",
       "date": "2026-11-29",
       "home_name": "Los Angeles Chargers",
-      "away_name": "New England Patriots"
+      "away_name": "New England Patriots",
+      "home_name_zh": "\u6d1b\u6749\u78ef\u96fb\u5149",
+      "away_name_zh": "\u65b0\u82f1\u683c\u862d\u611b\u570b\u8005"
     },
     {
       "home_team": "TB",
@@ -5380,7 +5796,9 @@
       "game_type": "REG",
       "date": "2026-11-30",
       "home_name": "Tampa Bay Buccaneers",
-      "away_name": "Carolina Panthers"
+      "away_name": "Carolina Panthers",
+      "home_name_zh": "\u5766\u5e15\u7063\u6d77\u76dc",
+      "away_name_zh": "\u5361\u7f85\u840a\u7d0d\u9ed1\u8c79"
     },
     {
       "home_team": "LA",
@@ -5408,7 +5826,9 @@
       "game_type": "REG",
       "date": "2026-12-03",
       "home_name": "Los Angeles Rams",
-      "away_name": "Kansas City Chiefs"
+      "away_name": "Kansas City Chiefs",
+      "home_name_zh": "\u6d1b\u6749\u78ef\u516c\u7f8a",
+      "away_name_zh": "\u582a\u85a9\u65af\u57ce\u914b\u9577"
     },
     {
       "home_team": "ATL",
@@ -5436,7 +5856,9 @@
       "game_type": "REG",
       "date": "2026-12-06",
       "home_name": "Atlanta Falcons",
-      "away_name": "Detroit Lions"
+      "away_name": "Detroit Lions",
+      "home_name_zh": "\u4e9e\u7279\u862d\u5927\u7375\u9df9",
+      "away_name_zh": "\u5e95\u7279\u5f8b\u96c4\u7345"
     },
     {
       "home_team": "CHI",
@@ -5464,7 +5886,9 @@
       "game_type": "REG",
       "date": "2026-12-06",
       "home_name": "Chicago Bears",
-      "away_name": "Jacksonville Jaguars"
+      "away_name": "Jacksonville Jaguars",
+      "home_name_zh": "\u829d\u52a0\u54e5\u718a",
+      "away_name_zh": "\u5091\u514b\u905c\u7dad\u723e\u7f8e\u6d32\u8c79"
     },
     {
       "home_team": "CLE",
@@ -5492,7 +5916,9 @@
       "game_type": "REG",
       "date": "2026-12-06",
       "home_name": "Cleveland Browns",
-      "away_name": "Cincinnati Bengals"
+      "away_name": "Cincinnati Bengals",
+      "home_name_zh": "\u514b\u91cc\u592b\u862d\u5e03\u6717",
+      "away_name_zh": "\u8f9b\u8f9b\u90a3\u63d0\u5b5f\u52a0\u62c9\u864e"
     },
     {
       "home_team": "NO",
@@ -5520,7 +5946,9 @@
       "game_type": "REG",
       "date": "2026-12-06",
       "home_name": "New Orleans Saints",
-      "away_name": "Green Bay Packers"
+      "away_name": "Green Bay Packers",
+      "home_name_zh": "\u7d10\u5967\u826f\u8056\u5f92",
+      "away_name_zh": "\u7da0\u7063\u5305\u88dd\u5de5"
     },
     {
       "home_team": "NYG",
@@ -5548,7 +5976,9 @@
       "game_type": "REG",
       "date": "2026-12-06",
       "home_name": "New York Giants",
-      "away_name": "San Francisco 49ers"
+      "away_name": "San Francisco 49ers",
+      "home_name_zh": "\u7d10\u7d04\u5de8\u4eba",
+      "away_name_zh": "\u820a\u91d1\u5c7149\u4eba"
     },
     {
       "home_team": "TB",
@@ -5576,7 +6006,9 @@
       "game_type": "REG",
       "date": "2026-12-06",
       "home_name": "Tampa Bay Buccaneers",
-      "away_name": "Los Angeles Chargers"
+      "away_name": "Los Angeles Chargers",
+      "home_name_zh": "\u5766\u5e15\u7063\u6d77\u76dc",
+      "away_name_zh": "\u6d1b\u6749\u78ef\u96fb\u5149"
     },
     {
       "home_team": "TEN",
@@ -5604,7 +6036,9 @@
       "game_type": "REG",
       "date": "2026-12-06",
       "home_name": "Tennessee Titans",
-      "away_name": "Washington Commanders"
+      "away_name": "Washington Commanders",
+      "home_name_zh": "\u7530\u7d0d\u897f\u6cf0\u5766",
+      "away_name_zh": "\u83ef\u76db\u9813\u6307\u63ee\u5b98"
     },
     {
       "home_team": "ARI",
@@ -5632,7 +6066,9 @@
       "game_type": "REG",
       "date": "2026-12-06",
       "home_name": "Arizona Cardinals",
-      "away_name": "Philadelphia Eagles"
+      "away_name": "Philadelphia Eagles",
+      "home_name_zh": "\u4e9e\u5229\u6851\u90a3\u7d05\u96c0",
+      "away_name_zh": "\u8cbb\u57ce\u8001\u9df9"
     },
     {
       "home_team": "DEN",
@@ -5660,7 +6096,9 @@
       "game_type": "REG",
       "date": "2026-12-06",
       "home_name": "Denver Broncos",
-      "away_name": "Miami Dolphins"
+      "away_name": "Miami Dolphins",
+      "home_name_zh": "\u4e39\u4f5b\u91ce\u99ac",
+      "away_name_zh": "\u9081\u963f\u5bc6\u6d77\u8c5a"
     },
     {
       "home_team": "MIN",
@@ -5688,7 +6126,9 @@
       "game_type": "REG",
       "date": "2026-12-06",
       "home_name": "Minnesota Vikings",
-      "away_name": "Carolina Panthers"
+      "away_name": "Carolina Panthers",
+      "home_name_zh": "\u660e\u5c3c\u8607\u9054\u7dad\u4eac\u4eba",
+      "away_name_zh": "\u5361\u7f85\u840a\u7d0d\u9ed1\u8c79"
     },
     {
       "home_team": "NE",
@@ -5716,7 +6156,9 @@
       "game_type": "REG",
       "date": "2026-12-06",
       "home_name": "New England Patriots",
-      "away_name": "Buffalo Bills"
+      "away_name": "Buffalo Bills",
+      "home_name_zh": "\u65b0\u82f1\u683c\u862d\u611b\u570b\u8005",
+      "away_name_zh": "\u6c34\u725b\u57ce\u6bd4\u723e"
     },
     {
       "home_team": "PIT",
@@ -5744,7 +6186,9 @@
       "game_type": "REG",
       "date": "2026-12-06",
       "home_name": "Pittsburgh Steelers",
-      "away_name": "Houston Texans"
+      "away_name": "Houston Texans",
+      "home_name_zh": "\u5339\u8332\u5821\u92fc\u4eba",
+      "away_name_zh": "\u4f11\u58eb\u9813\u5fb7\u5dde\u4eba"
     },
     {
       "home_team": "SEA",
@@ -5772,7 +6216,9 @@
       "game_type": "REG",
       "date": "2026-12-07",
       "home_name": "Seattle Seahawks",
-      "away_name": "Dallas Cowboys"
+      "away_name": "Dallas Cowboys",
+      "home_name_zh": "\u897f\u96c5\u5716\u6d77\u9df9",
+      "away_name_zh": "\u9054\u62c9\u65af\u725b\u4ed4"
     },
     {
       "home_team": "NE",
@@ -5800,7 +6246,9 @@
       "game_type": "REG",
       "date": "2026-12-10",
       "home_name": "New England Patriots",
-      "away_name": "Minnesota Vikings"
+      "away_name": "Minnesota Vikings",
+      "home_name_zh": "\u65b0\u82f1\u683c\u862d\u611b\u570b\u8005",
+      "away_name_zh": "\u660e\u5c3c\u8607\u9054\u7dad\u4eac\u4eba"
     },
     {
       "home_team": "BAL",
@@ -5828,7 +6276,9 @@
       "game_type": "REG",
       "date": "2026-12-13",
       "home_name": "Baltimore Ravens",
-      "away_name": "Tampa Bay Buccaneers"
+      "away_name": "Tampa Bay Buccaneers",
+      "home_name_zh": "\u5df4\u723e\u7684\u6469\u70cf\u9d09",
+      "away_name_zh": "\u5766\u5e15\u7063\u6d77\u76dc"
     },
     {
       "home_team": "CAR",
@@ -5856,7 +6306,9 @@
       "game_type": "REG",
       "date": "2026-12-13",
       "home_name": "Carolina Panthers",
-      "away_name": "New Orleans Saints"
+      "away_name": "New Orleans Saints",
+      "home_name_zh": "\u5361\u7f85\u840a\u7d0d\u9ed1\u8c79",
+      "away_name_zh": "\u7d10\u5967\u826f\u8056\u5f92"
     },
     {
       "home_team": "CLE",
@@ -5884,7 +6336,9 @@
       "game_type": "REG",
       "date": "2026-12-13",
       "home_name": "Cleveland Browns",
-      "away_name": "Atlanta Falcons"
+      "away_name": "Atlanta Falcons",
+      "home_name_zh": "\u514b\u91cc\u592b\u862d\u5e03\u6717",
+      "away_name_zh": "\u4e9e\u7279\u862d\u5927\u7375\u9df9"
     },
     {
       "home_team": "DET",
@@ -5912,7 +6366,9 @@
       "game_type": "REG",
       "date": "2026-12-13",
       "home_name": "Detroit Lions",
-      "away_name": "Tennessee Titans"
+      "away_name": "Tennessee Titans",
+      "home_name_zh": "\u5e95\u7279\u5f8b\u96c4\u7345",
+      "away_name_zh": "\u7530\u7d0d\u897f\u6cf0\u5766"
     },
     {
       "home_team": "MIA",
@@ -5940,7 +6396,9 @@
       "game_type": "REG",
       "date": "2026-12-13",
       "home_name": "Miami Dolphins",
-      "away_name": "Chicago Bears"
+      "away_name": "Chicago Bears",
+      "home_name_zh": "\u9081\u963f\u5bc6\u6d77\u8c5a",
+      "away_name_zh": "\u829d\u52a0\u54e5\u718a"
     },
     {
       "home_team": "NYJ",
@@ -5968,7 +6426,9 @@
       "game_type": "REG",
       "date": "2026-12-13",
       "home_name": "New York Jets",
-      "away_name": "Denver Broncos"
+      "away_name": "Denver Broncos",
+      "home_name_zh": "\u7d10\u7d04\u5674\u5c04\u6a5f",
+      "away_name_zh": "\u4e39\u4f5b\u91ce\u99ac"
     },
     {
       "home_team": "PHI",
@@ -5996,7 +6456,9 @@
       "game_type": "REG",
       "date": "2026-12-13",
       "home_name": "Philadelphia Eagles",
-      "away_name": "Indianapolis Colts"
+      "away_name": "Indianapolis Colts",
+      "home_name_zh": "\u8cbb\u57ce\u8001\u9df9",
+      "away_name_zh": "\u5370\u7b2c\u5b89\u7d0d\u6ce2\u5229\u65af\u5c0f\u99ac"
     },
     {
       "home_team": "WAS",
@@ -6024,7 +6486,9 @@
       "game_type": "REG",
       "date": "2026-12-13",
       "home_name": "Washington Commanders",
-      "away_name": "Houston Texans"
+      "away_name": "Houston Texans",
+      "home_name_zh": "\u83ef\u76db\u9813\u6307\u63ee\u5b98",
+      "away_name_zh": "\u4f11\u58eb\u9813\u5fb7\u5dde\u4eba"
     },
     {
       "home_team": "LV",
@@ -6052,7 +6516,9 @@
       "game_type": "REG",
       "date": "2026-12-13",
       "home_name": "Las Vegas Raiders",
-      "away_name": "Los Angeles Chargers"
+      "away_name": "Los Angeles Chargers",
+      "home_name_zh": "\u62c9\u65af\u7dad\u52a0\u65af\u7a81\u8972\u8005",
+      "away_name_zh": "\u6d1b\u6749\u78ef\u96fb\u5149"
     },
     {
       "home_team": "CIN",
@@ -6080,7 +6546,9 @@
       "game_type": "REG",
       "date": "2026-12-13",
       "home_name": "Cincinnati Bengals",
-      "away_name": "Kansas City Chiefs"
+      "away_name": "Kansas City Chiefs",
+      "home_name_zh": "\u8f9b\u8f9b\u90a3\u63d0\u5b5f\u52a0\u62c9\u864e",
+      "away_name_zh": "\u582a\u85a9\u65af\u57ce\u914b\u9577"
     },
     {
       "home_team": "SEA",
@@ -6108,7 +6576,9 @@
       "game_type": "REG",
       "date": "2026-12-13",
       "home_name": "Seattle Seahawks",
-      "away_name": "New York Giants"
+      "away_name": "New York Giants",
+      "home_name_zh": "\u897f\u96c5\u5716\u6d77\u9df9",
+      "away_name_zh": "\u7d10\u7d04\u5de8\u4eba"
     },
     {
       "home_team": "SF",
@@ -6136,7 +6606,9 @@
       "game_type": "REG",
       "date": "2026-12-13",
       "home_name": "San Francisco 49ers",
-      "away_name": "Los Angeles Rams"
+      "away_name": "Los Angeles Rams",
+      "home_name_zh": "\u820a\u91d1\u5c7149\u4eba",
+      "away_name_zh": "\u6d1b\u6749\u78ef\u516c\u7f8a"
     },
     {
       "home_team": "GB",
@@ -6164,7 +6636,9 @@
       "game_type": "REG",
       "date": "2026-12-13",
       "home_name": "Green Bay Packers",
-      "away_name": "Buffalo Bills"
+      "away_name": "Buffalo Bills",
+      "home_name_zh": "\u7da0\u7063\u5305\u88dd\u5de5",
+      "away_name_zh": "\u6c34\u725b\u57ce\u6bd4\u723e"
     },
     {
       "home_team": "JAX",
@@ -6192,7 +6666,9 @@
       "game_type": "REG",
       "date": "2026-12-14",
       "home_name": "Jacksonville Jaguars",
-      "away_name": "Pittsburgh Steelers"
+      "away_name": "Pittsburgh Steelers",
+      "home_name_zh": "\u5091\u514b\u905c\u7dad\u723e\u7f8e\u6d32\u8c79",
+      "away_name_zh": "\u5339\u8332\u5821\u92fc\u4eba"
     },
     {
       "home_team": "LAC",
@@ -6220,7 +6696,9 @@
       "game_type": "REG",
       "date": "2026-12-17",
       "home_name": "Los Angeles Chargers",
-      "away_name": "San Francisco 49ers"
+      "away_name": "San Francisco 49ers",
+      "home_name_zh": "\u6d1b\u6749\u78ef\u96fb\u5149",
+      "away_name_zh": "\u820a\u91d1\u5c7149\u4eba"
     },
     {
       "home_team": "PHI",
@@ -6248,7 +6726,9 @@
       "game_type": "REG",
       "date": "2026-12-19",
       "home_name": "Philadelphia Eagles",
-      "away_name": "Seattle Seahawks"
+      "away_name": "Seattle Seahawks",
+      "home_name_zh": "\u8cbb\u57ce\u8001\u9df9",
+      "away_name_zh": "\u897f\u96c5\u5716\u6d77\u9df9"
     },
     {
       "home_team": "BUF",
@@ -6276,7 +6756,9 @@
       "game_type": "REG",
       "date": "2026-12-19",
       "home_name": "Buffalo Bills",
-      "away_name": "Chicago Bears"
+      "away_name": "Chicago Bears",
+      "home_name_zh": "\u6c34\u725b\u57ce\u6bd4\u723e",
+      "away_name_zh": "\u829d\u52a0\u54e5\u718a"
     },
     {
       "home_team": "CAR",
@@ -6304,7 +6786,9 @@
       "game_type": "REG",
       "date": "2026-12-20",
       "home_name": "Carolina Panthers",
-      "away_name": "Cincinnati Bengals"
+      "away_name": "Cincinnati Bengals",
+      "home_name_zh": "\u5361\u7f85\u840a\u7d0d\u9ed1\u8c79",
+      "away_name_zh": "\u8f9b\u8f9b\u90a3\u63d0\u5b5f\u52a0\u62c9\u864e"
     },
     {
       "home_team": "GB",
@@ -6332,7 +6816,9 @@
       "game_type": "REG",
       "date": "2026-12-20",
       "home_name": "Green Bay Packers",
-      "away_name": "Miami Dolphins"
+      "away_name": "Miami Dolphins",
+      "home_name_zh": "\u7da0\u7063\u5305\u88dd\u5de5",
+      "away_name_zh": "\u9081\u963f\u5bc6\u6d77\u8c5a"
     },
     {
       "home_team": "HOU",
@@ -6360,7 +6846,9 @@
       "game_type": "REG",
       "date": "2026-12-20",
       "home_name": "Houston Texans",
-      "away_name": "Jacksonville Jaguars"
+      "away_name": "Jacksonville Jaguars",
+      "home_name_zh": "\u4f11\u58eb\u9813\u5fb7\u5dde\u4eba",
+      "away_name_zh": "\u5091\u514b\u905c\u7dad\u723e\u7f8e\u6d32\u8c79"
     },
     {
       "home_team": "NYG",
@@ -6388,7 +6876,9 @@
       "game_type": "REG",
       "date": "2026-12-20",
       "home_name": "New York Giants",
-      "away_name": "Cleveland Browns"
+      "away_name": "Cleveland Browns",
+      "home_name_zh": "\u7d10\u7d04\u5de8\u4eba",
+      "away_name_zh": "\u514b\u91cc\u592b\u862d\u5e03\u6717"
     },
     {
       "home_team": "PIT",
@@ -6416,7 +6906,9 @@
       "game_type": "REG",
       "date": "2026-12-20",
       "home_name": "Pittsburgh Steelers",
-      "away_name": "Baltimore Ravens"
+      "away_name": "Baltimore Ravens",
+      "home_name_zh": "\u5339\u8332\u5821\u92fc\u4eba",
+      "away_name_zh": "\u5df4\u723e\u7684\u6469\u70cf\u9d09"
     },
     {
       "home_team": "TB",
@@ -6444,7 +6936,9 @@
       "game_type": "REG",
       "date": "2026-12-20",
       "home_name": "Tampa Bay Buccaneers",
-      "away_name": "New Orleans Saints"
+      "away_name": "New Orleans Saints",
+      "home_name_zh": "\u5766\u5e15\u7063\u6d77\u76dc",
+      "away_name_zh": "\u7d10\u5967\u826f\u8056\u5f92"
     },
     {
       "home_team": "TEN",
@@ -6472,7 +6966,9 @@
       "game_type": "REG",
       "date": "2026-12-20",
       "home_name": "Tennessee Titans",
-      "away_name": "Indianapolis Colts"
+      "away_name": "Indianapolis Colts",
+      "home_name_zh": "\u7530\u7d0d\u897f\u6cf0\u5766",
+      "away_name_zh": "\u5370\u7b2c\u5b89\u7d0d\u6ce2\u5229\u65af\u5c0f\u99ac"
     },
     {
       "home_team": "WAS",
@@ -6500,7 +6996,9 @@
       "game_type": "REG",
       "date": "2026-12-20",
       "home_name": "Washington Commanders",
-      "away_name": "Atlanta Falcons"
+      "away_name": "Atlanta Falcons",
+      "home_name_zh": "\u83ef\u76db\u9813\u6307\u63ee\u5b98",
+      "away_name_zh": "\u4e9e\u7279\u862d\u5927\u7375\u9df9"
     },
     {
       "home_team": "ARI",
@@ -6528,7 +7026,9 @@
       "game_type": "REG",
       "date": "2026-12-20",
       "home_name": "Arizona Cardinals",
-      "away_name": "New York Jets"
+      "away_name": "New York Jets",
+      "home_name_zh": "\u4e9e\u5229\u6851\u90a3\u7d05\u96c0",
+      "away_name_zh": "\u7d10\u7d04\u5674\u5c04\u6a5f"
     },
     {
       "home_team": "LA",
@@ -6556,7 +7056,9 @@
       "game_type": "REG",
       "date": "2026-12-20",
       "home_name": "Los Angeles Rams",
-      "away_name": "Dallas Cowboys"
+      "away_name": "Dallas Cowboys",
+      "home_name_zh": "\u6d1b\u6749\u78ef\u516c\u7f8a",
+      "away_name_zh": "\u9054\u62c9\u65af\u725b\u4ed4"
     },
     {
       "home_team": "LV",
@@ -6584,7 +7086,9 @@
       "game_type": "REG",
       "date": "2026-12-20",
       "home_name": "Las Vegas Raiders",
-      "away_name": "Denver Broncos"
+      "away_name": "Denver Broncos",
+      "home_name_zh": "\u62c9\u65af\u7dad\u52a0\u65af\u7a81\u8972\u8005",
+      "away_name_zh": "\u4e39\u4f5b\u91ce\u99ac"
     },
     {
       "home_team": "MIN",
@@ -6612,7 +7116,9 @@
       "game_type": "REG",
       "date": "2026-12-20",
       "home_name": "Minnesota Vikings",
-      "away_name": "Detroit Lions"
+      "away_name": "Detroit Lions",
+      "home_name_zh": "\u660e\u5c3c\u8607\u9054\u7dad\u4eac\u4eba",
+      "away_name_zh": "\u5e95\u7279\u5f8b\u96c4\u7345"
     },
     {
       "home_team": "KC",
@@ -6640,7 +7146,9 @@
       "game_type": "REG",
       "date": "2026-12-21",
       "home_name": "Kansas City Chiefs",
-      "away_name": "New England Patriots"
+      "away_name": "New England Patriots",
+      "home_name_zh": "\u582a\u85a9\u65af\u57ce\u914b\u9577",
+      "away_name_zh": "\u65b0\u82f1\u683c\u862d\u611b\u570b\u8005"
     },
     {
       "home_team": "PHI",
@@ -6668,7 +7176,9 @@
       "game_type": "REG",
       "date": "2026-12-24",
       "home_name": "Philadelphia Eagles",
-      "away_name": "Houston Texans"
+      "away_name": "Houston Texans",
+      "home_name_zh": "\u8cbb\u57ce\u8001\u9df9",
+      "away_name_zh": "\u4f11\u58eb\u9813\u5fb7\u5dde\u4eba"
     },
     {
       "home_team": "CHI",
@@ -6696,7 +7206,9 @@
       "game_type": "REG",
       "date": "2026-12-25",
       "home_name": "Chicago Bears",
-      "away_name": "Green Bay Packers"
+      "away_name": "Green Bay Packers",
+      "home_name_zh": "\u829d\u52a0\u54e5\u718a",
+      "away_name_zh": "\u7da0\u7063\u5305\u88dd\u5de5"
     },
     {
       "home_team": "DEN",
@@ -6724,7 +7236,9 @@
       "game_type": "REG",
       "date": "2026-12-25",
       "home_name": "Denver Broncos",
-      "away_name": "Buffalo Bills"
+      "away_name": "Buffalo Bills",
+      "home_name_zh": "\u4e39\u4f5b\u91ce\u99ac",
+      "away_name_zh": "\u6c34\u725b\u57ce\u6bd4\u723e"
     },
     {
       "home_team": "SEA",
@@ -6752,7 +7266,9 @@
       "game_type": "REG",
       "date": "2026-12-25",
       "home_name": "Seattle Seahawks",
-      "away_name": "Los Angeles Rams"
+      "away_name": "Los Angeles Rams",
+      "home_name_zh": "\u897f\u96c5\u5716\u6d77\u9df9",
+      "away_name_zh": "\u6d1b\u6749\u78ef\u516c\u7f8a"
     },
     {
       "home_team": "ATL",
@@ -6780,7 +7296,9 @@
       "game_type": "REG",
       "date": "2026-12-27",
       "home_name": "Atlanta Falcons",
-      "away_name": "Tampa Bay Buccaneers"
+      "away_name": "Tampa Bay Buccaneers",
+      "home_name_zh": "\u4e9e\u7279\u862d\u5927\u7375\u9df9",
+      "away_name_zh": "\u5766\u5e15\u7063\u6d77\u76dc"
     },
     {
       "home_team": "BAL",
@@ -6808,7 +7326,9 @@
       "game_type": "REG",
       "date": "2026-12-27",
       "home_name": "Baltimore Ravens",
-      "away_name": "Cleveland Browns"
+      "away_name": "Cleveland Browns",
+      "home_name_zh": "\u5df4\u723e\u7684\u6469\u70cf\u9d09",
+      "away_name_zh": "\u514b\u91cc\u592b\u862d\u5e03\u6717"
     },
     {
       "home_team": "IND",
@@ -6836,7 +7356,9 @@
       "game_type": "REG",
       "date": "2026-12-27",
       "home_name": "Indianapolis Colts",
-      "away_name": "Cincinnati Bengals"
+      "away_name": "Cincinnati Bengals",
+      "home_name_zh": "\u5370\u7b2c\u5b89\u7d0d\u6ce2\u5229\u65af\u5c0f\u99ac",
+      "away_name_zh": "\u8f9b\u8f9b\u90a3\u63d0\u5b5f\u52a0\u62c9\u864e"
     },
     {
       "home_team": "MIA",
@@ -6864,7 +7386,9 @@
       "game_type": "REG",
       "date": "2026-12-27",
       "home_name": "Miami Dolphins",
-      "away_name": "Los Angeles Chargers"
+      "away_name": "Los Angeles Chargers",
+      "home_name_zh": "\u9081\u963f\u5bc6\u6d77\u8c5a",
+      "away_name_zh": "\u6d1b\u6749\u78ef\u96fb\u5149"
     },
     {
       "home_team": "MIN",
@@ -6892,7 +7416,9 @@
       "game_type": "REG",
       "date": "2026-12-27",
       "home_name": "Minnesota Vikings",
-      "away_name": "Washington Commanders"
+      "away_name": "Washington Commanders",
+      "home_name_zh": "\u660e\u5c3c\u8607\u9054\u7dad\u4eac\u4eba",
+      "away_name_zh": "\u83ef\u76db\u9813\u6307\u63ee\u5b98"
     },
     {
       "home_team": "NO",
@@ -6920,7 +7446,9 @@
       "game_type": "REG",
       "date": "2026-12-27",
       "home_name": "New Orleans Saints",
-      "away_name": "Arizona Cardinals"
+      "away_name": "Arizona Cardinals",
+      "home_name_zh": "\u7d10\u5967\u826f\u8056\u5f92",
+      "away_name_zh": "\u4e9e\u5229\u6851\u90a3\u7d05\u96c0"
     },
     {
       "home_team": "NYJ",
@@ -6948,7 +7476,9 @@
       "game_type": "REG",
       "date": "2026-12-27",
       "home_name": "New York Jets",
-      "away_name": "New England Patriots"
+      "away_name": "New England Patriots",
+      "home_name_zh": "\u7d10\u7d04\u5674\u5c04\u6a5f",
+      "away_name_zh": "\u65b0\u82f1\u683c\u862d\u611b\u570b\u8005"
     },
     {
       "home_team": "PIT",
@@ -6976,7 +7506,9 @@
       "game_type": "REG",
       "date": "2026-12-27",
       "home_name": "Pittsburgh Steelers",
-      "away_name": "Carolina Panthers"
+      "away_name": "Carolina Panthers",
+      "home_name_zh": "\u5339\u8332\u5821\u92fc\u4eba",
+      "away_name_zh": "\u5361\u7f85\u840a\u7d0d\u9ed1\u8c79"
     },
     {
       "home_team": "LV",
@@ -7004,7 +7536,9 @@
       "game_type": "REG",
       "date": "2026-12-27",
       "home_name": "Las Vegas Raiders",
-      "away_name": "Tennessee Titans"
+      "away_name": "Tennessee Titans",
+      "home_name_zh": "\u62c9\u65af\u7dad\u52a0\u65af\u7a81\u8972\u8005",
+      "away_name_zh": "\u7530\u7d0d\u897f\u6cf0\u5766"
     },
     {
       "home_team": "KC",
@@ -7032,7 +7566,9 @@
       "game_type": "REG",
       "date": "2026-12-27",
       "home_name": "Kansas City Chiefs",
-      "away_name": "San Francisco 49ers"
+      "away_name": "San Francisco 49ers",
+      "home_name_zh": "\u582a\u85a9\u65af\u57ce\u914b\u9577",
+      "away_name_zh": "\u820a\u91d1\u5c7149\u4eba"
     },
     {
       "home_team": "DAL",
@@ -7060,7 +7596,9 @@
       "game_type": "REG",
       "date": "2026-12-27",
       "home_name": "Dallas Cowboys",
-      "away_name": "Jacksonville Jaguars"
+      "away_name": "Jacksonville Jaguars",
+      "home_name_zh": "\u9054\u62c9\u65af\u725b\u4ed4",
+      "away_name_zh": "\u5091\u514b\u905c\u7dad\u723e\u7f8e\u6d32\u8c79"
     },
     {
       "home_team": "DET",
@@ -7088,7 +7626,9 @@
       "game_type": "REG",
       "date": "2026-12-28",
       "home_name": "Detroit Lions",
-      "away_name": "New York Giants"
+      "away_name": "New York Giants",
+      "home_name_zh": "\u5e95\u7279\u5f8b\u96c4\u7345",
+      "away_name_zh": "\u7d10\u7d04\u5de8\u4eba"
     },
     {
       "home_team": "CIN",
@@ -7116,7 +7656,9 @@
       "game_type": "REG",
       "date": "2026-12-31",
       "home_name": "Cincinnati Bengals",
-      "away_name": "Baltimore Ravens"
+      "away_name": "Baltimore Ravens",
+      "home_name_zh": "\u8f9b\u8f9b\u90a3\u63d0\u5b5f\u52a0\u62c9\u864e",
+      "away_name_zh": "\u5df4\u723e\u7684\u6469\u70cf\u9d09"
     },
     {
       "home_team": "ATL",
@@ -7144,7 +7686,9 @@
       "game_type": "REG",
       "date": "2027-01-03",
       "home_name": "Atlanta Falcons",
-      "away_name": "New Orleans Saints"
+      "away_name": "New Orleans Saints",
+      "home_name_zh": "\u4e9e\u7279\u862d\u5927\u7375\u9df9",
+      "away_name_zh": "\u7d10\u5967\u826f\u8056\u5f92"
     },
     {
       "home_team": "CAR",
@@ -7172,7 +7716,9 @@
       "game_type": "REG",
       "date": "2027-01-03",
       "home_name": "Carolina Panthers",
-      "away_name": "Seattle Seahawks"
+      "away_name": "Seattle Seahawks",
+      "home_name_zh": "\u5361\u7f85\u840a\u7d0d\u9ed1\u8c79",
+      "away_name_zh": "\u897f\u96c5\u5716\u6d77\u9df9"
     },
     {
       "home_team": "CLE",
@@ -7200,7 +7746,9 @@
       "game_type": "REG",
       "date": "2027-01-03",
       "home_name": "Cleveland Browns",
-      "away_name": "Indianapolis Colts"
+      "away_name": "Indianapolis Colts",
+      "home_name_zh": "\u514b\u91cc\u592b\u862d\u5e03\u6717",
+      "away_name_zh": "\u5370\u7b2c\u5b89\u7d0d\u6ce2\u5229\u65af\u5c0f\u99ac"
     },
     {
       "home_team": "DAL",
@@ -7228,7 +7776,9 @@
       "game_type": "REG",
       "date": "2027-01-03",
       "home_name": "Dallas Cowboys",
-      "away_name": "New York Giants"
+      "away_name": "New York Giants",
+      "home_name_zh": "\u9054\u62c9\u65af\u725b\u4ed4",
+      "away_name_zh": "\u7d10\u7d04\u5de8\u4eba"
     },
     {
       "home_team": "JAX",
@@ -7256,7 +7806,9 @@
       "game_type": "REG",
       "date": "2027-01-03",
       "home_name": "Jacksonville Jaguars",
-      "away_name": "Washington Commanders"
+      "away_name": "Washington Commanders",
+      "home_name_zh": "\u5091\u514b\u905c\u7dad\u723e\u7f8e\u6d32\u8c79",
+      "away_name_zh": "\u83ef\u76db\u9813\u6307\u63ee\u5b98"
     },
     {
       "home_team": "LAC",
@@ -7284,7 +7836,9 @@
       "game_type": "REG",
       "date": "2027-01-03",
       "home_name": "Los Angeles Chargers",
-      "away_name": "Kansas City Chiefs"
+      "away_name": "Kansas City Chiefs",
+      "home_name_zh": "\u6d1b\u6749\u78ef\u96fb\u5149",
+      "away_name_zh": "\u582a\u85a9\u65af\u57ce\u914b\u9577"
     },
     {
       "home_team": "MIA",
@@ -7312,7 +7866,9 @@
       "game_type": "REG",
       "date": "2027-01-03",
       "home_name": "Miami Dolphins",
-      "away_name": "Buffalo Bills"
+      "away_name": "Buffalo Bills",
+      "home_name_zh": "\u9081\u963f\u5bc6\u6d77\u8c5a",
+      "away_name_zh": "\u6c34\u725b\u57ce\u6bd4\u723e"
     },
     {
       "home_team": "NE",
@@ -7340,7 +7896,9 @@
       "game_type": "REG",
       "date": "2027-01-03",
       "home_name": "New England Patriots",
-      "away_name": "Denver Broncos"
+      "away_name": "Denver Broncos",
+      "home_name_zh": "\u65b0\u82f1\u683c\u862d\u611b\u570b\u8005",
+      "away_name_zh": "\u4e39\u4f5b\u91ce\u99ac"
     },
     {
       "home_team": "NYJ",
@@ -7368,7 +7926,9 @@
       "game_type": "REG",
       "date": "2027-01-03",
       "home_name": "New York Jets",
-      "away_name": "Minnesota Vikings"
+      "away_name": "Minnesota Vikings",
+      "home_name_zh": "\u7d10\u7d04\u5674\u5c04\u6a5f",
+      "away_name_zh": "\u660e\u5c3c\u8607\u9054\u7dad\u4eac\u4eba"
     },
     {
       "home_team": "TB",
@@ -7396,7 +7956,9 @@
       "game_type": "REG",
       "date": "2027-01-03",
       "home_name": "Tampa Bay Buccaneers",
-      "away_name": "Los Angeles Rams"
+      "away_name": "Los Angeles Rams",
+      "home_name_zh": "\u5766\u5e15\u7063\u6d77\u76dc",
+      "away_name_zh": "\u6d1b\u6749\u78ef\u516c\u7f8a"
     },
     {
       "home_team": "TEN",
@@ -7424,7 +7986,9 @@
       "game_type": "REG",
       "date": "2027-01-03",
       "home_name": "Tennessee Titans",
-      "away_name": "Pittsburgh Steelers"
+      "away_name": "Pittsburgh Steelers",
+      "home_name_zh": "\u7530\u7d0d\u897f\u6cf0\u5766",
+      "away_name_zh": "\u5339\u8332\u5821\u92fc\u4eba"
     },
     {
       "home_team": "ARI",
@@ -7452,7 +8016,9 @@
       "game_type": "REG",
       "date": "2027-01-03",
       "home_name": "Arizona Cardinals",
-      "away_name": "Las Vegas Raiders"
+      "away_name": "Las Vegas Raiders",
+      "home_name_zh": "\u4e9e\u5229\u6851\u90a3\u7d05\u96c0",
+      "away_name_zh": "\u62c9\u65af\u7dad\u52a0\u65af\u7a81\u8972\u8005"
     },
     {
       "home_team": "CHI",
@@ -7480,7 +8046,9 @@
       "game_type": "REG",
       "date": "2027-01-03",
       "home_name": "Chicago Bears",
-      "away_name": "Detroit Lions"
+      "away_name": "Detroit Lions",
+      "home_name_zh": "\u829d\u52a0\u54e5\u718a",
+      "away_name_zh": "\u5e95\u7279\u5f8b\u96c4\u7345"
     },
     {
       "home_team": "SF",
@@ -7508,7 +8076,9 @@
       "game_type": "REG",
       "date": "2027-01-03",
       "home_name": "San Francisco 49ers",
-      "away_name": "Philadelphia Eagles"
+      "away_name": "Philadelphia Eagles",
+      "home_name_zh": "\u820a\u91d1\u5c7149\u4eba",
+      "away_name_zh": "\u8cbb\u57ce\u8001\u9df9"
     },
     {
       "home_team": "GB",
@@ -7536,7 +8106,9 @@
       "game_type": "REG",
       "date": "2027-01-04",
       "home_name": "Green Bay Packers",
-      "away_name": "Houston Texans"
+      "away_name": "Houston Texans",
+      "home_name_zh": "\u7da0\u7063\u5305\u88dd\u5de5",
+      "away_name_zh": "\u4f11\u58eb\u9813\u5fb7\u5dde\u4eba"
     },
     {
       "home_team": "ARI",
@@ -7564,7 +8136,9 @@
       "game_type": "REG",
       "date": "2027-01-10",
       "home_name": "Arizona Cardinals",
-      "away_name": "San Francisco 49ers"
+      "away_name": "San Francisco 49ers",
+      "home_name_zh": "\u4e9e\u5229\u6851\u90a3\u7d05\u96c0",
+      "away_name_zh": "\u820a\u91d1\u5c7149\u4eba"
     },
     {
       "home_team": "BAL",
@@ -7592,7 +8166,9 @@
       "game_type": "REG",
       "date": "2027-01-10",
       "home_name": "Baltimore Ravens",
-      "away_name": "Pittsburgh Steelers"
+      "away_name": "Pittsburgh Steelers",
+      "home_name_zh": "\u5df4\u723e\u7684\u6469\u70cf\u9d09",
+      "away_name_zh": "\u5339\u8332\u5821\u92fc\u4eba"
     },
     {
       "home_team": "BUF",
@@ -7620,7 +8196,9 @@
       "game_type": "REG",
       "date": "2027-01-10",
       "home_name": "Buffalo Bills",
-      "away_name": "New York Jets"
+      "away_name": "New York Jets",
+      "home_name_zh": "\u6c34\u725b\u57ce\u6bd4\u723e",
+      "away_name_zh": "\u7d10\u7d04\u5674\u5c04\u6a5f"
     },
     {
       "home_team": "CAR",
@@ -7648,7 +8226,9 @@
       "game_type": "REG",
       "date": "2027-01-10",
       "home_name": "Carolina Panthers",
-      "away_name": "Atlanta Falcons"
+      "away_name": "Atlanta Falcons",
+      "home_name_zh": "\u5361\u7f85\u840a\u7d0d\u9ed1\u8c79",
+      "away_name_zh": "\u4e9e\u7279\u862d\u5927\u7375\u9df9"
     },
     {
       "home_team": "CIN",
@@ -7676,7 +8256,9 @@
       "game_type": "REG",
       "date": "2027-01-10",
       "home_name": "Cincinnati Bengals",
-      "away_name": "Cleveland Browns"
+      "away_name": "Cleveland Browns",
+      "home_name_zh": "\u8f9b\u8f9b\u90a3\u63d0\u5b5f\u52a0\u62c9\u864e",
+      "away_name_zh": "\u514b\u91cc\u592b\u862d\u5e03\u6717"
     },
     {
       "home_team": "DEN",
@@ -7704,7 +8286,9 @@
       "game_type": "REG",
       "date": "2027-01-10",
       "home_name": "Denver Broncos",
-      "away_name": "Los Angeles Chargers"
+      "away_name": "Los Angeles Chargers",
+      "home_name_zh": "\u4e39\u4f5b\u91ce\u99ac",
+      "away_name_zh": "\u6d1b\u6749\u78ef\u96fb\u5149"
     },
     {
       "home_team": "GB",
@@ -7732,7 +8316,9 @@
       "game_type": "REG",
       "date": "2027-01-10",
       "home_name": "Green Bay Packers",
-      "away_name": "Detroit Lions"
+      "away_name": "Detroit Lions",
+      "home_name_zh": "\u7da0\u7063\u5305\u88dd\u5de5",
+      "away_name_zh": "\u5e95\u7279\u5f8b\u96c4\u7345"
     },
     {
       "home_team": "HOU",
@@ -7760,7 +8346,9 @@
       "game_type": "REG",
       "date": "2027-01-10",
       "home_name": "Houston Texans",
-      "away_name": "Tennessee Titans"
+      "away_name": "Tennessee Titans",
+      "home_name_zh": "\u4f11\u58eb\u9813\u5fb7\u5dde\u4eba",
+      "away_name_zh": "\u7530\u7d0d\u897f\u6cf0\u5766"
     },
     {
       "home_team": "IND",
@@ -7788,7 +8376,9 @@
       "game_type": "REG",
       "date": "2027-01-10",
       "home_name": "Indianapolis Colts",
-      "away_name": "Jacksonville Jaguars"
+      "away_name": "Jacksonville Jaguars",
+      "home_name_zh": "\u5370\u7b2c\u5b89\u7d0d\u6ce2\u5229\u65af\u5c0f\u99ac",
+      "away_name_zh": "\u5091\u514b\u905c\u7dad\u723e\u7f8e\u6d32\u8c79"
     },
     {
       "home_team": "KC",
@@ -7816,7 +8406,9 @@
       "game_type": "REG",
       "date": "2027-01-10",
       "home_name": "Kansas City Chiefs",
-      "away_name": "Las Vegas Raiders"
+      "away_name": "Las Vegas Raiders",
+      "home_name_zh": "\u582a\u85a9\u65af\u57ce\u914b\u9577",
+      "away_name_zh": "\u62c9\u65af\u7dad\u52a0\u65af\u7a81\u8972\u8005"
     },
     {
       "home_team": "LA",
@@ -7844,7 +8436,9 @@
       "game_type": "REG",
       "date": "2027-01-10",
       "home_name": "Los Angeles Rams",
-      "away_name": "Seattle Seahawks"
+      "away_name": "Seattle Seahawks",
+      "home_name_zh": "\u6d1b\u6749\u78ef\u516c\u7f8a",
+      "away_name_zh": "\u897f\u96c5\u5716\u6d77\u9df9"
     },
     {
       "home_team": "MIN",
@@ -7872,7 +8466,9 @@
       "game_type": "REG",
       "date": "2027-01-10",
       "home_name": "Minnesota Vikings",
-      "away_name": "Chicago Bears"
+      "away_name": "Chicago Bears",
+      "home_name_zh": "\u660e\u5c3c\u8607\u9054\u7dad\u4eac\u4eba",
+      "away_name_zh": "\u829d\u52a0\u54e5\u718a"
     },
     {
       "home_team": "NE",
@@ -7900,7 +8496,9 @@
       "game_type": "REG",
       "date": "2027-01-10",
       "home_name": "New England Patriots",
-      "away_name": "Miami Dolphins"
+      "away_name": "Miami Dolphins",
+      "home_name_zh": "\u65b0\u82f1\u683c\u862d\u611b\u570b\u8005",
+      "away_name_zh": "\u9081\u963f\u5bc6\u6d77\u8c5a"
     },
     {
       "home_team": "NO",
@@ -7928,7 +8526,9 @@
       "game_type": "REG",
       "date": "2027-01-10",
       "home_name": "New Orleans Saints",
-      "away_name": "Tampa Bay Buccaneers"
+      "away_name": "Tampa Bay Buccaneers",
+      "home_name_zh": "\u7d10\u5967\u826f\u8056\u5f92",
+      "away_name_zh": "\u5766\u5e15\u7063\u6d77\u76dc"
     },
     {
       "home_team": "NYG",
@@ -7956,7 +8556,9 @@
       "game_type": "REG",
       "date": "2027-01-10",
       "home_name": "New York Giants",
-      "away_name": "Philadelphia Eagles"
+      "away_name": "Philadelphia Eagles",
+      "home_name_zh": "\u7d10\u7d04\u5de8\u4eba",
+      "away_name_zh": "\u8cbb\u57ce\u8001\u9df9"
     },
     {
       "home_team": "WAS",
@@ -7984,7 +8586,9 @@
       "game_type": "REG",
       "date": "2027-01-10",
       "home_name": "Washington Commanders",
-      "away_name": "Dallas Cowboys"
+      "away_name": "Dallas Cowboys",
+      "home_name_zh": "\u83ef\u76db\u9813\u6307\u63ee\u5b98",
+      "away_name_zh": "\u9054\u62c9\u65af\u725b\u4ed4"
     }
   ],
   "model_performance": {

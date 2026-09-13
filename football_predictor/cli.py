@@ -16,7 +16,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from .advanced_model import AdvancedPredictor, advanced_backtest, market_backtest
-from .data import load_games, load_upcoming_games, normalize_team, team_display_name, TEAM_NAMES
+from .data import (
+    load_games, load_upcoming_games, normalize_team, team_display_name, team_display_name_zh,
+    TEAM_NAMES, TEAM_NAMES_ZH,
+)
 from .elo import EloConfig, EloRatingSystem
 from .features import FEATURE_NAMES, SituationalContext
 from .model import FootballPredictor, backtest as elo_backtest
@@ -247,7 +250,7 @@ def cmd_export_site(args: argparse.Namespace) -> int:
 
     rankings = advanced_predictor.power_rankings()
     power_rankings = [
-        {"rank": i, "team": team, "name": name, "elo": round(rating, 1)}
+        {"rank": i, "team": team, "name": name, "name_zh": team_display_name_zh(team), "elo": round(rating, 1)}
         for i, (team, name, rating) in enumerate(rankings, start=1)
     ]
 
@@ -263,6 +266,8 @@ def cmd_export_site(args: argparse.Namespace) -> int:
             "date": game.date,
             "home_name": team_display_name(game.home_team),
             "away_name": team_display_name(game.away_team),
+            "home_name_zh": team_display_name_zh(game.home_team),
+            "away_name_zh": team_display_name_zh(game.away_team),
         })
         if game.spread_line is not None:
             entry["market_spread"] = game.spread_line
@@ -273,7 +278,10 @@ def cmd_export_site(args: argparse.Namespace) -> int:
 
     site_data = {
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
-        "teams": [{"code": code, "name": name} for code, name in sorted(TEAM_NAMES.items())],
+        "teams": [
+            {"code": code, "name": name, "name_zh": TEAM_NAMES_ZH.get(code, code)}
+            for code, name in sorted(TEAM_NAMES.items())
+        ],
         "power_rankings": power_rankings,
         "upcoming": upcoming_predictions,
         "model_performance": performance,
