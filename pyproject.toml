@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "football-predictor"
+version = "1.0.0"
+description = "Professional Elo-based NFL game prediction toolkit"
+requires-python = ">=3.9"
+readme = "README.md"
+
+[project.scripts]
+nflpredict = "football_predictor.cli:main"
+
+[tool.setuptools]
+packages = ["football_predictor"]
