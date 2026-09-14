@@ -14,13 +14,50 @@ const WEEKDAY_ZH = {
   Thursday: "週四", Friday: "週五", Saturday: "週六",
 };
 
+// NFL kickoff times are published in US Eastern time (America/New_York),
+// which shifts between EDT (-04:00) and EST (-05:00) with US daylight
+// saving. Rather than hardcoding those transition dates, ask the browser's
+// own timezone database what the correct offset is for the game's date.
+function nyOffsetString(dateStr) {
+  const [y, m, d] = dateStr.split("-").map(Number);
+  const ref = new Date(Date.UTC(y, m - 1, d, 12));
+  try {
+    const parts = new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/New_York",
+      timeZoneName: "longOffset",
+    }).formatToParts(ref);
+    const tz = parts.find((p) => p.type === "timeZoneName")?.value;
+    if (tz && tz.startsWith("GMT")) return tz.replace("GMT", "") || "+00:00";
+  } catch {
+    /* Intl.DateTimeFormat with longOffset unsupported — fall through */
+  }
+  return null;
+}
+
+function kickoffInstant(g) {
+  if (!g.date || !g.gametime) return null;
+  const offset = nyOffsetString(g.date);
+  if (!offset) return null;
+  const dt = new Date(`${g.date}T${g.gametime}:00${offset}`);
+  return Number.isNaN(dt.getTime()) ? null : dt;
+}
+
 function formatKickoff(g) {
   if (!g.date) return "";
   const [, m, d] = g.date.split("-");
   const md = `${Number(m)}月${Number(d)}日`;
   const wd = WEEKDAY_ZH[g.weekday] ? `（${WEEKDAY_ZH[g.weekday]}）` : "";
-  const time = g.gametime ? ` ${g.gametime} 美東時間` : "（時間未定）";
-  return `${md}${wd}${time}`;
+  if (!g.gametime) return `${md}${wd}（時間未定）`;
+
+  const etLine = `${md}${wd} ${g.gametime} 美東時間`;
+  const instant = kickoffInstant(g);
+  if (!instant) return etLine;
+
+  const twStr = instant.toLocaleString("zh-TW", {
+    timeZone: "Asia/Taipei", month: "numeric", day: "numeric",
+    hour: "2-digit", minute: "2-digit", hour12: false, weekday: "short",
+  });
+  return `${etLine}<br><span class="kickoff-tw">台灣時間 ${twStr}</span>`;
 }
 
 let SITE_DATA = null;
