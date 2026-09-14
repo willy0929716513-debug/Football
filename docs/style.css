@@ -273,6 +273,13 @@ button#predict-btn:hover { filter: brightness(1.08); }
   text-transform: uppercase;
   letter-spacing: 0.02em;
   margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.game-card .kickoff-tw {
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: none;
 }
 
 .game-card .matchup {
