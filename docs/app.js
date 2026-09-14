@@ -9,6 +9,20 @@ const CONTEXT_LABELS = {
 
 const MODEL_LABELS = { elo: "Elo 基準模型", advanced: "進階整合模型", market: "Vegas 市場盤口" };
 
+const WEEKDAY_ZH = {
+  Sunday: "週日", Monday: "週一", Tuesday: "週二", Wednesday: "週三",
+  Thursday: "週四", Friday: "週五", Saturday: "週六",
+};
+
+function formatKickoff(g) {
+  if (!g.date) return "";
+  const [, m, d] = g.date.split("-");
+  const md = `${Number(m)}月${Number(d)}日`;
+  const wd = WEEKDAY_ZH[g.weekday] ? `（${WEEKDAY_ZH[g.weekday]}）` : "";
+  const time = g.gametime ? ` ${g.gametime} 美東時間` : "（時間未定）";
+  return `${md}${wd}${time}`;
+}
+
 let SITE_DATA = null;
 
 async function loadData() {
@@ -99,7 +113,11 @@ function renderGamesForWeek(upcoming, weekKey) {
   const [season, week] = weekKey.split("|");
   const games = upcoming
     .filter((g) => String(g.season) === season && String(g.week) === week)
-    .sort((a, b) => (a.date || "").localeCompare(b.date || ""));
+    .sort((a, b) => {
+      const dateCmp = (a.date || "").localeCompare(b.date || "");
+      if (dateCmp !== 0) return dateCmp;
+      return (a.gametime || "").localeCompare(b.gametime || "");
+    });
 
   const grid = document.getElementById("games-grid");
   grid.innerHTML = "";
@@ -121,6 +139,7 @@ function renderGamesForWeek(upcoming, weekKey) {
     const card = document.createElement("div");
     card.className = "game-card";
     card.innerHTML = `
+      <div class="kickoff">${formatKickoff(g)}</div>
       <div class="matchup"><span>${g.away_team}</span><span>@</span><span>${g.home_team}</span></div>
       <div class="matchup-zh">${g.away_name_zh ?? g.away_name} @ ${g.home_name_zh ?? g.home_name}</div>
       ${probBarHtml(g.home_team, g.away_team, g.home_win_prob, g.away_win_prob)}

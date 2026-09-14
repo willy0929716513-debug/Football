@@ -264,6 +264,8 @@ def cmd_export_site(args: argparse.Namespace) -> int:
             "week": game.week,
             "game_type": game.game_type,
             "date": game.date,
+            "weekday": game.weekday,
+            "gametime": game.gametime,
             "home_name": team_display_name(game.home_team),
             "away_name": team_display_name(game.away_team),
             "home_name_zh": team_display_name_zh(game.home_team),

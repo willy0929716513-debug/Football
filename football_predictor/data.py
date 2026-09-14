@@ -75,6 +75,8 @@ class Game:
     away_team: str
     home_score: int | None
     away_score: int | None
+    weekday: str = ""
+    gametime: str = ""  # kickoff time, US Eastern (ET), e.g. "13:00"
     home_rest: int | None = None
     away_rest: int | None = None
     div_game: bool = False
@@ -133,6 +135,8 @@ def _row_to_game(row: dict) -> Game:
         away_team=normalize_team(row["away_team"]),
         home_score=_to_int(row.get("home_score")),
         away_score=_to_int(row.get("away_score")),
+        weekday=row.get("weekday", "") or "",
+        gametime=row.get("gametime", "") or "",
         home_rest=_to_int(row.get("home_rest")),
         away_rest=_to_int(row.get("away_rest")),
         div_game=row.get("div_game") in ("1", "True", "true"),
