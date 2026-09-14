@@ -34,6 +34,21 @@ TEAM_NAMES = {
     "TEN": "Tennessee Titans", "WAS": "Washington Commanders",
 }
 
+# Traditional Chinese team names, as commonly used in Chinese-language NFL coverage.
+TEAM_NAMES_ZH = {
+    "ARI": "亞利桑那紅雀", "ATL": "亞特蘭大獵鷹", "BAL": "巴爾的摩烏鴉",
+    "BUF": "水牛城比爾", "CAR": "卡羅萊納黑豹", "CHI": "芝加哥熊",
+    "CIN": "辛辛那提孟加拉虎", "CLE": "克里夫蘭布朗", "DAL": "達拉斯牛仔",
+    "DEN": "丹佛野馬", "DET": "底特律雄獅", "GB": "綠灣包裝工",
+    "HOU": "休士頓德州人", "IND": "印第安納波利斯小馬", "JAX": "傑克遜維爾美洲豹",
+    "KC": "堪薩斯城酋長", "LA": "洛杉磯公羊", "LAC": "洛杉磯電光",
+    "LV": "拉斯維加斯突襲者", "MIA": "邁阿密海豚", "MIN": "明尼蘇達維京人",
+    "NE": "新英格蘭愛國者", "NO": "紐奧良聖徒", "NYG": "紐約巨人",
+    "NYJ": "紐約噴射機", "PHI": "費城老鷹", "PIT": "匹茲堡鋼人",
+    "SEA": "西雅圖海鷹", "SF": "舊金山49人", "TB": "坦帕灣海盜",
+    "TEN": "田納西泰坦", "WAS": "華盛頓指揮官",
+}
+
 
 def normalize_team(code: str) -> str:
     code = code.strip().upper()
@@ -43,6 +58,11 @@ def normalize_team(code: str) -> str:
 def team_display_name(code: str) -> str:
     code = normalize_team(code)
     return TEAM_NAMES.get(code, code)
+
+
+def team_display_name_zh(code: str) -> str:
+    code = normalize_team(code)
+    return TEAM_NAMES_ZH.get(code, code)
 
 
 @dataclass(frozen=True)
@@ -55,6 +75,8 @@ class Game:
     away_team: str
     home_score: int | None
     away_score: int | None
+    weekday: str = ""
+    gametime: str = ""  # kickoff time, US Eastern (ET), e.g. "13:00"
     home_rest: int | None = None
     away_rest: int | None = None
     div_game: bool = False
@@ -113,6 +135,8 @@ def _row_to_game(row: dict) -> Game:
         away_team=normalize_team(row["away_team"]),
         home_score=_to_int(row.get("home_score")),
         away_score=_to_int(row.get("away_score")),
+        weekday=row.get("weekday", "") or "",
+        gametime=row.get("gametime", "") or "",
         home_rest=_to_int(row.get("home_rest")),
         away_rest=_to_int(row.get("away_rest")),
         div_game=row.get("div_game") in ("1", "True", "true"),

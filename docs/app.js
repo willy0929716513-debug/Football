@@ -9,6 +9,20 @@ const CONTEXT_LABELS = {
 
 const MODEL_LABELS = { elo: "Elo 基準模型", advanced: "進階整合模型", market: "Vegas 市場盤口" };
 
+const WEEKDAY_ZH = {
+  Sunday: "週日", Monday: "週一", Tuesday: "週二", Wednesday: "週三",
+  Thursday: "週四", Friday: "週五", Saturday: "週六",
+};
+
+function formatKickoff(g) {
+  if (!g.date) return "";
+  const [, m, d] = g.date.split("-");
+  const md = `${Number(m)}月${Number(d)}日`;
+  const wd = WEEKDAY_ZH[g.weekday] ? `（${WEEKDAY_ZH[g.weekday]}）` : "";
+  const time = g.gametime ? ` ${g.gametime} 美東時間` : "（時間未定）";
+  return `${md}${wd}${time}`;
+}
+
 let SITE_DATA = null;
 
 async function loadData() {
@@ -21,8 +35,12 @@ function fmtPct(x) {
   return `${(x * 100).toFixed(1)}%`;
 }
 
-function teamLabel(code, name) {
-  return `${name}（${code}）`;
+function teamLabel(code, nameZh) {
+  return `${nameZh}（${code}）`;
+}
+
+function findTeam(teams, code) {
+  return teams.find((t) => t.code === code);
 }
 
 function renderUpdatedAt(iso) {
@@ -38,13 +56,14 @@ function renderUpdatedAt(iso) {
 function populateTeamSelects(teams) {
   const homeSel = document.getElementById("home-select");
   const awaySel = document.getElementById("away-select");
-  const sorted = [...teams].sort((a, b) => a.name.localeCompare(b.name));
+  const sorted = [...teams].sort((a, b) => a.name_zh.localeCompare(b.name_zh, "zh-Hant"));
   for (const sel of [homeSel, awaySel]) {
     sel.innerHTML = "";
     for (const t of sorted) {
       const opt = document.createElement("option");
       opt.value = t.code;
-      opt.textContent = teamLabel(t.code, t.name);
+      opt.textContent = teamLabel(t.code, t.name_zh);
+      opt.title = t.name;
       sel.appendChild(opt);
     }
   }
@@ -94,7 +113,11 @@ function renderGamesForWeek(upcoming, weekKey) {
   const [season, week] = weekKey.split("|");
   const games = upcoming
     .filter((g) => String(g.season) === season && String(g.week) === week)
-    .sort((a, b) => (a.date || "").localeCompare(b.date || ""));
+    .sort((a, b) => {
+      const dateCmp = (a.date || "").localeCompare(b.date || "");
+      if (dateCmp !== 0) return dateCmp;
+      return (a.gametime || "").localeCompare(b.gametime || "");
+    });
 
   const grid = document.getElementById("games-grid");
   grid.innerHTML = "";
@@ -116,7 +139,9 @@ function renderGamesForWeek(upcoming, weekKey) {
     const card = document.createElement("div");
     card.className = "game-card";
     card.innerHTML = `
+      <div class="kickoff">${formatKickoff(g)}</div>
       <div class="matchup"><span>${g.away_team}</span><span>@</span><span>${g.home_team}</span></div>
+      <div class="matchup-zh">${g.away_name_zh ?? g.away_name} @ ${g.home_name_zh ?? g.home_name}</div>
       ${probBarHtml(g.home_team, g.away_team, g.home_win_prob, g.away_win_prob)}
       <div class="score-line">預測比分：${g.home_team} ${g.predicted_home_score.toFixed(1)} - ${g.predicted_away_score.toFixed(1)} ${g.away_team}</div>
       <div class="spread-line">模型分差：${g.home_team} ${g.predicted_margin >= 0 ? "+" : ""}${g.predicted_margin.toFixed(1)}${marketLine}</div>
@@ -138,7 +163,7 @@ function renderRankings(rankings) {
     const tr = document.createElement("tr");
     tr.innerHTML = `
       <td>${r.rank}</td>
-      <td>${teamLabel(r.team, r.name)}</td>
+      <td title="${r.name}">${teamLabel(r.team, r.name_zh)}</td>
       <td>${r.elo.toFixed(1)}</td>
       <td class="rating-bar-cell"><div class="rating-bar-track"><div class="rating-bar-fill" style="width:${pct}%"></div></div></td>
     `;
@@ -237,8 +262,8 @@ function wireUpPredictor(data) {
     };
 
     const r = clientPredict(data.client_model, homeCode, awayCode, opts);
-    const homeName = data.teams.find((t) => t.code === homeCode)?.name ?? homeCode;
-    const awayName = data.teams.find((t) => t.code === awayCode)?.name ?? awayCode;
+    const homeName = findTeam(data.teams, homeCode)?.name_zh ?? homeCode;
+    const awayName = findTeam(data.teams, awayCode)?.name_zh ?? awayCode;
     const favorite = r.homeWinProb >= 0.5 ? homeName : awayName;
 
     resultBox.hidden = false;

@@ -13,7 +13,18 @@
 場已完賽的 NFL 常規賽與季後賽，以及該賽季所有已公布的未來賽程，取自公開的
 [nflverse/nfldata](https://github.com/nflverse/nfldata) 專案，內容包含比分、休息天數、天氣、
 先發QB、教練、以及 Vegas 收盤盤口（分差／美式賠率）。已將搬遷過的球隊（如 OAK→LV、SD→LAC、
-STL→LA）統一為現行代碼，讓 Elo 歷史連續不中斷。
+STL→LA）統一為現行代碼，讓 Elo 歷史連續不中斷。所有 32 支球隊皆附有正體中文隊名（見下方對照表）。
+
+### 盤口資料是真實的嗎？
+
+是。`spread_line` / `home_moneyline` / `away_moneyline` / `total_line` 等欄位是 nflverse/nfldata
+官方資料字典（`nflreadr::dictionary_schedules`，[來源](https://raw.githubusercontent.com/nflverse/nflreadr/master/data-raw/dictionary_schedules.csv)）
+明確定義的**真實歷史收盤盤口**（"Odds for home/away team to win the game" / "The spread line for
+the game"），不是模擬或虛構數據。開發時也另外做了獨立驗證：抽查歷史上懸殊的比賽（例如 2013年
+DEN vs JAX，DEN 主場美式賠率 -5000、JAX 客場 +2173），確認 `spread_line` 的正負號與方向、與該場
+比賽實際的大幅懸殊賠率完全吻合（大幅領先的一方對應大幅有利的賠率與盤口），並且抽查了 2026 年已
+公布的未來賽程盤口，同樣可對應到已知的真實對戰強弱關係。`market` 回測（見下方）就是直接用這些
+真實盤口計算準確率，而非用模型自己的預測結果假裝是「市場」。
 
 ## 兩種模型
 
@@ -177,6 +188,21 @@ nflpredict export-site --start-season 2015
 Monday Night Football 結束後）重新抓取最新真實比賽資料、重新訓練模型、重新產生
 `docs/data.json`，並自動 commit + push — 網站內容會持續保持在最新戰績與賽程之上，
 不需要手動維護。也可以在 GitHub 的 Actions 頁面手動觸發（`workflow_dispatch`）。
+
+## 球隊代碼對照表
+
+| 代碼 | 中文隊名 | 代碼 | 中文隊名 | 代碼 | 中文隊名 | 代碼 | 中文隊名 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| BUF | 水牛城比爾 | BAL | 巴爾的摩烏鴉 | HOU | 休士頓德州人 | DEN | 丹佛野馬 |
+| MIA | 邁阿密海豚 | CIN | 辛辛那提孟加拉虎 | IND | 印第安納波利斯小馬 | KC | 堪薩斯城酋長 |
+| NE | 新英格蘭愛國者 | CLE | 克里夫蘭布朗 | JAX | 傑克遜維爾美洲豹 | LV | 拉斯維加斯突襲者 |
+| NYJ | 紐約噴射機 | PIT | 匹茲堡鋼人 | TEN | 田納西泰坦 | LAC | 洛杉磯電光 |
+| DAL | 達拉斯牛仔 | CHI | 芝加哥熊 | ATL | 亞特蘭大獵鷹 | ARI | 亞利桑那紅雀 |
+| NYG | 紐約巨人 | DET | 底特律雄獅 | CAR | 卡羅萊納黑豹 | LA | 洛杉磯公羊 |
+| PHI | 費城老鷹 | GB | 綠灣包裝工 | NO | 紐奧良聖徒 | SF | 舊金山49人 |
+| WAS | 華盛頓指揮官 | MIN | 明尼蘇達維京人 | TB | 坦帕灣海盜 | SEA | 西雅圖海鷹 |
+
+（依 AFC/NFC 東北南西分區排列；程式內部對應表見 `football_predictor/data.py` 的 `TEAM_NAMES_ZH`。）
 
 ## 專案結構
 

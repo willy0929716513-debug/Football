@@ -19,7 +19,8 @@ SOURCE_URL = "https://raw.githubusercontent.com/nflverse/nfldata/master/data/gam
 TEAM_MAP = {"OAK": "LV", "SD": "LAC", "STL": "LA"}
 
 COLUMNS = [
-    "season", "week", "game_type", "gameday", "home_team", "away_team", "home_score", "away_score",
+    "season", "week", "game_type", "gameday", "weekday", "gametime", "home_team", "away_team",
+    "home_score", "away_score",
     "home_rest", "away_rest", "div_game", "roof", "surface", "temp", "wind",
     "home_qb_id", "away_qb_id", "home_qb_name", "away_qb_name", "home_coach", "away_coach",
     "spread_line", "home_moneyline", "away_moneyline", "total_line",

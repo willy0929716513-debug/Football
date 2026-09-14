@@ -266,12 +266,27 @@ button#predict-btn:hover { filter: brightness(1.08); }
   background: var(--surface-alt);
 }
 
+.game-card .kickoff {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 6px;
+}
+
 .game-card .matchup {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   font-weight: 700;
   margin-bottom: 2px;
+}
+
+.game-card .matchup-zh {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
 }
 
 .game-card .score-line {
