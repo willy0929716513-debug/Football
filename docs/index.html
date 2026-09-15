@@ -22,6 +22,31 @@
 
   <main class="wrap">
 
+    <section class="card" id="trigger-section">
+      <h2>手動更新資料</h2>
+      <p class="section-note">
+        本網站每週二台灣時間晚上 6 點（Monday Night Football 結束後）會自動重新抓取最新賽果／賽程／
+        盤口並更新，不需要手動操作。若想立即更新，有兩種方式：
+      </p>
+      <p class="section-note">
+        <strong>方式一（最簡單）</strong>：直接前往
+        <a href="https://github.com/willy0929716513-debug/Football/actions/workflows/update-predictions.yml" target="_blank" rel="noopener">GitHub Actions 頁面</a>，
+        點右上角「Run workflow」。
+      </p>
+      <p class="section-note">
+        <strong>方式二</strong>：在下方輸入一組僅授權此 repo「Actions: Read and write」權限的
+        GitHub 權杖（fine-grained personal access token），直接在這個頁面按鈕觸發。權杖只會存在
+        <strong>你自己瀏覽器的 localStorage</strong>，不會送到除了 GitHub API 以外的任何地方，但
+        仍建議使用最小權限的權杖，並在公用電腦上使用後按「清除已儲存的權杖」。
+      </p>
+      <div class="trigger-row">
+        <input type="password" id="trigger-token" placeholder="貼上 GitHub Personal Access Token（僅存於本機瀏覽器）">
+        <button id="trigger-btn" type="button">觸發更新</button>
+        <button id="trigger-clear-btn" type="button" class="secondary-btn">清除已儲存的權杖</button>
+      </div>
+      <div class="trigger-status" id="trigger-status"></div>
+    </section>
+
     <section class="card" id="predictor-section">
       <h2>互動式對戰預測器</h2>
       <p class="section-note">選擇任意兩隊，並依需要開啟情境因子，即時試算勝率與預測比分（純瀏覽器端運算，模型與後端訓練所用者完全一致）。</p>
@@ -148,31 +173,6 @@
         本工具不包含即時傷兵名單細節、比賽當下天氣預報（僅使用比賽日已知資訊）、教練臨場調度等更細緻的訊號；
         這是一套方法公開、可回測、誠實揭露準確度的統計模型，適合研究與教育用途，<strong>不構成博弈建議</strong>。
       </p>
-    </section>
-
-    <section class="card">
-      <h2>手動更新資料</h2>
-      <p class="section-note">
-        本網站每週二台灣時間晚上 6 點（Monday Night Football 結束後）會自動重新抓取最新賽果／賽程／
-        盤口並更新，不需要手動操作。若想立即更新，有兩種方式：
-      </p>
-      <p class="section-note">
-        <strong>方式一（最簡單）</strong>：直接前往
-        <a href="https://github.com/willy0929716513-debug/Football/actions/workflows/update-predictions.yml" target="_blank" rel="noopener">GitHub Actions 頁面</a>，
-        點右上角「Run workflow」。
-      </p>
-      <p class="section-note">
-        <strong>方式二</strong>：在下方輸入一組僅授權此 repo「Actions: Read and write」權限的
-        GitHub 權杖（fine-grained personal access token），直接在這個頁面按鈕觸發。權杖只會存在
-        <strong>你自己瀏覽器的 localStorage</strong>，不會送到除了 GitHub API 以外的任何地方，但
-        仍建議使用最小權限的權杖，並在公用電腦上使用後按「清除已儲存的權杖」。
-      </p>
-      <div class="trigger-row">
-        <input type="password" id="trigger-token" placeholder="貼上 GitHub Personal Access Token（僅存於本機瀏覽器）">
-        <button id="trigger-btn" type="button">觸發更新</button>
-        <button id="trigger-clear-btn" type="button" class="secondary-btn">清除已儲存的權杖</button>
-      </div>
-      <div class="trigger-status" id="trigger-status"></div>
     </section>
 
   </main>

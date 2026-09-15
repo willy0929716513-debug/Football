@@ -106,6 +106,14 @@ function populateTeamSelects(teams) {
   }
 }
 
+function favoriteLineHtml(homeCode, homeNameZh, awayCode, awayNameZh, homeProb) {
+  const homeFavored = homeProb >= 0.5;
+  const code = homeFavored ? homeCode : awayCode;
+  const nameZh = homeFavored ? homeNameZh : awayNameZh;
+  const prob = homeFavored ? homeProb : 1 - homeProb;
+  return `<div class="favorite-line">預測勝方：<strong>${nameZh}（${code}）</strong> — 獲勝機率 <strong>${fmtPct(prob)}</strong></div>`;
+}
+
 function probBarHtml(homeCode, awayCode, homeProb, awayProb) {
   const homePct = Math.max(homeProb * 100, 4);
   const awayPct = Math.max(awayProb * 100, 4);
@@ -180,6 +188,7 @@ function renderGamesForWeek(upcoming, weekKey) {
       <div class="matchup"><span>${g.away_team}</span><span>@</span><span>${g.home_team}</span></div>
       <div class="matchup-zh">${g.away_name_zh ?? g.away_name} @ ${g.home_name_zh ?? g.home_name}</div>
       ${probBarHtml(g.home_team, g.away_team, g.home_win_prob, g.away_win_prob)}
+      ${favoriteLineHtml(g.home_team, g.home_name_zh ?? g.home_name, g.away_team, g.away_name_zh ?? g.away_name, g.home_win_prob)}
       <div class="score-line">預測比分：${g.home_team} ${g.predicted_home_score.toFixed(1)} - ${g.predicted_away_score.toFixed(1)} ${g.away_team}</div>
       <div class="spread-line">模型分差：${g.home_team} ${g.predicted_margin >= 0 ? "+" : ""}${g.predicted_margin.toFixed(1)}${marketLine}</div>
       <div style="margin-top:8px">${contextBadgesHtml(g.context, restLabel)}</div>
@@ -301,16 +310,15 @@ function wireUpPredictor(data) {
     const r = clientPredict(data.client_model, homeCode, awayCode, opts);
     const homeName = findTeam(data.teams, homeCode)?.name_zh ?? homeCode;
     const awayName = findTeam(data.teams, awayCode)?.name_zh ?? awayCode;
-    const favorite = r.homeWinProb >= 0.5 ? homeName : awayName;
 
     resultBox.hidden = false;
     resultBox.innerHTML = `
       <div class="result-teams">${awayName} (${awayCode}) @ ${homeName} (${homeCode})</div>
       <div class="result-meta">Elo 評等　${homeCode}: ${r.homeRating.toFixed(1)}　${awayCode}: ${r.awayRating.toFixed(1)}</div>
       ${probBarHtml(homeCode, awayCode, r.homeWinProb, 1 - r.homeWinProb)}
+      ${favoriteLineHtml(homeCode, homeName, awayCode, awayName, r.homeWinProb)}
       <div class="score-line">預測比分：${homeCode} ${r.homeScore.toFixed(1)} - ${r.awayScore.toFixed(1)} ${awayCode}</div>
       <div class="spread-line">預測分差：${homeCode} ${r.predictedMargin >= 0 ? "+" : ""}${r.predictedMargin.toFixed(1)}</div>
-      <div class="result-meta" style="margin-top:6px">預測勝方：<strong>${favorite}</strong></div>
     `;
   });
 }
