@@ -210,7 +210,13 @@ nflpredict export-site --start-season 2015
 1. 到 repo 的 **Settings → Pages**
 2. **Source** 選擇 `Deploy from a branch`
 3. **Branch** 選 `main`，資料夾選 `/docs`，按下 **Save**
-4. 幾分鐘後網站會發佈在 `https://<你的帳號>.github.io/football/`
+4. 幾分鐘後網站會發佈在 `https://<你的帳號>.github.io/<repo名稱>/`
+
+> **注意大小寫**：GitHub Pages 的網址路徑必須跟 repo 名稱的**大小寫完全一致**（GitHub API 呼叫不
+> 分大小寫，但 Pages 網址是分大小寫的）。這個 repo 實際名稱是 `Football`（大寫 F），所以正確網址是
+> `https://<你的帳號>.github.io/Football/`，不是全小寫的 `football`。若打開網址出現 404，先檢查
+> 網址的大小寫是否跟 repo 名稱一致；也可以直接到 **Settings → Pages** 頁面複製上面顯示的網址，
+> 那個一定是正確的。
 
 啟用後，`.github/workflows/update-predictions.yml` 會自動：每週二 UTC 10:00（= 台灣時間週二晚上
 18:00，約在 Monday Night Football 結束後）重新抓取最新真實比賽資料、重新訓練模型、重新產生

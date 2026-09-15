@@ -440,7 +440,7 @@ function wireUpHistory() {
 // ------------------------------------------------------- manual trigger ---
 
 const TRIGGER_OWNER = "willy0929716513-debug";
-const TRIGGER_REPO = "football";
+const TRIGGER_REPO = "Football";
 const TRIGGER_WORKFLOW = "update-predictions.yml";
 const TRIGGER_TOKEN_KEY = "nfl_predict_gh_token";
 
