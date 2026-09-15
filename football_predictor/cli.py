@@ -15,7 +15,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-from .advanced_model import AdvancedPredictor, advanced_backtest, market_backtest
+from .advanced_model import AdvancedPredictor, advanced_backtest, backtest_history, market_backtest
 from .data import (
     load_games, load_upcoming_games, normalize_team, team_display_name, team_display_name_zh,
     TEAM_NAMES, TEAM_NAMES_ZH,
@@ -302,6 +302,15 @@ def cmd_export_site(args: argparse.Namespace) -> int:
     data_path.write_text(json.dumps(site_data, indent=2, sort_keys=False), encoding="utf-8")
     print(f"site data written to {data_path} ({len(upcoming_predictions)} upcoming games, "
           f"{len(power_rankings)} teams ranked)")
+
+    history = backtest_history(games, start_season=args.start_season, config=config)
+    history_path = out_dir / "backtest_history.json"
+    history_path.write_text(json.dumps({
+        "start_season": args.start_season,
+        "generated_at": site_data["generated_at"],
+        "games": history,
+    }, indent=2, sort_keys=False), encoding="utf-8")
+    print(f"backtest history written to {history_path} ({len(history)} games)")
     return 0
 
 

@@ -92,6 +92,48 @@
       </div>
     </section>
 
+    <section class="card">
+      <div class="section-head">
+        <h2>歷史回測紀錄</h2>
+        <button id="load-history-btn" type="button" class="secondary-btn">載入歷史回測資料</button>
+      </div>
+      <p class="section-note">
+        逐場列出「當時」的預測（不是事後諸葛）：每一列都是時序回測產生的真實紀錄 — Elo 模型、
+        進階整合模型、與 Vegas 收盤盤口三方在賽前各自對勝方的判斷，以及實際比分。資料量較大
+        （約 1.8MB），故採手動載入。
+      </p>
+      <div id="history-controls" class="history-controls" hidden>
+        <label>賽季
+          <select id="history-season-select"></select>
+        </label>
+        <label>只看
+          <select id="history-filter-select">
+            <option value="all">全部比賽</option>
+            <option value="adv-wrong">進階模型猜錯</option>
+            <option value="adv-right">進階模型猜對</option>
+            <option value="upset">爆冷（市場預測方輸球）</option>
+          </select>
+        </label>
+        <span class="history-count" id="history-count"></span>
+      </div>
+      <div class="history-table-wrap">
+        <table class="history-table" id="history-table" hidden>
+          <thead>
+            <tr>
+              <th>日期</th><th>客隊 @ 主隊</th><th>比分</th>
+              <th>Elo 預測</th><th>進階模型預測</th><th>市場盤口</th>
+            </tr>
+          </thead>
+          <tbody id="history-body"></tbody>
+        </table>
+      </div>
+      <div class="history-pager" id="history-pager" hidden>
+        <button id="history-prev" type="button" class="secondary-btn">上一頁</button>
+        <span id="history-page-label"></span>
+        <button id="history-next" type="button" class="secondary-btn">下一頁</button>
+      </div>
+    </section>
+
     <section class="card methodology">
       <h2>方法論：考慮了哪些因素？</h2>
       <ul class="factor-list">
@@ -106,6 +148,31 @@
         本工具不包含即時傷兵名單細節、比賽當下天氣預報（僅使用比賽日已知資訊）、教練臨場調度等更細緻的訊號；
         這是一套方法公開、可回測、誠實揭露準確度的統計模型，適合研究與教育用途，<strong>不構成博弈建議</strong>。
       </p>
+    </section>
+
+    <section class="card">
+      <h2>手動更新資料</h2>
+      <p class="section-note">
+        本網站每週二台灣時間晚上 6 點（Monday Night Football 結束後）會自動重新抓取最新賽果／賽程／
+        盤口並更新，不需要手動操作。若想立即更新，有兩種方式：
+      </p>
+      <p class="section-note">
+        <strong>方式一（最簡單）</strong>：直接前往
+        <a href="https://github.com/willy0929716513-debug/football/actions/workflows/update-predictions.yml" target="_blank" rel="noopener">GitHub Actions 頁面</a>，
+        點右上角「Run workflow」。
+      </p>
+      <p class="section-note">
+        <strong>方式二</strong>：在下方輸入一組僅授權此 repo「Actions: Read and write」權限的
+        GitHub 權杖（fine-grained personal access token），直接在這個頁面按鈕觸發。權杖只會存在
+        <strong>你自己瀏覽器的 localStorage</strong>，不會送到除了 GitHub API 以外的任何地方，但
+        仍建議使用最小權限的權杖，並在公用電腦上使用後按「清除已儲存的權杖」。
+      </p>
+      <div class="trigger-row">
+        <input type="password" id="trigger-token" placeholder="貼上 GitHub Personal Access Token（僅存於本機瀏覽器）">
+        <button id="trigger-btn" type="button">觸發更新</button>
+        <button id="trigger-clear-btn" type="button" class="secondary-btn">清除已儲存的權杖</button>
+      </div>
+      <div class="trigger-status" id="trigger-status"></div>
     </section>
 
   </main>

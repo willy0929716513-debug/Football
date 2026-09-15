@@ -315,6 +315,215 @@ function wireUpPredictor(data) {
   });
 }
 
+// ---------------------------------------------------------- history table --
+
+const HISTORY_PAGE_SIZE = 25;
+let HISTORY_STATE = null; // { all: [...], filtered: [...], page: 0 }
+
+function pickCell(homeCode, awayCode, homeProb, correct) {
+  if (homeProb === null || homeProb === undefined) {
+    return `<span class="pred-na">尚無資料</span>`;
+  }
+  const pick = homeProb >= 0.5 ? homeCode : awayCode;
+  const prob = homeProb >= 0.5 ? homeProb : 1 - homeProb;
+  const icon = correct === null || correct === undefined
+    ? `<span class="pred-na">—</span>`
+    : correct
+      ? `<span class="pred-correct">✓</span>`
+      : `<span class="pred-wrong">✗</span>`;
+  return `${pick} ${fmtPct(prob)} ${icon}`;
+}
+
+function marketCell(homeCode, awayCode, homeProb, spread, correct) {
+  if (homeProb === null || homeProb === undefined) {
+    return `<span class="pred-na">無盤口資料</span>`;
+  }
+  const base = pickCell(homeCode, awayCode, homeProb, correct);
+  const spreadStr = spread !== null && spread !== undefined
+    ? `（${homeCode} ${spread > 0 ? "-" : "+"}${Math.abs(spread).toFixed(1)}）`
+    : "";
+  return `${base}${spreadStr}`;
+}
+
+function applyHistoryFilters() {
+  const seasonSel = document.getElementById("history-season-select");
+  const filterSel = document.getElementById("history-filter-select");
+  const season = seasonSel.value;
+  const mode = filterSel.value;
+
+  let rows = HISTORY_STATE.all;
+  if (season !== "all") rows = rows.filter((r) => String(r.season) === season);
+  if (mode === "adv-wrong") rows = rows.filter((r) => r.adv_correct === false);
+  else if (mode === "adv-right") rows = rows.filter((r) => r.adv_correct === true);
+  else if (mode === "upset") rows = rows.filter((r) => r.market_correct === false);
+
+  HISTORY_STATE.filtered = rows;
+  HISTORY_STATE.page = 0;
+  renderHistoryPage();
+}
+
+function renderHistoryPage() {
+  const { filtered, page } = HISTORY_STATE;
+  const totalPages = Math.max(Math.ceil(filtered.length / HISTORY_PAGE_SIZE), 1);
+  const clampedPage = Math.min(page, totalPages - 1);
+  HISTORY_STATE.page = clampedPage;
+
+  const start = clampedPage * HISTORY_PAGE_SIZE;
+  const pageRows = filtered.slice(start, start + HISTORY_PAGE_SIZE);
+
+  const body = document.getElementById("history-body");
+  body.innerHTML = pageRows.map((r) => `
+    <tr>
+      <td>${r.date}</td>
+      <td>
+        ${r.away_team} @ ${r.home_team}
+        <span class="team-cell-zh">${r.away_name_zh} @ ${r.home_name_zh}</span>
+      </td>
+      <td>${r.home_score}-${r.away_score}</td>
+      <td>${pickCell(r.home_team, r.away_team, r.elo_home_win_prob, r.elo_correct)}</td>
+      <td>${pickCell(r.home_team, r.away_team, r.adv_home_win_prob, r.adv_correct)}</td>
+      <td>${marketCell(r.home_team, r.away_team, r.market_home_win_prob, r.market_spread, r.market_correct)}</td>
+    </tr>
+  `).join("");
+
+  document.getElementById("history-count").textContent = `共 ${filtered.length} 場`;
+  document.getElementById("history-page-label").textContent = `第 ${clampedPage + 1} / ${totalPages} 頁`;
+  document.getElementById("history-prev").disabled = clampedPage <= 0;
+  document.getElementById("history-next").disabled = clampedPage >= totalPages - 1;
+}
+
+function populateHistorySeasons(rows) {
+  const seasonSel = document.getElementById("history-season-select");
+  const seasons = [...new Set(rows.map((r) => r.season))].sort((a, b) => b - a);
+  seasonSel.innerHTML = `<option value="all">全部賽季</option>` +
+    seasons.map((s) => `<option value="${s}">${s} 賽季</option>`).join("");
+}
+
+function wireUpHistory() {
+  const loadBtn = document.getElementById("load-history-btn");
+  loadBtn.addEventListener("click", async () => {
+    loadBtn.disabled = true;
+    loadBtn.textContent = "載入中…";
+    try {
+      const res = await fetch("backtest_history.json", { cache: "no-store" });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const payload = await res.json();
+      const newestFirst = payload.games.slice().reverse(); // exported oldest-first; show recent games by default
+      HISTORY_STATE = { all: newestFirst, filtered: newestFirst, page: 0 };
+
+      populateHistorySeasons(payload.games);
+      document.getElementById("history-controls").hidden = false;
+      document.getElementById("history-table").hidden = false;
+      document.getElementById("history-pager").hidden = false;
+      loadBtn.hidden = true;
+
+      document.getElementById("history-season-select").addEventListener("change", applyHistoryFilters);
+      document.getElementById("history-filter-select").addEventListener("change", applyHistoryFilters);
+      document.getElementById("history-prev").addEventListener("click", () => {
+        HISTORY_STATE.page -= 1;
+        renderHistoryPage();
+      });
+      document.getElementById("history-next").addEventListener("click", () => {
+        HISTORY_STATE.page += 1;
+        renderHistoryPage();
+      });
+
+      applyHistoryFilters();
+    } catch (err) {
+      loadBtn.disabled = false;
+      loadBtn.textContent = "載入失敗，點此重試";
+      console.error(err);
+    }
+  });
+}
+
+// ------------------------------------------------------- manual trigger ---
+
+const TRIGGER_OWNER = "willy0929716513-debug";
+const TRIGGER_REPO = "football";
+const TRIGGER_WORKFLOW = "update-predictions.yml";
+const TRIGGER_TOKEN_KEY = "nfl_predict_gh_token";
+
+function setTriggerStatus(message, kind) {
+  const el = document.getElementById("trigger-status");
+  el.textContent = message;
+  el.className = `trigger-status${kind ? ` ${kind}` : ""}`;
+}
+
+function wireUpTrigger() {
+  const tokenInput = document.getElementById("trigger-token");
+  const triggerBtn = document.getElementById("trigger-btn");
+  const clearBtn = document.getElementById("trigger-clear-btn");
+
+  if (localStorage.getItem(TRIGGER_TOKEN_KEY)) {
+    tokenInput.placeholder = "已儲存權杖（留空並按下方按鈕即可使用已儲存的權杖）";
+  }
+
+  triggerBtn.addEventListener("click", async () => {
+    const typed = tokenInput.value.trim();
+    let savedNewToken = false;
+    if (typed) {
+      try {
+        localStorage.setItem(TRIGGER_TOKEN_KEY, typed);
+        savedNewToken = true;
+      } catch {
+        /* localStorage unavailable (private browsing etc.) — fall through and use the typed value once */
+      }
+    }
+    const token = typed || localStorage.getItem(TRIGGER_TOKEN_KEY);
+    if (!token) {
+      setTriggerStatus("請先輸入 GitHub 權杖。", "err");
+      return;
+    }
+
+    triggerBtn.disabled = true;
+    triggerBtn.textContent = "觸發中…";
+    setTriggerStatus(savedNewToken ? "已儲存權杖於本機瀏覽器，觸發中…" : "觸發中…");
+
+    try {
+      const res = await fetch(
+        `https://api.github.com/repos/${TRIGGER_OWNER}/${TRIGGER_REPO}/actions/workflows/${TRIGGER_WORKFLOW}/dispatches`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            Accept: "application/vnd.github+json",
+            "X-GitHub-Api-Version": "2022-11-28",
+          },
+          body: JSON.stringify({ ref: "main" }),
+        },
+      );
+
+      if (res.status === 204) {
+        tokenInput.value = "";
+        setTriggerStatus("已成功觸發更新！請稍候約 1-2 分鐘後重新整理頁面查看最新資料。", "ok");
+      } else {
+        let detail = `HTTP ${res.status}`;
+        try {
+          const body = await res.json();
+          if (body && body.message) detail = body.message;
+        } catch {
+          /* response body wasn't JSON — keep the HTTP status as the detail */
+        }
+        setTriggerStatus(`觸發失敗：${detail}（請確認權杖是否有效、且已授權此 repo 的 Actions 讀寫權限）`, "err");
+      }
+    } catch (err) {
+      console.error(err);
+      setTriggerStatus("觸發失敗：網路或瀏覽器攔截了這個請求，請改用上方「GitHub Actions 頁面」手動觸發。", "err");
+    } finally {
+      triggerBtn.disabled = false;
+      triggerBtn.textContent = "觸發更新";
+    }
+  });
+
+  clearBtn.addEventListener("click", () => {
+    localStorage.removeItem(TRIGGER_TOKEN_KEY);
+    tokenInput.value = "";
+    tokenInput.placeholder = "貼上 GitHub Personal Access Token（僅存於本機瀏覽器）";
+    setTriggerStatus("已清除本機儲存的權杖。");
+  });
+}
+
 async function main() {
   try {
     SITE_DATA = await loadData();
@@ -330,6 +539,8 @@ async function main() {
   renderRankings(SITE_DATA.power_rankings);
   renderPerformance(SITE_DATA.model_performance);
   wireUpPredictor(SITE_DATA);
+  wireUpHistory();
+  wireUpTrigger();
 
   const weekSel = document.getElementById("week-select");
   const rerenderGames = () => renderGamesForWeek(SITE_DATA.upcoming, weekSel.value);

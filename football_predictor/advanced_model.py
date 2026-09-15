@@ -14,10 +14,10 @@ from pathlib import Path
 
 import numpy as np
 
-from .data import Game, team_display_name
+from .data import Game, team_display_name, team_display_name_zh
 from .elo import EloConfig, EloRatingSystem
 from .features import FEATURE_NAMES, QBTracker, SituationalContext, build_context
-from .model import Prediction
+from .model import DEFAULT_SPREAD_SCALE, Prediction, _fit_scale
 from .regression import LinearModel, LogisticModel, fit_logistic, fit_ridge_linear
 
 
@@ -301,3 +301,109 @@ def market_backtest(games: list[Game], start_season: int) -> MarketBacktestResul
         brier_score=brier_sum / evaluated,
         spread_mae=spread_error_sum / evaluated,
     )
+
+
+def backtest_history(games: list[Game], start_season: int, config: EloConfig | None = None,
+                      l2_logit: float = 2.0, l2_linear: float = 2.0) -> list[dict]:
+    """Walk-forward backtest that records one transparent, inspectable
+    record per evaluated game: what the elo model, the advanced model, and
+    the real Vegas market line each said beforehand, and what actually
+    happened. This is the same walk-forward methodology as `backtest`,
+    `advanced_backtest`, and `market_backtest` (no look-ahead: the elo
+    spread-scale, the advanced model's regression, and every prediction are
+    all computed only from games strictly before the one being scored), just
+    combined into one pass so the site can show a real, checkable track
+    record instead of only aggregate accuracy numbers.
+    """
+    predictor = AdvancedPredictor(EloRatingSystem(config=config or EloConfig()))
+
+    rows: list[list[float]] = []
+    home_wins: list[float] = []
+    margins: list[float] = []
+    totals: list[int] = []
+    elo_diffs: list[float] = []  # for the elo model's own spread-scale fit
+
+    current_season: int | None = None
+    history: list[dict] = []
+
+    for game in games:
+        if game.season != current_season:
+            current_season = game.season
+            if game.season >= start_season and len(rows) >= 200:
+                X = np.array(rows)
+                predictor.win_model = fit_logistic(X, np.array(home_wins), l2=l2_logit)
+                predictor.margin_model = fit_ridge_linear(X, np.array(margins), l2=l2_linear)
+                predictor.avg_total_points = sum(totals) / len(totals)
+
+        home_rating = predictor.elo.get_rating(game.home_team)
+        away_rating = predictor.elo.get_rating(game.away_team)
+        elo_diff = (home_rating + predictor.elo.config.home_advantage) - away_rating
+        elo_home_win_prob = predictor.elo.expected_home_win_prob(game.home_team, game.away_team)
+        ctx = build_context(game, predictor.qb_tracker)
+        vector = ctx.to_vector(elo_diff)
+
+        if game.season >= start_season:
+            record: dict = {
+                "season": game.season,
+                "week": game.week,
+                "game_type": game.game_type,
+                "date": game.date,
+                "home_team": game.home_team,
+                "away_team": game.away_team,
+                "home_name_zh": team_display_name_zh(game.home_team),
+                "away_name_zh": team_display_name_zh(game.away_team),
+                "home_score": game.home_score,
+                "away_score": game.away_score,
+                "elo_home_win_prob": round(elo_home_win_prob, 4),
+                "elo_predicted_margin": round(elo_diff / (_fit_scale(elo_diffs, margins) or DEFAULT_SPREAD_SCALE), 1)
+                if elo_diffs else None,
+            }
+
+            actual_winner_home = game.home_score >= game.away_score
+            record["elo_correct"] = (elo_home_win_prob >= 0.5) == actual_winner_home
+
+            if predictor.win_model is not None:
+                X_row = np.array([vector])
+                adv_prob = float(predictor.win_model.predict_proba(X_row)[0])
+                adv_margin = float(predictor.margin_model.predict(X_row)[0])
+                record["adv_home_win_prob"] = round(adv_prob, 4)
+                record["adv_predicted_margin"] = round(adv_margin, 1)
+                record["adv_correct"] = (adv_prob >= 0.5) == actual_winner_home
+            else:
+                record["adv_home_win_prob"] = None
+                record["adv_predicted_margin"] = None
+                record["adv_correct"] = None
+
+            if game.spread_line is not None and game.home_moneyline is not None and game.away_moneyline is not None:
+                home_implied = _american_odds_to_prob(game.home_moneyline)
+                away_implied = _american_odds_to_prob(game.away_moneyline)
+                overround = home_implied + away_implied
+                market_prob = home_implied / overround if overround > 0 else 0.5
+                record["market_home_win_prob"] = round(market_prob, 4)
+                record["market_spread"] = game.spread_line
+                record["market_correct"] = (market_prob >= 0.5) == actual_winner_home
+            else:
+                record["market_home_win_prob"] = None
+                record["market_spread"] = None
+                record["market_correct"] = None
+
+            history.append(record)
+
+        predictor.qb_tracker.observe(game.home_team, game.home_qb_id)
+        predictor.qb_tracker.observe(game.away_team, game.away_qb_id)
+        predictor.elo.process_game(
+            season=game.season,
+            home_team=game.home_team,
+            away_team=game.away_team,
+            home_score=game.home_score,
+            away_score=game.away_score,
+            is_playoff=game.is_playoff,
+        )
+
+        rows.append(vector)
+        home_wins.append(1.0 if game.home_score > game.away_score else (0.0 if game.home_score < game.away_score else 0.5))
+        margins.append(float(game.margin))
+        totals.append(game.home_score + game.away_score)
+        elo_diffs.append(elo_diff)
+
+    return history
