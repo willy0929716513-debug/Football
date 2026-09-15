@@ -1,4 +1,6 @@
-from football_predictor.advanced_model import AdvancedPredictor, advanced_backtest, market_backtest
+from football_predictor.advanced_model import (
+    AdvancedPredictor, advanced_backtest, backtest_history, market_backtest,
+)
 from football_predictor.data import Game
 from football_predictor.features import SituationalContext
 
@@ -57,6 +59,58 @@ def test_advanced_backtest_runs_and_beats_coinflip():
     result = advanced_backtest(_synthetic_games(), start_season=2010)
     assert result.games > 0
     assert result.accuracy > 0.9
+
+
+def test_backtest_history_only_covers_the_scored_window():
+    games = _synthetic_games(n_seasons=20, games_per_season=16)
+    history = backtest_history(games, start_season=2015)
+    assert len(history) == sum(1 for g in games if g.season >= 2015)
+    assert all(record["season"] >= 2015 for record in history)
+
+
+def test_backtest_history_records_have_expected_shape():
+    games = _synthetic_games(n_seasons=20, games_per_season=16)
+    history = backtest_history(games, start_season=2015)
+    record = history[0]
+
+    assert record["home_team"] == "AAA" and record["away_team"] == "BBB"
+    assert record["home_name_zh"] and record["away_name_zh"]
+    assert isinstance(record["home_score"], int) and isinstance(record["away_score"], int)
+    assert 0.0 <= record["elo_home_win_prob"] <= 1.0
+    assert isinstance(record["elo_correct"], bool)
+    # 200+ prior games have already been processed by 2015 in this dataset,
+    # so the advanced model should already be warmed up and predicting.
+    assert record["adv_home_win_prob"] is not None
+    assert isinstance(record["adv_correct"], bool)
+    # no market columns were supplied for this synthetic dataset
+    assert record["market_home_win_prob"] is None
+    assert record["market_correct"] is None
+
+
+def test_backtest_history_matches_aggregate_backtest_accuracy():
+    games = _synthetic_games(n_seasons=20, games_per_season=16)
+    history = backtest_history(games, start_season=2015)
+    adv_result = advanced_backtest(games, start_season=2015)
+
+    history_adv_accuracy = sum(r["adv_correct"] for r in history) / len(history)
+    assert abs(history_adv_accuracy - adv_result.accuracy) < 1e-9
+
+
+def test_backtest_history_includes_market_fields_when_available():
+    games = [
+        Game(
+            season=2021, week=str(w), game_type="REG", date=f"2021-09-{w:02d}",
+            home_team="AAA", away_team="BBB", home_score=27, away_score=13,
+            spread_line=7.0, home_moneyline=-300.0, away_moneyline=250.0,
+        )
+        for w in range(1, 4)
+    ]
+    history = backtest_history(games, start_season=2021)
+    assert len(history) == 3
+    for record in history:
+        assert record["market_home_win_prob"] is not None
+        assert record["market_spread"] == 7.0
+        assert record["market_correct"] is True
 
 
 def test_market_backtest_uses_moneylines_and_spread():

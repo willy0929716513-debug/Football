@@ -184,7 +184,8 @@ nflpredict export-site --start-season 2015
 ```
 
 重新訓練 elo / advanced 兩個模型、跑三方回測比較，並將戰力排名、整季賽程預測、模型準確度、以及給
-瀏覽器端互動預測器使用的模型快照，全部寫入 `docs/data.json`（GitHub Pages 網站讀取的資料檔）。
+瀏覽器端互動預測器使用的模型快照，全部寫入 `docs/data.json`（GitHub Pages 網站讀取的資料檔）；
+同時也會把逐場的時序回測明細（見下方「歷史回測紀錄」）寫入 `docs/backtest_history.json`。
 
 ## GitHub Pages 網站
 
@@ -192,9 +193,14 @@ nflpredict export-site --start-season 2015
 
 - **互動式對戰預測器**：任選兩隊、開關情境因子（主客場、分區戰、季後賽、QB異動、天氣、休息天數），
   瀏覽器端即時運算勝率與預測比分（與後端訓練用的是同一套模型參數）。
-- **本週／整季預測**：目前已公布賽程的每一場比賽，含勝率、預測比分、預測分差，並列出市場盤口對照。
+- **本週／整季預測**：目前已公布賽程的每一場比賽，含勝率、預測比分、預測分差，並列出市場盤口對照，
+  同時顯示美東時間與台灣時間的實際開賽日期時間。
 - **戰力排名**：目前 Elo 評等排序。
 - **模型準確度與市場比較**：公開的回測結果，`elo` / `advanced` / `market` 三方比較。
+- **歷史回測紀錄**：可手動載入、逐場列出的時序回測明細（非事後諸葛）— 每場比賽當時 Elo／進階模型／
+  市場盤口三方各自的賽前判斷，以及實際比分與對錯，可依賽季與「猜對/猜錯/爆冷」篩選、翻頁瀏覽。
+- **手動更新按鈕**：不必等到每週自動更新，可直接在頁面上（或連到 GitHub Actions 頁面）立即觸發
+  重新抓資料＋重新訓練＋重新發佈。
 - **方法論頁**：列出模型考慮的所有因素與已知限制。
 
 ### 啟用方式（一次性設定）
@@ -206,10 +212,26 @@ nflpredict export-site --start-season 2015
 3. **Branch** 選 `main`，資料夾選 `/docs`，按下 **Save**
 4. 幾分鐘後網站會發佈在 `https://<你的帳號>.github.io/football/`
 
-啟用後，`.github/workflows/update-predictions.yml` 會自動：每週二 UTC 10:00（約在
-Monday Night Football 結束後）重新抓取最新真實比賽資料、重新訓練模型、重新產生
-`docs/data.json`，並自動 commit + push — 網站內容會持續保持在最新戰績與賽程之上，
-不需要手動維護。也可以在 GitHub 的 Actions 頁面手動觸發（`workflow_dispatch`）。
+啟用後，`.github/workflows/update-predictions.yml` 會自動：每週二 UTC 10:00（= 台灣時間週二晚上
+18:00，約在 Monday Night Football 結束後）重新抓取最新真實比賽資料、重新訓練模型、重新產生
+`docs/data.json` 與 `docs/backtest_history.json`，並自動 commit + push — 網站內容會持續保持在
+最新戰績與賽程之上，不需要手動維護。
+
+### 網頁上的「手動更新資料」按鈕
+
+網站首頁最下方有一個手動更新區塊，提供兩種立即觸發更新的方式：
+
+1. **最簡單**：直接點連結前往 GitHub Actions 頁面，按「Run workflow」。不需要任何額外設定。
+2. **網頁上一鍵觸發**：因為 GitHub Pages 是純靜態網站、沒有後端伺服器，若要從網頁本身直接呼叫
+   GitHub API 觸發 workflow，需要一組有權限的 GitHub 權杖（personal access token）。設定方式：
+   - 到 GitHub **Settings → Developer settings → Fine-grained tokens → Generate new token**
+   - **Repository access** 選擇「Only select repositories」→ 選這個 repo
+   - **Permissions** 只勾選 **Actions: Read and write**（不需要其他任何權限）
+   - 產生後把權杖貼到網站的輸入框，按「觸發更新」
+
+   權杖只會存在**你自己瀏覽器的 localStorage**（下次造訪同一台裝置/瀏覽器時會自動沿用，不用重貼），
+   不會被送到 GitHub API 以外的任何地方，也不會被寫進這個 repo。但仍建議：只給最小權限（僅這個
+   repo 的 Actions 讀寫）、不要在公用電腦上長期保留，並在用完後按「清除已儲存的權杖」。
 
 ## 球隊代碼對照表
 
@@ -235,12 +257,14 @@ football_predictor/
   features.py        # 情境特徵：休息天數、QB異動追蹤、天氣、分區/季後賽旗標
   regression.py       # 純 numpy 的邏輯迴歸（IRLS）與 ridge 線性迴歸
   model.py           # Elo 基準模型（FootballPredictor）+ 回測
-  advanced_model.py  # 進階整合模型（AdvancedPredictor）+ 回測 + 市場盤口回測
+  advanced_model.py  # 進階整合模型（AdvancedPredictor）+ 回測 + 市場盤口回測 + 逐場回測明細
   cli.py             # 命令列介面
 data/
   nfl_games.csv      # 1999 年至今的真實 NFL 比賽結果與未來賽程
 docs/
-  index.html / style.css / app.js / data.json   # GitHub Pages 靜態網站
+  index.html / style.css / app.js               # GitHub Pages 靜態網站
+  data.json                                     # 排名/預測/效能摘要（每次 export-site 產生）
+  backtest_history.json                         # 逐場時序回測明細（手動載入，資料量較大）
 scripts/
   fetch_data.py      # 從 nflverse/nfldata 重新抓取並正規化資料
 .github/workflows/

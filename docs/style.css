@@ -53,6 +53,8 @@
 
 * { box-sizing: border-box; }
 
+[hidden] { display: none !important; }
+
 body {
   background: var(--bg);
   color: var(--text);
@@ -208,6 +210,24 @@ button#predict-btn {
 
 button#predict-btn:hover { filter: brightness(1.08); }
 
+.secondary-btn {
+  background: var(--surface-alt);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.secondary-btn:hover { opacity: 0.8; }
+
+.secondary-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .predictor-result {
   margin-top: 18px;
   padding-top: 18px;
@@ -349,6 +369,87 @@ th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; text-transfo
   background: var(--accent);
   height: 100%;
 }
+
+/* ---- historical backtest table ---- */
+
+.history-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.history-controls label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.history-count {
+  margin-left: auto;
+  font-weight: 600;
+}
+
+.history-table-wrap {
+  overflow-x: auto;
+}
+
+.history-table td, .history-table th {
+  white-space: nowrap;
+}
+
+.history-table .team-cell-zh {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.pred-correct { color: var(--good); font-weight: 700; }
+.pred-wrong { color: var(--bad); font-weight: 700; }
+.pred-na { color: var(--text-muted); }
+
+.history-pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ---- manual trigger ---- */
+
+.trigger-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.trigger-row input[type="password"] {
+  flex: 1 1 320px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 9px 10px;
+  font-size: 0.9rem;
+}
+
+.trigger-status {
+  font-size: 0.85rem;
+  font-weight: 600;
+  min-height: 1.2em;
+}
+
+.trigger-status.ok { color: var(--good); }
+.trigger-status.err { color: var(--bad); }
 
 /* ---- methodology ---- */
 
