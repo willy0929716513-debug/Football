@@ -129,6 +129,17 @@ main.wrap {
   margin: 0 0 16px;
 }
 
+.data-updated-at {
+  display: inline-block;
+  color: var(--accent);
+  background: var(--accent-soft);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin: 0 0 16px;
+}
+
 .section-head {
   display: flex;
   align-items: center;
