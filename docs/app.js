@@ -106,6 +106,25 @@ function populateTeamSelects(teams) {
   }
 }
 
+function marginSentence(homeCode, awayCode, margin, label) {
+  const rounded = Math.round(Math.abs(margin));
+  if (rounded === 0) return `${label}：勢均力敵，難分軒輊`;
+  const winner = margin >= 0 ? homeCode : awayCode;
+  return `${label}：${winner} 會贏 ${rounded} 分`;
+}
+
+function scoreLineHtml(homeCode, awayCode, homeScore, awayScore) {
+  return `<div class="score-line">預測比分：${homeCode} ${Math.round(homeScore)} - ${Math.round(awayScore)} ${awayCode}</div>`;
+}
+
+function marginLineHtml(homeCode, awayCode, predictedMargin, marketSpread) {
+  const parts = [marginSentence(homeCode, awayCode, predictedMargin, "模型預測")];
+  if (marketSpread !== undefined && marketSpread !== null) {
+    parts.push(marginSentence(homeCode, awayCode, marketSpread, "市場預測"));
+  }
+  return `<div class="spread-line">${parts.join("｜")}</div>`;
+}
+
 function favoriteLineHtml(homeCode, homeNameZh, awayCode, awayNameZh, homeProb) {
   const homeFavored = homeProb >= 0.5;
   const code = homeFavored ? homeCode : awayCode;
@@ -177,10 +196,6 @@ function renderGamesForWeek(upcoming, weekKey) {
     if (restDiff >= 2) restLabel = `${g.home_team} 多休 ${restDiff.toFixed(0)} 天`;
     else if (restDiff <= -2) restLabel = `${g.away_team} 多休 ${Math.abs(restDiff).toFixed(0)} 天`;
 
-    const marketLine = g.market_spread !== undefined
-      ? `｜市場盤口：${g.home_team} ${g.market_spread > 0 ? "-" : "+"}${Math.abs(g.market_spread).toFixed(1)}`
-      : "";
-
     const card = document.createElement("div");
     card.className = "game-card";
     card.innerHTML = `
@@ -189,8 +204,8 @@ function renderGamesForWeek(upcoming, weekKey) {
       <div class="matchup-zh">${g.away_name_zh ?? g.away_name} @ ${g.home_name_zh ?? g.home_name}</div>
       ${probBarHtml(g.home_team, g.away_team, g.home_win_prob, g.away_win_prob)}
       ${favoriteLineHtml(g.home_team, g.home_name_zh ?? g.home_name, g.away_team, g.away_name_zh ?? g.away_name, g.home_win_prob)}
-      <div class="score-line">預測比分：${g.home_team} ${g.predicted_home_score.toFixed(1)} - ${g.predicted_away_score.toFixed(1)} ${g.away_team}</div>
-      <div class="spread-line">模型分差：${g.home_team} ${g.predicted_margin >= 0 ? "+" : ""}${g.predicted_margin.toFixed(1)}${marketLine}</div>
+      ${scoreLineHtml(g.home_team, g.away_team, g.predicted_home_score, g.predicted_away_score)}
+      ${marginLineHtml(g.home_team, g.away_team, g.predicted_margin, g.market_spread)}
       <div style="margin-top:8px">${contextBadgesHtml(g.context, restLabel)}</div>
     `;
     grid.appendChild(card);
@@ -314,11 +329,11 @@ function wireUpPredictor(data) {
     resultBox.hidden = false;
     resultBox.innerHTML = `
       <div class="result-teams">${awayName} (${awayCode}) @ ${homeName} (${homeCode})</div>
-      <div class="result-meta">Elo 評等　${homeCode}: ${r.homeRating.toFixed(1)}　${awayCode}: ${r.awayRating.toFixed(1)}</div>
+      <div class="result-meta">戰力值　${homeCode}: ${r.homeRating.toFixed(1)}　${awayCode}: ${r.awayRating.toFixed(1)}</div>
       ${probBarHtml(homeCode, awayCode, r.homeWinProb, 1 - r.homeWinProb)}
       ${favoriteLineHtml(homeCode, homeName, awayCode, awayName, r.homeWinProb)}
-      <div class="score-line">預測比分：${homeCode} ${r.homeScore.toFixed(1)} - ${r.awayScore.toFixed(1)} ${awayCode}</div>
-      <div class="spread-line">預測分差：${homeCode} ${r.predictedMargin >= 0 ? "+" : ""}${r.predictedMargin.toFixed(1)}</div>
+      ${scoreLineHtml(homeCode, awayCode, r.homeScore, r.awayScore)}
+      ${marginLineHtml(homeCode, awayCode, r.predictedMargin)}
     `;
   });
 }

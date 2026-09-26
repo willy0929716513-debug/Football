@@ -13,8 +13,8 @@
       <p class="eyebrow">NFL PREDICTION CENTER</p>
       <h1>NFL 比賽預測中心</h1>
       <p class="lede">
-        以 <strong>Elo 戰力評等</strong> 為核心，疊加休息天數、先發QB異動、比賽天氣、主客場與季後賽等
-        情境因子的整合模型，並公開與真實 Vegas 收盤盤口的準確度比較 — 資料透明、方法可回測。
+        根據每支球隊的近期戰績、休息天數、先發QB有沒有換人、比賽當天天氣等因素，算出每場比賽的
+        獲勝機率跟預測比分。而且不藏私：連跟真實莊家盤口比誰猜得準，也大方公開給你看。
       </p>
       <p class="updated" id="updated-at">資料更新中…</p>
     </div>
@@ -49,7 +49,7 @@
 
     <section class="card" id="predictor-section">
       <h2>互動式對戰預測器</h2>
-      <p class="section-note">選擇任意兩隊，並依需要開啟情境因子，即時試算勝率與預測比分（純瀏覽器端運算，模型與後端訓練所用者完全一致）。</p>
+      <p class="section-note">選擇任意兩隊，想測試「如果臨時換QB」「如果下雨很冷」會怎樣，也可以直接勾選，立刻看到勝率跟預測比分怎麼變。</p>
       <div class="predictor">
         <div class="predictor-row">
           <label>客場球隊
@@ -103,18 +103,23 @@
     <section class="card">
       <h2>模型準確度與市場比較</h2>
       <p class="section-note">
-        採用「時序回測」(walk-forward)：每場比賽只用當下已知的評等與模型做預測，再更新評等，
-        避免用到未來資訊。同時也列出同期真實 Vegas 收盤盤口的表現作為對照基準 — 長期打敗收盤盤口
-        本身就極為困難，這裡誠實呈現，而非誇大宣稱。
+        這裡誠實公開「過去每一場比賽，模型當時猜得準不準」，不是拿結果來湊答案。同時也列出真實
+        Vegas 莊家盤口的表現讓你自己比較 — 長期要贏過莊家本來就非常困難，這裡如實呈現，不誇大宣傳。
       </p>
       <div class="perf-table-wrap">
         <table class="perf-table" id="perf-table">
           <thead>
-            <tr><th>模型</th><th>樣本數</th><th>勝負準確率</th><th>Brier Score</th><th>分差 MAE</th></tr>
+            <tr><th>模型</th><th>樣本數</th><th>猜對比例</th><th>機率準確度</th><th>比分誤差</th></tr>
           </thead>
           <tbody id="perf-body"></tbody>
         </table>
       </div>
+      <p class="section-note" style="margin-top:10px">
+        白話說明：「猜對比例」是單純猜中勝方的比例；「機率準確度」（Brier Score）是看模型講的
+        機率準不準（例如講 70% 獲勝，結果是不是真的差不多 70% 的機率會贏），數字越接近 0 代表
+        算得越準，0.25 大約等於用丟硬幣亂猜；「比分誤差」是預測的分差跟實際分差差了幾分，數字
+        越小代表預測越貼近實際比分。
+      </p>
     </section>
 
     <section class="card">
@@ -123,9 +128,9 @@
         <button id="load-history-btn" type="button" class="secondary-btn">載入歷史回測資料</button>
       </div>
       <p class="section-note">
-        逐場列出「當時」的預測（不是事後諸葛）：每一列都是時序回測產生的真實紀錄 — Elo 模型、
-        進階整合模型、與 Vegas 收盤盤口三方在賽前各自對勝方的判斷，以及實際比分。資料量較大
-        （約 1.8MB），故採手動載入。
+        逐場列出「當時」真的猜了什麼（不是看完結果再說當初就知道）：每一列是 Elo 模型、進階整合
+        模型、跟 Vegas 莊家盤口三方在賽前各自猜的勝方，以及最後實際比分。資料比較大（約 1.8MB），
+        所以要按下面的按鈕才會載入。
       </p>
       <div id="history-controls" class="history-controls" hidden>
         <label>賽季
