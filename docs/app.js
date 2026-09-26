@@ -49,15 +49,18 @@ function formatKickoff(g) {
   const wd = WEEKDAY_ZH[g.weekday] ? `（${WEEKDAY_ZH[g.weekday]}）` : "";
   if (!g.gametime) return `${md}${wd}（時間未定）`;
 
-  const etLine = `${md}${wd} ${g.gametime} 美東時間`;
+  const etLine = `美東時間 ${md}${wd} ${g.gametime}`;
   const instant = kickoffInstant(g);
   if (!instant) return etLine;
 
+  // Taiwan time first and most prominent — this site's primary audience —
+  // with the US Eastern kickoff time (as officially published by the NFL)
+  // shown underneath for reference.
   const twStr = instant.toLocaleString("zh-TW", {
     timeZone: "Asia/Taipei", month: "numeric", day: "numeric",
     hour: "2-digit", minute: "2-digit", hour12: false, weekday: "short",
   });
-  return `${etLine}<br><span class="kickoff-tw">台灣時間 ${twStr}</span>`;
+  return `台灣時間 ${twStr}<br><span class="kickoff-et">${etLine}</span>`;
 }
 
 let SITE_DATA = null;

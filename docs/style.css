@@ -303,7 +303,7 @@ button#predict-btn:hover { filter: brightness(1.08); }
   line-height: 1.5;
 }
 
-.game-card .kickoff-tw {
+.game-card .kickoff-et {
   font-weight: 600;
   color: var(--text-muted);
   text-transform: none;
