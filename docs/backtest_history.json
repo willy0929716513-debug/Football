@@ -1,6 +1,6 @@
 {
   "start_season": 2015,
-  "generated_at": "2026-09-26T15:03:18Z",
+  "generated_at": "2026-09-26T15:05:04Z",
   "games": [
     {
       "season": 2015,
@@ -64261,6 +64261,27 @@
       "market_home_win_prob": 0.718,
       "market_spread": 6.5,
       "market_correct": true
+    },
+    {
+      "season": 2026,
+      "week": "3",
+      "game_type": "REG",
+      "date": "2026-09-24",
+      "home_team": "GB",
+      "away_team": "ATL",
+      "home_name_zh": "\u7da0\u7063\u5305\u88dd\u5de5",
+      "away_name_zh": "\u4e9e\u7279\u862d\u5927\u7375\u9df9",
+      "home_score": 14,
+      "away_score": 35,
+      "elo_home_win_prob": 0.7012,
+      "elo_predicted_margin": 6.2,
+      "elo_correct": false,
+      "adv_home_win_prob": 0.7676,
+      "adv_predicted_margin": 9.0,
+      "adv_correct": false,
+      "market_home_win_prob": 0.669,
+      "market_spread": 4.5,
+      "market_correct": false
     }
   ]
 }
