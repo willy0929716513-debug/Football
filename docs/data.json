@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T14:17:44Z",
+  "generated_at": "2026-09-26T14:59:53Z",
   "teams": [
     {
       "code": "ARI",
@@ -8092,7 +8092,7 @@
       "games": 3060,
       "accuracy": 0.642483660130719,
       "brier_score": 0.22146857719177604,
-      "spread_mae": 10.217974994831689
+      "spread_mae": 10.217974994831685
     },
     "advanced": {
       "games": 3060,
@@ -8144,7 +8144,7 @@
       "LAC": 1442.83,
       "HOU": 1542.49
     },
-    "spread_scale": 23.81566388352884,
+    "spread_scale": 23.815663883528813,
     "avg_total_points": 44.2587575259989,
     "feature_names": [
       "elo_diff",
