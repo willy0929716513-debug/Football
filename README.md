@@ -199,7 +199,7 @@ nflpredict export-site --start-season 2015
 - **模型準確度與市場比較**：公開的回測結果，`elo` / `advanced` / `market` 三方比較。
 - **歷史回測紀錄**：可手動載入、逐場列出的時序回測明細（非事後諸葛）— 每場比賽當時 Elo／進階模型／
   市場盤口三方各自的賽前判斷，以及實際比分與對錯，可依賽季與「猜對/猜錯/爆冷」篩選、翻頁瀏覽。
-- **手動更新按鈕**：不必等到每週自動更新，可直接在頁面上（或連到 GitHub Actions 頁面）立即觸發
+- **手動更新按鈕**：不必等到每天自動更新，可直接在頁面上（或連到 GitHub Actions 頁面）立即觸發
   重新抓資料＋重新訓練＋重新發佈。
 - **方法論頁**：列出模型考慮的所有因素與已知限制。
 
@@ -218,10 +218,10 @@ nflpredict export-site --start-season 2015
 > 網址的大小寫是否跟 repo 名稱一致；也可以直接到 **Settings → Pages** 頁面複製上面顯示的網址，
 > 那個一定是正確的。
 
-啟用後，`.github/workflows/update-predictions.yml` 會自動：每週二 UTC 10:00（= 台灣時間週二晚上
-18:00，約在 Monday Night Football 結束後）重新抓取最新真實比賽資料、重新訓練模型、重新產生
-`docs/data.json` 與 `docs/backtest_history.json`，並自動 commit + push — 網站內容會持續保持在
-最新戰績與賽程之上，不需要手動維護。
+啟用後，`.github/workflows/update-predictions.yml` 會自動：每天 UTC 10:00（= 台灣時間每天晚上
+18:00）重新抓取最新真實比賽資料、重新訓練模型、重新產生 `docs/data.json` 與
+`docs/backtest_history.json`，並自動 commit + push — 網站內容會持續保持在最新戰績與賽程之上，
+不需要手動維護。
 
 ### 網頁上的「手動更新資料」按鈕
 
@@ -274,7 +274,7 @@ docs/
 scripts/
   fetch_data.py      # 從 nflverse/nfldata 重新抓取並正規化資料
 .github/workflows/
-  update-predictions.yml   # 每週自動重新訓練並更新網站資料
+  update-predictions.yml   # 每天自動重新訓練並更新網站資料
 tests/               # pytest 單元測試（34 個測試，涵蓋各模組）
 ```
 

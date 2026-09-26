@@ -2,8 +2,9 @@ name: Update NFL predictions
 
 on:
   schedule:
-    # 10:00 UTC every Tuesday — after Monday Night Football results are final.
-    - cron: "0 10 * * 2"
+    # 10:00 UTC every day (= 18:00 Taiwan time) — catches each day's completed
+    # games well after they've finished (even late Sunday/Monday-night games).
+    - cron: "0 10 * * *"
   workflow_dispatch: {}
 
 permissions:
