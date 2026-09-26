@@ -83,14 +83,22 @@ function findTeam(teams, code) {
   return teams.find((t) => t.code === code);
 }
 
+function formatUpdatedAt(iso) {
+  try {
+    return new Date(iso).toLocaleString("zh-TW", { dateStyle: "medium", timeStyle: "short" });
+  } catch {
+    return iso;
+  }
+}
+
 function renderUpdatedAt(iso) {
   const el = document.getElementById("updated-at");
-  try {
-    const d = new Date(iso);
-    el.textContent = `模型與資料更新時間：${d.toLocaleString("zh-TW", { dateStyle: "medium", timeStyle: "short" })}`;
-  } catch {
-    el.textContent = `模型與資料更新時間：${iso}`;
-  }
+  el.textContent = `模型與資料更新時間：${formatUpdatedAt(iso)}`;
+}
+
+function renderPredictionsUpdatedAt(iso) {
+  const el = document.getElementById("predictions-updated-at");
+  el.textContent = `這份預測資料更新於：${formatUpdatedAt(iso)}（每天台灣時間晚上 6 點自動更新）`;
 }
 
 function populateTeamSelects(teams) {
@@ -438,6 +446,9 @@ function wireUpHistory() {
       HISTORY_STATE = { all: newestFirst, filtered: newestFirst, page: 0 };
 
       populateHistorySeasons(payload.games);
+      const updatedEl = document.getElementById("history-updated-at");
+      updatedEl.textContent = `這份歷史回測資料更新於：${formatUpdatedAt(payload.generated_at)}`;
+      updatedEl.hidden = false;
       document.getElementById("history-controls").hidden = false;
       document.getElementById("history-table").hidden = false;
       document.getElementById("history-pager").hidden = false;
@@ -555,11 +566,13 @@ async function main() {
     SITE_DATA = await loadData();
   } catch (err) {
     document.getElementById("updated-at").textContent = "資料載入失敗，請稍後再試。";
+    document.getElementById("predictions-updated-at").textContent = "資料載入失敗，請稍後再試。";
     console.error(err);
     return;
   }
 
   renderUpdatedAt(SITE_DATA.generated_at);
+  renderPredictionsUpdatedAt(SITE_DATA.generated_at);
   populateTeamSelects(SITE_DATA.teams);
   populateWeekSelect(SITE_DATA.upcoming);
   renderRankings(SITE_DATA.power_rankings);
