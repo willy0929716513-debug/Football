@@ -16,7 +16,14 @@ class EloConfig:
     k_factor: float = 20.0
     home_advantage: float = 48.0
     playoff_multiplier: float = 1.2
-    revert_to_mean: float = 1.0 / 3.0
+    # 0.45 rather than 538's traditional 1/3: a hyperparameter grid search
+    # (tuned on 2010-2020, confirmed on a held-out 2021+ window, both via
+    # walk-forward backtesting) found 0.45 gives a small but consistent
+    # Brier-score improvement over the whole tested (k, home_advantage,
+    # playoff_multiplier) grid. K-factor, home-field advantage, and the
+    # playoff multiplier showed no reliable improvement over the classic
+    # 538 defaults, so those are unchanged.
+    revert_to_mean: float = 0.45
     mov_divisor_base: float = 2.2
     mov_divisor_scale: float = 0.001
 

@@ -42,7 +42,7 @@ def _add_elo_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--k", type=float, default=20.0, help="Elo K-factor (default: 20)")
     parser.add_argument("--home-advantage", type=float, default=48.0, help="home-field Elo bonus (default: 48)")
     parser.add_argument("--playoff-boost", type=float, default=1.2, help="K multiplier for playoff games (default: 1.2)")
-    parser.add_argument("--revert", type=float, default=1.0 / 3.0, help="between-season regression to the mean (default: 1/3)")
+    parser.add_argument("--revert", type=float, default=0.45, help="between-season regression to the mean (default: 0.45, empirically tuned)")
 
 
 def _elo_config(args: argparse.Namespace) -> EloConfig:
