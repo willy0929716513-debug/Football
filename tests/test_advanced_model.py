@@ -1,5 +1,6 @@
 from football_predictor.advanced_model import (
-    AdvancedPredictor, advanced_backtest, backtest_history, market_backtest,
+    AdvancedPredictor, advanced_backtest, backtest_history, blend_prediction,
+    blend_summary_from_history, market_backtest,
 )
 from football_predictor.data import Game
 from football_predictor.features import SituationalContext
@@ -111,6 +112,89 @@ def test_backtest_history_includes_market_fields_when_available():
         assert record["market_home_win_prob"] is not None
         assert record["market_spread"] == 7.0
         assert record["market_correct"] is True
+
+
+def test_blend_prediction_weight_zero_returns_pure_market():
+    prob, margin = blend_prediction(
+        model_home_win_prob=0.9, market_home_win_prob=0.55,
+        model_margin=14.0, market_spread=3.0, weight=0.0,
+    )
+    assert abs(prob - 0.55) < 1e-9
+    assert abs(margin - 3.0) < 1e-9
+
+
+def test_blend_prediction_weight_one_returns_pure_model():
+    prob, margin = blend_prediction(
+        model_home_win_prob=0.9, market_home_win_prob=0.55,
+        model_margin=14.0, market_spread=3.0, weight=1.0,
+    )
+    assert abs(prob - 0.9) < 1e-9
+    assert abs(margin - 14.0) < 1e-9
+
+
+def test_blend_prediction_moves_toward_the_more_confident_side():
+    # model and market both favor the home team, but the market is far more
+    # confident (55% vs 90%) — a small model weight should pull the blend
+    # only slightly away from the market's number, not all the way to 90%.
+    prob, _ = blend_prediction(
+        model_home_win_prob=0.9, market_home_win_prob=0.55,
+        model_margin=14.0, market_spread=3.0, weight=0.10,
+    )
+    assert 0.55 < prob < 0.65
+
+
+def test_backtest_history_includes_blend_fields_once_warmed_up():
+    games = _synthetic_games(n_seasons=20, games_per_season=16)
+    # attach market data to the final season only, so we exercise blend
+    # fields on games where the advanced model is definitely warmed up.
+    tail_start = len(games) - 16
+    patched = []
+    for i, g in enumerate(games):
+        if i >= tail_start:
+            g = Game(
+                **{**vars(g), "spread_line": 10.0, "home_moneyline": -300.0, "away_moneyline": 250.0},
+            )
+        patched.append(g)
+
+    history = backtest_history(patched, start_season=2019)
+    with_market = [r for r in history if r["market_home_win_prob"] is not None]
+    assert len(with_market) == 16
+    for record in with_market:
+        assert record["blend_home_win_prob"] is not None
+        assert record["blend_predicted_margin"] is not None
+        assert isinstance(record["blend_correct"], bool)
+        # the blend is a weighted average in log-odds space, so it must
+        # fall between the two inputs (inclusive) on the probability scale
+        lo = min(record["adv_home_win_prob"], record["market_home_win_prob"])
+        hi = max(record["adv_home_win_prob"], record["market_home_win_prob"])
+        assert lo - 1e-9 <= record["blend_home_win_prob"] <= hi + 1e-9
+
+
+def test_blend_summary_from_history_matches_manual_aggregate():
+    games = _synthetic_games(n_seasons=20, games_per_season=16)
+    tail_start = len(games) - 16
+    patched = []
+    for i, g in enumerate(games):
+        if i >= tail_start:
+            g = Game(**{**vars(g), "spread_line": 10.0, "home_moneyline": -300.0, "away_moneyline": 250.0})
+        patched.append(g)
+
+    history = backtest_history(patched, start_season=2019)
+    summary = blend_summary_from_history(history)
+
+    with_blend = [r for r in history if r["blend_correct"] is not None]
+    assert summary.games == len(with_blend)
+    assert summary.accuracy == sum(r["blend_correct"] for r in with_blend) / len(with_blend)
+
+
+def test_blend_summary_from_history_raises_without_any_market_data():
+    games = _synthetic_games(n_seasons=5, games_per_season=16)
+    history = backtest_history(games, start_season=2001)
+    try:
+        blend_summary_from_history(history)
+        assert False, "expected ValueError when no games have both adv and market predictions"
+    except ValueError:
+        pass
 
 
 def test_market_backtest_uses_moneylines_and_spread():

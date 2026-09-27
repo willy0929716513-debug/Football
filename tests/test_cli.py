@@ -83,5 +83,64 @@ def test_backtest_command_all_models_reports_per_model_results(tmp_path, capsys)
     payload = json.loads(out)
     assert payload["elo"]["games"] > 0
     assert payload["advanced"]["games"] > 0
-    # this synthetic dataset carries no market odds columns, so market backtest is expected to error out
+    # this synthetic dataset carries no market odds columns, so market/blend are expected to error out
     assert "error" in payload["market"]
+    assert "error" in payload["blend"]
+
+
+def test_backtest_command_blend_model_with_market_data(tmp_path, capsys):
+    games_csv = tmp_path / "games.csv"
+    header = (
+        "season,week,game_type,gameday,home_team,away_team,home_score,away_score,"
+        "home_rest,away_rest,div_game,spread_line,home_moneyline,away_moneyline"
+    )
+    rows = [header]
+    for season in range(2005, 2023):
+        for week in range(1, 17):
+            rows.append(
+                f"{season},{week},REG,{season}-09-{week:02d},AAA,BBB,28,14,7,7,0,7.0,-300,250"
+            )
+    games_csv.write_text("\n".join(rows) + "\n")
+
+    exit_code, out = _run(capsys, [
+        "backtest", "--games", str(games_csv), "--start-season", "2020", "--model", "blend", "--json",
+    ])
+    assert exit_code == 0
+    payload = json.loads(out)
+    assert payload["blend"]["games"] > 0
+    assert 0.0 <= payload["blend"]["accuracy"] <= 1.0
+
+
+def test_export_site_writes_data_and_history_with_blend_fields(tmp_path, capsys):
+    games_csv = tmp_path / "games.csv"
+    header = (
+        "season,week,game_type,gameday,home_team,away_team,home_score,away_score,"
+        "home_rest,away_rest,div_game,spread_line,home_moneyline,away_moneyline"
+    )
+    rows = [header]
+    for season in range(2005, 2023):
+        for week in range(1, 17):
+            rows.append(
+                f"{season},{week},REG,{season}-09-{week:02d},AAA,BBB,28,14,7,7,0,7.0,-300,250"
+            )
+    # one upcoming (unplayed) game with market data, so export-site's
+    # upcoming-predictions loop has something to attach blend fields to
+    rows.append("2023,1,REG,2023-09-10,AAA,BBB,,,7,7,0,7.0,-300,250")
+    games_csv.write_text("\n".join(rows) + "\n")
+
+    out_dir = tmp_path / "site"
+    exit_code, out = _run(capsys, [
+        "export-site", "--games", str(games_csv), "--out-dir", str(out_dir), "--start-season", "2020",
+    ])
+    assert exit_code == 0
+
+    data = json.loads((out_dir / "data.json").read_text())
+    assert data["model_performance"]["blend"]["games"] > 0
+    upcoming = data["upcoming"]
+    assert len(upcoming) == 1
+    assert upcoming[0]["blend_home_win_prob"] is not None
+    assert upcoming[0]["market_home_win_prob"] is not None
+
+    history = json.loads((out_dir / "backtest_history.json").read_text())
+    assert history["games"]
+    assert any(g["blend_correct"] is not None for g in history["games"])

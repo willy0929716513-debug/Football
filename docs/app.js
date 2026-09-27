@@ -7,7 +7,10 @@ const CONTEXT_LABELS = {
   playoff: "季後賽",
 };
 
-const MODEL_LABELS = { elo: "Elo 基準模型", advanced: "進階整合模型", market: "Vegas 市場盤口" };
+const MODEL_LABELS = {
+  elo: "Elo 基準模型", advanced: "進階整合模型", market: "Vegas 市場盤口",
+  blend: "整合預測（模型+盤口）",
+};
 
 const WEEKDAY_ZH = {
   Sunday: "週日", Monday: "週一", Tuesday: "週二", Wednesday: "週三",
@@ -128,12 +131,35 @@ function scoreLineHtml(homeCode, awayCode, homeScore, awayScore) {
   return `<div class="score-line">預測比分：${homeCode} ${Math.round(homeScore)} - ${Math.round(awayScore)} ${awayCode}</div>`;
 }
 
-function marginLineHtml(homeCode, awayCode, predictedMargin, marketSpread) {
-  const parts = [marginSentence(homeCode, awayCode, predictedMargin, "模型預測")];
-  if (marketSpread !== undefined && marketSpread !== null) {
-    parts.push(marginSentence(homeCode, awayCode, marketSpread, "市場預測"));
-  }
-  return `<div class="spread-line">${parts.join("｜")}</div>`;
+function marginLineHtml(homeCode, awayCode, predictedMargin) {
+  return `<div class="spread-line">${marginSentence(homeCode, awayCode, predictedMargin, "模型預測")}</div>`;
+}
+
+// Traditional point-spread ("讓分") notation: the favored team shown with a
+// negative number (how many points they must win by to "cover"), the
+// underdog with the same magnitude as a positive number. Built from the
+// real market_spread (positive = home favored), never the model's own
+// margin — this line is specifically the real quoted odds.
+function formatSpread(homeCode, awayCode, marketSpread) {
+  if (marketSpread === undefined || marketSpread === null) return null;
+  if (marketSpread === 0) return `${homeCode} 拿捏（pk） / ${awayCode} 拿捏（pk）`;
+  const favCode = marketSpread > 0 ? homeCode : awayCode;
+  const dogCode = marketSpread > 0 ? awayCode : homeCode;
+  const mag = Math.abs(marketSpread).toFixed(1).replace(/\.0$/, "");
+  return `${favCode} -${mag} / ${dogCode} +${mag}`;
+}
+
+function spreadLineHtml(homeCode, awayCode, marketSpread) {
+  const spread = formatSpread(homeCode, awayCode, marketSpread);
+  if (!spread) return "";
+  return `<div class="spread-line">讓分（Vegas 真實盤口）：${spread}</div>`;
+}
+
+function blendLineHtml(homeCode, awayCode, blendHomeWinProb) {
+  if (blendHomeWinProb === undefined || blendHomeWinProb === null) return "";
+  const pick = blendHomeWinProb >= 0.5 ? homeCode : awayCode;
+  const prob = blendHomeWinProb >= 0.5 ? blendHomeWinProb : 1 - blendHomeWinProb;
+  return `<div class="blend-line">整合預測（模型 + 真實賠率）：<strong>${pick}</strong> 獲勝機率 <strong>${fmtPct(prob)}</strong></div>`;
 }
 
 function favoriteLineHtml(homeCode, homeNameZh, awayCode, awayNameZh, homeProb) {
@@ -215,8 +241,10 @@ function renderGamesForWeek(upcoming, weekKey) {
       <div class="matchup-zh">${g.away_name_zh ?? g.away_name} @ ${g.home_name_zh ?? g.home_name}</div>
       ${probBarHtml(g.home_team, g.away_team, g.home_win_prob, g.away_win_prob)}
       ${favoriteLineHtml(g.home_team, g.home_name_zh ?? g.home_name, g.away_team, g.away_name_zh ?? g.away_name, g.home_win_prob)}
+      ${blendLineHtml(g.home_team, g.away_team, g.blend_home_win_prob)}
       ${scoreLineHtml(g.home_team, g.away_team, g.predicted_home_score, g.predicted_away_score)}
-      ${marginLineHtml(g.home_team, g.away_team, g.predicted_margin, g.market_spread)}
+      ${marginLineHtml(g.home_team, g.away_team, g.predicted_margin)}
+      ${spreadLineHtml(g.home_team, g.away_team, g.market_spread)}
       <div style="margin-top:8px">${contextBadgesHtml(g.context, restLabel)}</div>
     `;
     grid.appendChild(card);
@@ -246,7 +274,7 @@ function renderRankings(rankings) {
 function renderPerformance(performance) {
   const body = document.getElementById("perf-body");
   body.innerHTML = "";
-  for (const key of ["elo", "advanced", "market"]) {
+  for (const key of ["elo", "advanced", "market", "blend"]) {
     const r = performance[key];
     const tr = document.createElement("tr");
     if (!r || r.error) {
@@ -373,10 +401,8 @@ function marketCell(homeCode, awayCode, homeProb, spread, correct) {
     return `<span class="pred-na">無盤口資料</span>`;
   }
   const base = pickCell(homeCode, awayCode, homeProb, correct);
-  const spreadStr = spread !== null && spread !== undefined
-    ? `（${homeCode} ${spread > 0 ? "-" : "+"}${Math.abs(spread).toFixed(1)}）`
-    : "";
-  return `${base}${spreadStr}`;
+  const spreadStr = formatSpread(homeCode, awayCode, spread);
+  return spreadStr ? `${base}（讓分 ${spreadStr}）` : base;
 }
 
 function applyHistoryFilters() {
@@ -417,6 +443,7 @@ function renderHistoryPage() {
       <td>${pickCell(r.home_team, r.away_team, r.elo_home_win_prob, r.elo_correct)}</td>
       <td>${pickCell(r.home_team, r.away_team, r.adv_home_win_prob, r.adv_correct)}</td>
       <td>${marketCell(r.home_team, r.away_team, r.market_home_win_prob, r.market_spread, r.market_correct)}</td>
+      <td>${pickCell(r.home_team, r.away_team, r.blend_home_win_prob, r.blend_correct)}</td>
     </tr>
   `).join("");
 

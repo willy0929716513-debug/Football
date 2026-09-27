@@ -345,6 +345,13 @@ button#predict-btn:hover { filter: brightness(1.08); }
   color: var(--text-muted);
 }
 
+.game-card .blend-line {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 6px 0;
+}
+
 .week-picker {
   font-size: 0.85rem;
   color: var(--text-muted);

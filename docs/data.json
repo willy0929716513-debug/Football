@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T03:55:14Z",
+  "generated_at": "2026-09-27T13:45:38Z",
   "teams": [
     {
       "code": "ARI",
@@ -420,7 +420,12 @@
       "away_name": "Los Angeles Chargers",
       "home_name_zh": "\u6c34\u725b\u57ce\u6bd4\u723e",
       "away_name_zh": "\u6d1b\u6749\u78ef\u96fb\u5149",
-      "market_spread": 7.0
+      "market_spread": 7.0,
+      "home_moneyline": -325.0,
+      "away_moneyline": 260.0,
+      "market_home_win_prob": 0.7335,
+      "blend_home_win_prob": 0.7406,
+      "blend_predicted_margin": 7.4
     },
     {
       "home_team": "CLE",
@@ -453,7 +458,12 @@
       "away_name": "Carolina Panthers",
       "home_name_zh": "\u514b\u91cc\u592b\u862d\u5e03\u6717",
       "away_name_zh": "\u5361\u7f85\u840a\u7d0d\u9ed1\u8c79",
-      "market_spread": -1.5
+      "market_spread": -1.5,
+      "home_moneyline": 114.0,
+      "away_moneyline": -135.0,
+      "market_home_win_prob": 0.4486,
+      "blend_home_win_prob": 0.4585,
+      "blend_predicted_margin": -1.2
     },
     {
       "home_team": "DET",
@@ -486,7 +496,12 @@
       "away_name": "New York Jets",
       "home_name_zh": "\u5e95\u7279\u5f8b\u96c4\u7345",
       "away_name_zh": "\u7d10\u7d04\u5674\u5c04\u6a5f",
-      "market_spread": 6.5
+      "market_spread": 6.5,
+      "home_moneyline": -305.0,
+      "away_moneyline": 245.0,
+      "market_home_win_prob": 0.7221,
+      "blend_home_win_prob": 0.7244,
+      "blend_predicted_margin": 6.7
     },
     {
       "home_team": "IND",
@@ -519,7 +534,12 @@
       "away_name": "Houston Texans",
       "home_name_zh": "\u5370\u7b2c\u5b89\u7d0d\u6ce2\u5229\u65af\u5c0f\u99ac",
       "away_name_zh": "\u4f11\u58eb\u9813\u5fb7\u5dde\u4eba",
-      "market_spread": -1.5
+      "market_spread": -1.5,
+      "home_moneyline": 105.0,
+      "away_moneyline": -125.0,
+      "market_home_win_prob": 0.4675,
+      "blend_home_win_prob": 0.4638,
+      "blend_predicted_margin": -1.6
     },
     {
       "home_team": "JAX",
@@ -552,7 +572,12 @@
       "away_name": "New England Patriots",
       "home_name_zh": "\u5091\u514b\u905c\u7dad\u723e\u7f8e\u6d32\u8c79",
       "away_name_zh": "\u65b0\u82f1\u683c\u862d\u611b\u570b\u8005",
-      "market_spread": 3.0
+      "market_spread": 3.0,
+      "home_moneyline": -155.0,
+      "away_moneyline": 130.0,
+      "market_home_win_prob": 0.583,
+      "blend_home_win_prob": 0.577,
+      "blend_predicted_margin": 2.8
     },
     {
       "home_team": "MIA",
@@ -585,7 +610,12 @@
       "away_name": "Kansas City Chiefs",
       "home_name_zh": "\u9081\u963f\u5bc6\u6d77\u8c5a",
       "away_name_zh": "\u582a\u85a9\u65af\u57ce\u914b\u9577",
-      "market_spread": -10.0
+      "market_spread": -9.5,
+      "home_moneyline": 400.0,
+      "away_moneyline": -535.0,
+      "market_home_win_prob": 0.1918,
+      "blend_home_win_prob": 0.2097,
+      "blend_predicted_margin": -8.8
     },
     {
       "home_team": "NYG",
@@ -618,7 +648,12 @@
       "away_name": "Tennessee Titans",
       "home_name_zh": "\u7d10\u7d04\u5de8\u4eba",
       "away_name_zh": "\u7530\u7d0d\u897f\u6cf0\u5766",
-      "market_spread": 2.5
+      "market_spread": 2.5,
+      "home_moneyline": -130.0,
+      "away_moneyline": 110.0,
+      "market_home_win_prob": 0.5427,
+      "blend_home_win_prob": 0.5492,
+      "blend_predicted_margin": 2.7
     },
     {
       "home_team": "PIT",
@@ -651,7 +686,12 @@
       "away_name": "Cincinnati Bengals",
       "home_name_zh": "\u5339\u8332\u5821\u92fc\u4eba",
       "away_name_zh": "\u8f9b\u8f9b\u90a3\u63d0\u5b5f\u52a0\u62c9\u864e",
-      "market_spread": -3.5
+      "market_spread": -3.5,
+      "home_moneyline": 154.0,
+      "away_moneyline": -185.0,
+      "market_home_win_prob": 0.3775,
+      "blend_home_win_prob": 0.3901,
+      "blend_predicted_margin": -3.1
     },
     {
       "home_team": "WAS",
@@ -684,7 +724,12 @@
       "away_name": "Seattle Seahawks",
       "home_name_zh": "\u83ef\u76db\u9813\u6307\u63ee\u5b98",
       "away_name_zh": "\u897f\u96c5\u5716\u6d77\u9df9",
-      "market_spread": -7.5
+      "market_spread": -8.5,
+      "home_moneyline": 310.0,
+      "away_moneyline": -395.0,
+      "market_home_win_prob": 0.2341,
+      "blend_home_win_prob": 0.2359,
+      "blend_predicted_margin": -8.5
     },
     {
       "home_team": "SF",
@@ -717,7 +762,12 @@
       "away_name": "Arizona Cardinals",
       "home_name_zh": "\u820a\u91d1\u5c7149\u4eba",
       "away_name_zh": "\u4e9e\u5229\u6851\u90a3\u7d05\u96c0",
-      "market_spread": 7.5
+      "market_spread": 7.5,
+      "home_moneyline": -395.0,
+      "away_moneyline": 310.0,
+      "market_home_win_prob": 0.7659,
+      "blend_home_win_prob": 0.7656,
+      "blend_predicted_margin": 7.6
     },
     {
       "home_team": "TB",
@@ -750,7 +800,12 @@
       "away_name": "Minnesota Vikings",
       "home_name_zh": "\u5766\u5e15\u7063\u6d77\u76dc",
       "away_name_zh": "\u660e\u5c3c\u8607\u9054\u7dad\u4eac\u4eba",
-      "market_spread": -1.5
+      "market_spread": -1.5,
+      "home_moneyline": -105.0,
+      "away_moneyline": -115.0,
+      "market_home_win_prob": 0.4892,
+      "blend_home_win_prob": 0.4866,
+      "blend_predicted_margin": -1.5
     },
     {
       "home_team": "DAL",
@@ -783,7 +838,12 @@
       "away_name": "Baltimore Ravens",
       "home_name_zh": "\u9054\u62c9\u65af\u725b\u4ed4",
       "away_name_zh": "\u5df4\u723e\u7684\u6469\u70cf\u9d09",
-      "market_spread": -3.5
+      "market_spread": -3.5,
+      "home_moneyline": 142.0,
+      "away_moneyline": -170.0,
+      "market_home_win_prob": 0.3962,
+      "blend_home_win_prob": 0.4063,
+      "blend_predicted_margin": -3.2
     },
     {
       "home_team": "NO",
@@ -816,7 +876,12 @@
       "away_name": "Las Vegas Raiders",
       "home_name_zh": "\u7d10\u5967\u826f\u8056\u5f92",
       "away_name_zh": "\u62c9\u65af\u7dad\u52a0\u65af\u7a81\u8972\u8005",
-      "market_spread": 3.5
+      "market_spread": 3.5,
+      "home_moneyline": -198.0,
+      "away_moneyline": 164.0,
+      "market_home_win_prob": 0.6369,
+      "blend_home_win_prob": 0.6358,
+      "blend_predicted_margin": 3.5
     },
     {
       "home_team": "DEN",
@@ -849,7 +914,12 @@
       "away_name": "Los Angeles Rams",
       "home_name_zh": "\u4e39\u4f5b\u91ce\u99ac",
       "away_name_zh": "\u6d1b\u6749\u78ef\u516c\u7f8a",
-      "market_spread": -2.5
+      "market_spread": -1.5,
+      "home_moneyline": 110.0,
+      "away_moneyline": -130.0,
+      "market_home_win_prob": 0.4573,
+      "blend_home_win_prob": 0.4701,
+      "blend_predicted_margin": -1.1
     },
     {
       "home_team": "CHI",
@@ -882,7 +952,12 @@
       "away_name": "Philadelphia Eagles",
       "home_name_zh": "\u829d\u52a0\u54e5\u718a",
       "away_name_zh": "\u8cbb\u57ce\u8001\u9df9",
-      "market_spread": -3.5
+      "market_spread": -3.5,
+      "home_moneyline": 164.0,
+      "away_moneyline": -198.0,
+      "market_home_win_prob": 0.3631,
+      "blend_home_win_prob": 0.3713,
+      "blend_predicted_margin": -3.2
     },
     {
       "home_team": "CLE",
@@ -915,7 +990,12 @@
       "away_name": "Pittsburgh Steelers",
       "home_name_zh": "\u514b\u91cc\u592b\u862d\u5e03\u6717",
       "away_name_zh": "\u5339\u8332\u5821\u92fc\u4eba",
-      "market_spread": -3.0
+      "market_spread": -3.0,
+      "home_moneyline": 124.0,
+      "away_moneyline": -148.0,
+      "market_home_win_prob": 0.4279,
+      "blend_home_win_prob": 0.4327,
+      "blend_predicted_margin": -2.8
     },
     {
       "home_team": "WAS",
@@ -948,7 +1028,12 @@
       "away_name": "Indianapolis Colts",
       "home_name_zh": "\u83ef\u76db\u9813\u6307\u63ee\u5b98",
       "away_name_zh": "\u5370\u7b2c\u5b89\u7d0d\u6ce2\u5229\u65af\u5c0f\u99ac",
-      "market_spread": -4.5
+      "market_spread": -4.5,
+      "home_moneyline": 170.0,
+      "away_moneyline": -205.0,
+      "market_home_win_prob": 0.3553,
+      "blend_home_win_prob": 0.3757,
+      "blend_predicted_margin": -3.8
     },
     {
       "home_team": "BAL",
@@ -981,7 +1066,12 @@
       "away_name": "Tennessee Titans",
       "home_name_zh": "\u5df4\u723e\u7684\u6469\u70cf\u9d09",
       "away_name_zh": "\u7530\u7d0d\u897f\u6cf0\u5766",
-      "market_spread": 10.5
+      "market_spread": 10.5,
+      "home_moneyline": -575.0,
+      "away_moneyline": 425.0,
+      "market_home_win_prob": 0.8173,
+      "blend_home_win_prob": 0.8147,
+      "blend_predicted_margin": 10.5
     },
     {
       "home_team": "BUF",
@@ -1014,7 +1104,12 @@
       "away_name": "New England Patriots",
       "home_name_zh": "\u6c34\u725b\u57ce\u6bd4\u723e",
       "away_name_zh": "\u65b0\u82f1\u683c\u862d\u611b\u570b\u8005",
-      "market_spread": 5.5
+      "market_spread": 5.5,
+      "home_moneyline": -250.0,
+      "away_moneyline": 205.0,
+      "market_home_win_prob": 0.6854,
+      "blend_home_win_prob": 0.6761,
+      "blend_predicted_margin": 5.2
     },
     {
       "home_team": "CHI",
@@ -1047,7 +1142,12 @@
       "away_name": "New York Jets",
       "home_name_zh": "\u829d\u52a0\u54e5\u718a",
       "away_name_zh": "\u7d10\u7d04\u5674\u5c04\u6a5f",
-      "market_spread": 3.0
+      "market_spread": 3.0,
+      "home_moneyline": -166.0,
+      "away_moneyline": 140.0,
+      "market_home_win_prob": 0.5996,
+      "blend_home_win_prob": 0.6047,
+      "blend_predicted_margin": 3.2
     },
     {
       "home_team": "CIN",
@@ -1080,7 +1180,12 @@
       "away_name": "Jacksonville Jaguars",
       "home_name_zh": "\u8f9b\u8f9b\u90a3\u63d0\u5b5f\u52a0\u62c9\u864e",
       "away_name_zh": "\u5091\u514b\u905c\u7dad\u723e\u7f8e\u6d32\u8c79",
-      "market_spread": 3.0
+      "market_spread": 3.0,
+      "home_moneyline": -162.0,
+      "away_moneyline": 136.0,
+      "market_home_win_prob": 0.5934,
+      "blend_home_win_prob": 0.589,
+      "blend_predicted_margin": 2.9
     },
     {
       "home_team": "HOU",
@@ -1113,7 +1218,12 @@
       "away_name": "Dallas Cowboys",
       "home_name_zh": "\u4f11\u58eb\u9813\u5fb7\u5dde\u4eba",
       "away_name_zh": "\u9054\u62c9\u65af\u725b\u4ed4",
-      "market_spread": 3.0
+      "market_spread": 3.0,
+      "home_moneyline": -162.0,
+      "away_moneyline": 136.0,
+      "market_home_win_prob": 0.5934,
+      "blend_home_win_prob": 0.5998,
+      "blend_predicted_margin": 3.2
     },
     {
       "home_team": "NYG",
@@ -1146,7 +1256,12 @@
       "away_name": "Arizona Cardinals",
       "home_name_zh": "\u7d10\u7d04\u5de8\u4eba",
       "away_name_zh": "\u4e9e\u5229\u6851\u90a3\u7d05\u96c0",
-      "market_spread": 2.5
+      "market_spread": 2.5,
+      "home_moneyline": -135.0,
+      "away_moneyline": 114.0,
+      "market_home_win_prob": 0.5514,
+      "blend_home_win_prob": 0.5457,
+      "blend_predicted_margin": 2.3
     },
     {
       "home_team": "PHI",
@@ -1179,7 +1294,12 @@
       "away_name": "Los Angeles Rams",
       "home_name_zh": "\u8cbb\u57ce\u8001\u9df9",
       "away_name_zh": "\u6d1b\u6749\u78ef\u516c\u7f8a",
-      "market_spread": -2.5
+      "market_spread": -2.5,
+      "home_moneyline": 114.0,
+      "away_moneyline": -135.0,
+      "market_home_win_prob": 0.4486,
+      "blend_home_win_prob": 0.4591,
+      "blend_predicted_margin": -2.1
     },
     {
       "home_team": "TB",
@@ -1212,7 +1332,12 @@
       "away_name": "Green Bay Packers",
       "home_name_zh": "\u5766\u5e15\u7063\u6d77\u76dc",
       "away_name_zh": "\u7da0\u7063\u5305\u88dd\u5de5",
-      "market_spread": -1.5
+      "market_spread": -1.5,
+      "home_moneyline": -102.0,
+      "away_moneyline": -116.0,
+      "market_home_win_prob": 0.4846,
+      "blend_home_win_prob": 0.4898,
+      "blend_predicted_margin": -1.2
     },
     {
       "home_team": "MIN",
@@ -1245,7 +1370,12 @@
       "away_name": "Miami Dolphins",
       "home_name_zh": "\u660e\u5c3c\u8607\u9054\u7dad\u4eac\u4eba",
       "away_name_zh": "\u9081\u963f\u5bc6\u6d77\u8c5a",
-      "market_spread": 10.5
+      "market_spread": 10.5,
+      "home_moneyline": -700.0,
+      "away_moneyline": 500.0,
+      "market_home_win_prob": 0.84,
+      "blend_home_win_prob": 0.829,
+      "blend_predicted_margin": 10.2
     },
     {
       "home_team": "LV",
@@ -1278,7 +1408,12 @@
       "away_name": "Kansas City Chiefs",
       "home_name_zh": "\u62c9\u65af\u7dad\u52a0\u65af\u7a81\u8972\u8005",
       "away_name_zh": "\u582a\u85a9\u65af\u57ce\u914b\u9577",
-      "market_spread": -6.0
+      "market_spread": -6.0,
+      "home_moneyline": 210.0,
+      "away_moneyline": -258.0,
+      "market_home_win_prob": 0.3092,
+      "blend_home_win_prob": 0.321,
+      "blend_predicted_margin": -5.6
     },
     {
       "home_team": "SEA",
@@ -1311,7 +1446,12 @@
       "away_name": "Los Angeles Chargers",
       "home_name_zh": "\u897f\u96c5\u5716\u6d77\u9df9",
       "away_name_zh": "\u6d1b\u6749\u78ef\u96fb\u5149",
-      "market_spread": 6.5
+      "market_spread": 6.5,
+      "home_moneyline": -285.0,
+      "away_moneyline": 230.0,
+      "market_home_win_prob": 0.7095,
+      "blend_home_win_prob": 0.7249,
+      "blend_predicted_margin": 7.1
     },
     {
       "home_team": "SF",
@@ -1344,7 +1484,12 @@
       "away_name": "Denver Broncos",
       "home_name_zh": "\u820a\u91d1\u5c7149\u4eba",
       "away_name_zh": "\u4e39\u4f5b\u91ce\u99ac",
-      "market_spread": 3.0
+      "market_spread": 3.0,
+      "home_moneyline": -175.0,
+      "away_moneyline": 145.0,
+      "market_home_win_prob": 0.6092,
+      "blend_home_win_prob": 0.6105,
+      "blend_predicted_margin": 3.1
     },
     {
       "home_team": "CAR",
@@ -1377,7 +1522,12 @@
       "away_name": "Detroit Lions",
       "home_name_zh": "\u5361\u7f85\u840a\u7d0d\u9ed1\u8c79",
       "away_name_zh": "\u5e95\u7279\u5f8b\u96c4\u7345",
-      "market_spread": -3.0
+      "market_spread": -3.0,
+      "home_moneyline": 130.0,
+      "away_moneyline": -155.0,
+      "market_home_win_prob": 0.417,
+      "blend_home_win_prob": 0.4246,
+      "blend_predicted_margin": -2.7
     },
     {
       "home_team": "NO",
@@ -1410,7 +1560,12 @@
       "away_name": "Atlanta Falcons",
       "home_name_zh": "\u7d10\u5967\u826f\u8056\u5f92",
       "away_name_zh": "\u4e9e\u7279\u862d\u5927\u7375\u9df9",
-      "market_spread": 3.5
+      "market_spread": 3.5,
+      "home_moneyline": -174.0,
+      "away_moneyline": 146.0,
+      "market_home_win_prob": 0.6097,
+      "blend_home_win_prob": 0.605,
+      "blend_predicted_margin": 3.3
     },
     {
       "home_team": "DAL",
@@ -8075,13 +8230,13 @@
       "games": 3061,
       "accuracy": 0.6393335511270827,
       "brier_score": 0.22143975449771253,
-      "spread_mae": 10.21697053574888
+      "spread_mae": 10.216970535748876
     },
     "advanced": {
       "games": 3061,
       "accuracy": 0.6435805292388108,
       "brier_score": 0.2207715465615528,
-      "spread_mae": 10.201026625308,
+      "spread_mae": 10.201026625308002,
       "seasons_refit": 12
     },
     "market": {
@@ -8089,6 +8244,12 @@
       "accuracy": 0.6607843137254902,
       "brier_score": 0.2117775604076163,
       "spread_mae": 9.829411764705883
+    },
+    "blend": {
+      "games": 3060,
+      "accuracy": 0.6607843137254902,
+      "brier_score": 0.21187816460784342,
+      "spread_mae": 9.834117647058827
     }
   },
   "client_model": {
@@ -8127,7 +8288,7 @@
       "LAC": 1443.78,
       "HOU": 1525.3
     },
-    "spread_scale": 22.139314653963705,
+    "spread_scale": 22.139314653963645,
     "avg_total_points": 44.259406211520044,
     "feature_names": [
       "elo_diff",
@@ -8162,13 +8323,13 @@
       ],
       "coef": [
         0.7016229991325373,
-        0.061298600598610864,
-        -0.04609513396257785,
+        0.06129860059861087,
+        -0.046095133962577854,
         -0.1285199745274437,
         0.10568848895929256,
-        0.04034918971926452,
-        -0.011718695542739301,
-        0.0042970100081852975
+        0.040349189719264524,
+        -0.011718695542739297,
+        0.0042970100081852905
       ],
       "intercept": 0.2880633064259176
     },
@@ -8194,14 +8355,14 @@
         0.20121960764259952
       ],
       "coef": [
-        5.344282533037508,
-        0.5386864766067823,
-        -0.3092354181226176,
-        -0.7135089707047376,
-        0.756881623789572,
-        0.19020839258710173,
-        -0.04222168949161098,
-        0.15941760322700918
+        5.344282533037507,
+        0.5386864766067799,
+        -0.3092354181226161,
+        -0.7135089707047354,
+        0.7568816237895671,
+        0.19020839258710295,
+        -0.04222168949161147,
+        0.1594176032270092
       ],
       "intercept": 2.3316459159939775
     }
