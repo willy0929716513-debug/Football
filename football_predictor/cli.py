@@ -17,7 +17,8 @@ from pathlib import Path
 
 from .advanced_model import (
     AdvancedPredictor, advanced_backtest, backtest_history, blend_prediction,
-    blend_summary_from_history, market_backtest, _market_implied_prob,
+    blend_residual_std, blend_summary_from_history, market_backtest, pick_recommendation,
+    recommendation_summary_from_history, _market_implied_prob,
 )
 from .data import (
     load_games, load_upcoming_games, normalize_team, team_display_name, team_display_name_zh,
@@ -262,6 +263,12 @@ def cmd_export_site(args: argparse.Namespace) -> int:
         performance["blend"] = vars(blend_summary_from_history(history))
     except ValueError:
         performance["blend"] = None
+    try:
+        performance["recommendation"] = vars(recommendation_summary_from_history(history))
+    except ValueError:
+        performance["recommendation"] = None
+
+    residual_std = blend_residual_std(history)
 
     rankings = advanced_predictor.power_rankings()
     power_rankings = [
@@ -299,6 +306,10 @@ def cmd_export_site(args: argparse.Namespace) -> int:
             entry["market_home_win_prob"] = round(market_prob, 4)
             entry["blend_home_win_prob"] = round(blend_prob, 4)
             entry["blend_predicted_margin"] = round(blend_margin, 1)
+            entry.update(pick_recommendation(
+                blend_prob, blend_margin, game.spread_line, residual_std,
+                game.home_team, game.away_team,
+            ))
         upcoming_predictions.append(entry)
 
     win_model = advanced_predictor.win_model

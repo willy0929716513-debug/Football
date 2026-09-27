@@ -129,6 +129,7 @@
         是實測過：混入太多自己模型的判斷，準確度反而會變差，因為市場本身已經很難打敗。誠實說，
         這代表「整合預測」跟「Vegas 市場盤口」兩列的數字會非常接近。
       </p>
+      <p class="section-note" id="recommendation-summary-note"></p>
     </section>
 
     <section class="card">
@@ -138,8 +139,10 @@
       </div>
       <p class="section-note">
         逐場列出「當時」真的猜了什麼（不是看完結果再說當初就知道）：每一列是 Elo 模型、進階整合
-        模型、跟 Vegas 莊家盤口三方在賽前各自猜的勝方，以及最後實際比分。資料比較大（約 1.8MB），
-        所以要按下面的按鈕才會載入。
+        模型、跟 Vegas 莊家盤口三方在賽前各自猜的勝方，以及最後實際比分。「智慧推薦」欄則是自動
+        比較「不讓分」（單純猜贏家）跟「讓分」（猜誰能贏過盤口分差）兩種推薦各自的信心，哪個信心
+        較高就顯示哪個 — 信心不夠高的話（例如剛開始蒐集資料時）會先只用不讓分推薦。資料比較大
+        （約 1.8MB），所以要按下面的按鈕才會載入。
       </p>
       <p class="data-updated-at" id="history-updated-at" hidden></p>
       <div id="history-controls" class="history-controls" hidden>
@@ -161,7 +164,7 @@
           <thead>
             <tr>
               <th>日期</th><th>客隊 @ 主隊</th><th>比分</th>
-              <th>Elo 預測</th><th>進階模型預測</th><th>市場盤口／讓分</th><th>整合預測</th>
+              <th>Elo 預測</th><th>進階模型預測</th><th>市場盤口／讓分</th><th>整合預測</th><th>智慧推薦</th>
             </tr>
           </thead>
           <tbody id="history-body"></tbody>

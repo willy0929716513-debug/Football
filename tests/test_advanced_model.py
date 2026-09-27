@@ -1,6 +1,7 @@
 from football_predictor.advanced_model import (
     AdvancedPredictor, advanced_backtest, backtest_history, blend_prediction,
-    blend_summary_from_history, market_backtest,
+    blend_residual_std, blend_summary_from_history, market_backtest, pick_recommendation,
+    recommendation_summary_from_history,
 )
 from football_predictor.data import Game
 from football_predictor.features import SituationalContext
@@ -214,3 +215,127 @@ def test_market_backtest_uses_moneylines_and_spread():
     assert result.games == 2
     assert 0.0 <= result.accuracy <= 1.0
     assert result.spread_mae >= 0.0
+
+
+def test_pick_recommendation_falls_back_to_moneyline_without_residual_std():
+    rec = pick_recommendation(
+        blend_home_win_prob=0.55, blend_predicted_margin=10.0, market_spread=1.0,
+        residual_std=None, home_team="AAA", away_team="BBB",
+    )
+    assert rec["ats_confidence"] is None
+    assert rec["recommendation_type"] == "moneyline"
+    assert rec["recommendation_team"] == "AAA"
+    assert abs(rec["recommendation_confidence"] - 0.55) < 1e-9
+
+
+def test_pick_recommendation_chooses_ats_when_its_confidence_is_higher():
+    # moneyline is a coin flip (55%), but the model's margin (10) clears the
+    # market's spread (1) by 9 points against a small residual std (3), so
+    # the ATS cover probability is far more confident than the moneyline pick.
+    rec = pick_recommendation(
+        blend_home_win_prob=0.55, blend_predicted_margin=10.0, market_spread=1.0,
+        residual_std=3.0, home_team="AAA", away_team="BBB",
+    )
+    assert rec["recommendation_type"] == "ats"
+    assert rec["recommendation_team"] == "AAA"
+    assert rec["recommendation_confidence"] > rec["moneyline_confidence"]
+    assert rec["recommendation_confidence"] == rec["ats_confidence"]
+
+
+def test_pick_recommendation_chooses_moneyline_when_its_confidence_is_higher():
+    # moneyline is very confident (95%), while the model's margin edge over
+    # the spread is tiny relative to a large residual std, so ATS confidence
+    # stays close to a coin flip.
+    rec = pick_recommendation(
+        blend_home_win_prob=0.95, blend_predicted_margin=10.5, market_spread=10.0,
+        residual_std=10.0, home_team="AAA", away_team="BBB",
+    )
+    assert rec["recommendation_type"] == "moneyline"
+    assert rec["recommendation_team"] == "AAA"
+    assert rec["recommendation_confidence"] > rec["ats_confidence"]
+
+
+def test_backtest_history_includes_recommendation_fields_once_residual_std_warmed_up():
+    games = _synthetic_games(n_seasons=20, games_per_season=16)
+    # attach market data to the final two seasons (32 games) so the running
+    # residual-std sample has enough games to clear MIN_RESIDUAL_SAMPLES (20)
+    # partway through, letting us check both the "not warmed up yet" and
+    # "warmed up" states within one backtest run.
+    tail_start = len(games) - 32
+    patched = []
+    for i, g in enumerate(games):
+        if i >= tail_start:
+            g = Game(**{**vars(g), "spread_line": 3.0, "home_moneyline": -300.0, "away_moneyline": 250.0})
+        patched.append(g)
+
+    history = backtest_history(patched, start_season=2018)
+    with_market = [r for r in history if r["market_home_win_prob"] is not None]
+    assert len(with_market) == 32
+
+    for r in with_market[:20]:
+        assert r["ats_confidence"] is None
+        assert r["recommendation_type"] == "moneyline"
+
+    for r in with_market[20:]:
+        assert r["ats_confidence"] is not None
+        assert r["recommendation_type"] in ("ats", "moneyline")
+        assert r["recommendation_team"] in (r["home_team"], r["away_team"])
+        assert r["recommendation_confidence"] >= 0.5
+        assert r["recommendation_correct"] is not None
+
+
+def test_recommendation_summary_from_history_matches_manual_aggregate():
+    games = _synthetic_games(n_seasons=20, games_per_season=16)
+    tail_start = len(games) - 32
+    patched = []
+    for i, g in enumerate(games):
+        if i >= tail_start:
+            g = Game(**{**vars(g), "spread_line": 3.0, "home_moneyline": -300.0, "away_moneyline": 250.0})
+        patched.append(g)
+
+    history = backtest_history(patched, start_season=2018)
+    summary = recommendation_summary_from_history(history)
+
+    records = [r for r in history if r["recommendation_type"] is not None]
+    scored = [r for r in records if r["recommendation_correct"] is not None]
+    assert summary.games == len(records)
+    assert summary.ats_recommended + summary.moneyline_recommended == len(records)
+    assert abs(summary.accuracy - sum(r["recommendation_correct"] for r in scored) / len(scored)) < 1e-9
+
+
+def test_recommendation_summary_from_history_raises_without_any_recommendation_data():
+    games = _synthetic_games(n_seasons=5, games_per_season=16)
+    history = backtest_history(games, start_season=2001)
+    try:
+        recommendation_summary_from_history(history)
+        assert False, "expected ValueError when no games have a recommendation decision"
+    except ValueError:
+        pass
+
+
+def test_blend_residual_std_none_below_minimum_sample_size():
+    games = _synthetic_games(n_seasons=20, games_per_season=16)
+    tail_start = len(games) - 5
+    patched = []
+    for i, g in enumerate(games):
+        if i >= tail_start:
+            g = Game(**{**vars(g), "spread_line": 3.0, "home_moneyline": -300.0, "away_moneyline": 250.0})
+        patched.append(g)
+
+    history = backtest_history(patched, start_season=2019)
+    assert blend_residual_std(history) is None
+
+
+def test_blend_residual_std_positive_once_warmed_up():
+    games = _synthetic_games(n_seasons=20, games_per_season=16)
+    tail_start = len(games) - 32
+    patched = []
+    for i, g in enumerate(games):
+        if i >= tail_start:
+            g = Game(**{**vars(g), "spread_line": 3.0, "home_moneyline": -300.0, "away_moneyline": 250.0})
+        patched.append(g)
+
+    history = backtest_history(patched, start_season=2018)
+    std = blend_residual_std(history)
+    assert std is not None
+    assert std >= 0.0

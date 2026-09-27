@@ -352,6 +352,16 @@ button#predict-btn:hover { filter: brightness(1.08); }
   margin: 6px 0;
 }
 
+.game-card .recommend-line {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--good);
+  background: var(--accent-soft);
+  border-radius: 8px;
+  padding: 6px 10px;
+  margin: 6px 0 8px;
+}
+
 .week-picker {
   font-size: 0.85rem;
   color: var(--text-muted);

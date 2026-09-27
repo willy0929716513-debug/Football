@@ -144,3 +144,34 @@ def test_export_site_writes_data_and_history_with_blend_fields(tmp_path, capsys)
     history = json.loads((out_dir / "backtest_history.json").read_text())
     assert history["games"]
     assert any(g["blend_correct"] is not None for g in history["games"])
+    assert any(g["recommendation_type"] is not None for g in history["games"])
+
+
+def test_export_site_upcoming_games_include_recommendation_fields(tmp_path, capsys):
+    games_csv = tmp_path / "games.csv"
+    header = (
+        "season,week,game_type,gameday,home_team,away_team,home_score,away_score,"
+        "home_rest,away_rest,div_game,spread_line,home_moneyline,away_moneyline"
+    )
+    rows = [header]
+    # >=32 games with market data so blend_residual_std has enough samples
+    # to produce a non-None residual std for the upcoming game's ats fields.
+    for season in range(2005, 2025):
+        for week in range(1, 17):
+            rows.append(
+                f"{season},{week},REG,{season}-09-{week:02d},AAA,BBB,28,14,7,7,0,7.0,-300,250"
+            )
+    rows.append("2025,1,REG,2025-09-10,AAA,BBB,,,7,7,0,7.0,-300,250")
+    games_csv.write_text("\n".join(rows) + "\n")
+
+    out_dir = tmp_path / "site"
+    exit_code, out = _run(capsys, [
+        "export-site", "--games", str(games_csv), "--out-dir", str(out_dir), "--start-season", "2020",
+    ])
+    assert exit_code == 0
+
+    data = json.loads((out_dir / "data.json").read_text())
+    upcoming = data["upcoming"][0]
+    assert upcoming["recommendation_type"] in ("ats", "moneyline")
+    assert upcoming["recommendation_team"] in ("AAA", "BBB")
+    assert 0.5 <= upcoming["recommendation_confidence"] <= 1.0
