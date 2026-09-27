@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T13:57:01Z",
+  "generated_at": "2026-09-27T15:04:07Z",
   "teams": [
     {
       "code": "ARI",
@@ -556,18 +556,18 @@
       "home_name_zh": "\u5370\u7b2c\u5b89\u7d0d\u6ce2\u5229\u65af\u5c0f\u99ac",
       "away_name_zh": "\u4f11\u58eb\u9813\u5fb7\u5dde\u4eba",
       "market_spread": -1.5,
-      "home_moneyline": 105.0,
-      "away_moneyline": -125.0,
-      "market_home_win_prob": 0.4675,
-      "blend_home_win_prob": 0.4638,
+      "home_moneyline": 102.0,
+      "away_moneyline": -122.0,
+      "market_home_win_prob": 0.4739,
+      "blend_home_win_prob": 0.4695,
       "blend_predicted_margin": -1.6,
       "ats_edge": -0.1,
       "ats_cover_prob_home": 0.4983,
       "ats_confidence": 0.5017,
-      "moneyline_confidence": 0.5362,
+      "moneyline_confidence": 0.5305,
       "recommendation_type": "moneyline",
       "recommendation_team": "HOU",
-      "recommendation_confidence": 0.5362
+      "recommendation_confidence": 0.5305
     },
     {
       "home_team": "JAX",
@@ -736,18 +736,18 @@
       "home_name_zh": "\u5339\u8332\u5821\u92fc\u4eba",
       "away_name_zh": "\u8f9b\u8f9b\u90a3\u63d0\u5b5f\u52a0\u62c9\u864e",
       "market_spread": -3.5,
-      "home_moneyline": 154.0,
-      "away_moneyline": -185.0,
-      "market_home_win_prob": 0.3775,
-      "blend_home_win_prob": 0.3901,
+      "home_moneyline": 160.0,
+      "away_moneyline": -192.0,
+      "market_home_win_prob": 0.3691,
+      "blend_home_win_prob": 0.3823,
       "blend_predicted_margin": -3.1,
       "ats_edge": 0.4,
       "ats_cover_prob_home": 0.512,
       "ats_confidence": 0.512,
-      "moneyline_confidence": 0.6099,
+      "moneyline_confidence": 0.6177,
       "recommendation_type": "moneyline",
       "recommendation_team": "CIN",
-      "recommendation_confidence": 0.6099
+      "recommendation_confidence": 0.6177
     },
     {
       "home_team": "WAS",
@@ -781,18 +781,18 @@
       "home_name_zh": "\u83ef\u76db\u9813\u6307\u63ee\u5b98",
       "away_name_zh": "\u897f\u96c5\u5716\u6d77\u9df9",
       "market_spread": -8.5,
-      "home_moneyline": 310.0,
-      "away_moneyline": -395.0,
-      "market_home_win_prob": 0.2341,
-      "blend_home_win_prob": 0.2359,
+      "home_moneyline": 320.0,
+      "away_moneyline": -410.0,
+      "market_home_win_prob": 0.2285,
+      "blend_home_win_prob": 0.2308,
       "blend_predicted_margin": -8.5,
       "ats_edge": 0.0,
       "ats_cover_prob_home": 0.5007,
       "ats_confidence": 0.5007,
-      "moneyline_confidence": 0.7641,
+      "moneyline_confidence": 0.7692,
       "recommendation_type": "moneyline",
       "recommendation_team": "SEA",
-      "recommendation_confidence": 0.7641
+      "recommendation_confidence": 0.7692
     },
     {
       "home_team": "SF",
@@ -915,19 +915,19 @@
       "away_name": "Baltimore Ravens",
       "home_name_zh": "\u9054\u62c9\u65af\u725b\u4ed4",
       "away_name_zh": "\u5df4\u723e\u7684\u6469\u70cf\u9d09",
-      "market_spread": -3.5,
-      "home_moneyline": 142.0,
-      "away_moneyline": -170.0,
-      "market_home_win_prob": 0.3962,
-      "blend_home_win_prob": 0.4063,
-      "blend_predicted_margin": -3.2,
+      "market_spread": -3.0,
+      "home_moneyline": 136.0,
+      "away_moneyline": -162.0,
+      "market_home_win_prob": 0.4066,
+      "blend_home_win_prob": 0.4157,
+      "blend_predicted_margin": -2.7,
       "ats_edge": 0.3,
-      "ats_cover_prob_home": 0.5109,
-      "ats_confidence": 0.5109,
-      "moneyline_confidence": 0.5937,
+      "ats_cover_prob_home": 0.5093,
+      "ats_confidence": 0.5093,
+      "moneyline_confidence": 0.5843,
       "recommendation_type": "moneyline",
       "recommendation_team": "BAL",
-      "recommendation_confidence": 0.5937
+      "recommendation_confidence": 0.5843
     },
     {
       "home_team": "NO",
@@ -8447,13 +8447,13 @@
       "games": 3061,
       "accuracy": 0.6393335511270827,
       "brier_score": 0.22143975449771253,
-      "spread_mae": 10.216970535748876
+      "spread_mae": 10.21697053574888
     },
     "advanced": {
       "games": 3061,
       "accuracy": 0.6435805292388108,
       "brier_score": 0.2207715465615528,
-      "spread_mae": 10.201026625308002,
+      "spread_mae": 10.201026625308,
       "seasons_refit": 12
     },
     "market": {
@@ -8513,7 +8513,7 @@
       "LAC": 1443.78,
       "HOU": 1525.3
     },
-    "spread_scale": 22.139314653963645,
+    "spread_scale": 22.139314653963705,
     "avg_total_points": 44.259406211520044,
     "feature_names": [
       "elo_diff",
@@ -8580,14 +8580,14 @@
         0.20121960764259952
       ],
       "coef": [
-        5.344282533037507,
-        0.5386864766067799,
-        -0.3092354181226161,
-        -0.7135089707047354,
-        0.7568816237895671,
-        0.19020839258710295,
-        -0.04222168949161147,
-        0.1594176032270092
+        5.344282533037508,
+        0.5386864766067785,
+        -0.3092354181226151,
+        -0.7135089707047347,
+        0.7568816237895648,
+        0.19020839258710404,
+        -0.04222168949161174,
+        0.15941760322700796
       ],
       "intercept": 2.3316459159939775
     }
