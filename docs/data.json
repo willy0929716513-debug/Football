@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T16:15:06Z",
+  "generated_at": "2026-09-27T03:55:14Z",
   "teams": [
     {
       "code": "ARI",
@@ -453,7 +453,7 @@
       "away_name": "Carolina Panthers",
       "home_name_zh": "\u514b\u91cc\u592b\u862d\u5e03\u6717",
       "away_name_zh": "\u5361\u7f85\u840a\u7d0d\u9ed1\u8c79",
-      "market_spread": -2.5
+      "market_spread": -1.5
     },
     {
       "home_team": "DET",
@@ -717,7 +717,7 @@
       "away_name": "Arizona Cardinals",
       "home_name_zh": "\u820a\u91d1\u5c7149\u4eba",
       "away_name_zh": "\u4e9e\u5229\u6851\u90a3\u7d05\u96c0",
-      "market_spread": 8.5
+      "market_spread": 7.5
     },
     {
       "home_team": "TB",
@@ -816,7 +816,7 @@
       "away_name": "Las Vegas Raiders",
       "home_name_zh": "\u7d10\u5967\u826f\u8056\u5f92",
       "away_name_zh": "\u62c9\u65af\u7dad\u52a0\u65af\u7a81\u8972\u8005",
-      "market_spread": 3.0
+      "market_spread": 3.5
     },
     {
       "home_team": "DEN",
@@ -882,7 +882,7 @@
       "away_name": "Philadelphia Eagles",
       "home_name_zh": "\u829d\u52a0\u54e5\u718a",
       "away_name_zh": "\u8cbb\u57ce\u8001\u9df9",
-      "market_spread": -4.5
+      "market_spread": -3.5
     },
     {
       "home_team": "CLE",
@@ -1179,7 +1179,7 @@
       "away_name": "Los Angeles Rams",
       "home_name_zh": "\u8cbb\u57ce\u8001\u9df9",
       "away_name_zh": "\u6d1b\u6749\u78ef\u516c\u7f8a",
-      "market_spread": -1.5
+      "market_spread": -2.5
     },
     {
       "home_team": "TB",
@@ -8075,13 +8075,13 @@
       "games": 3061,
       "accuracy": 0.6393335511270827,
       "brier_score": 0.22143975449771253,
-      "spread_mae": 10.216970535748876
+      "spread_mae": 10.21697053574888
     },
     "advanced": {
       "games": 3061,
       "accuracy": 0.6435805292388108,
       "brier_score": 0.2207715465615528,
-      "spread_mae": 10.201026625308002,
+      "spread_mae": 10.201026625308,
       "seasons_refit": 12
     },
     "market": {
@@ -8127,7 +8127,7 @@
       "LAC": 1443.78,
       "HOU": 1525.3
     },
-    "spread_scale": 22.139314653963645,
+    "spread_scale": 22.139314653963705,
     "avg_total_points": 44.259406211520044,
     "feature_names": [
       "elo_diff",
@@ -8162,13 +8162,13 @@
       ],
       "coef": [
         0.7016229991325373,
-        0.06129860059861087,
-        -0.046095133962577854,
+        0.061298600598610864,
+        -0.04609513396257785,
         -0.1285199745274437,
         0.10568848895929256,
-        0.040349189719264524,
-        -0.011718695542739297,
-        0.0042970100081852905
+        0.04034918971926452,
+        -0.011718695542739301,
+        0.0042970100081852975
       ],
       "intercept": 0.2880633064259176
     },
@@ -8194,14 +8194,14 @@
         0.20121960764259952
       ],
       "coef": [
-        5.344282533037507,
-        0.5386864766067799,
-        -0.3092354181226161,
-        -0.7135089707047354,
-        0.7568816237895671,
-        0.19020839258710295,
-        -0.04222168949161147,
-        0.1594176032270092
+        5.344282533037508,
+        0.5386864766067823,
+        -0.3092354181226176,
+        -0.7135089707047376,
+        0.756881623789572,
+        0.19020839258710173,
+        -0.04222168949161098,
+        0.15941760322700918
       ],
       "intercept": 2.3316459159939775
     }
