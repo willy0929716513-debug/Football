@@ -9,11 +9,11 @@
       "playoff_multiplier": 1.2,
       "revert_to_mean": 0.45
     },
-    "current_season": 2022,
+    "current_season": 2024,
     "ratings": {
-      "AAA": 1695.5587109627957,
-      "BBB": 1304.4412890372048
+      "AAA": 1695.5587109628452,
+      "BBB": 1304.4412890371552
     }
   },
-  "spread_scale": 26.59396128898198
+  "spread_scale": 26.628879857695583
 }

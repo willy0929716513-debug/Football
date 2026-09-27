@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T13:45:38Z",
+  "generated_at": "2026-09-27T13:57:01Z",
   "teams": [
     {
       "code": "ARI",
@@ -425,7 +425,14 @@
       "away_moneyline": 260.0,
       "market_home_win_prob": 0.7335,
       "blend_home_win_prob": 0.7406,
-      "blend_predicted_margin": 7.4
+      "blend_predicted_margin": 7.4,
+      "ats_edge": 0.4,
+      "ats_cover_prob_home": 0.5112,
+      "ats_confidence": 0.5112,
+      "moneyline_confidence": 0.7406,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "BUF",
+      "recommendation_confidence": 0.7406
     },
     {
       "home_team": "CLE",
@@ -463,7 +470,14 @@
       "away_moneyline": -135.0,
       "market_home_win_prob": 0.4486,
       "blend_home_win_prob": 0.4585,
-      "blend_predicted_margin": -1.2
+      "blend_predicted_margin": -1.2,
+      "ats_edge": 0.3,
+      "ats_cover_prob_home": 0.5094,
+      "ats_confidence": 0.5094,
+      "moneyline_confidence": 0.5415,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "CAR",
+      "recommendation_confidence": 0.5415
     },
     {
       "home_team": "DET",
@@ -501,7 +515,14 @@
       "away_moneyline": 245.0,
       "market_home_win_prob": 0.7221,
       "blend_home_win_prob": 0.7244,
-      "blend_predicted_margin": 6.7
+      "blend_predicted_margin": 6.7,
+      "ats_edge": 0.2,
+      "ats_cover_prob_home": 0.5055,
+      "ats_confidence": 0.5055,
+      "moneyline_confidence": 0.7244,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "DET",
+      "recommendation_confidence": 0.7244
     },
     {
       "home_team": "IND",
@@ -539,7 +560,14 @@
       "away_moneyline": -125.0,
       "market_home_win_prob": 0.4675,
       "blend_home_win_prob": 0.4638,
-      "blend_predicted_margin": -1.6
+      "blend_predicted_margin": -1.6,
+      "ats_edge": -0.1,
+      "ats_cover_prob_home": 0.4983,
+      "ats_confidence": 0.5017,
+      "moneyline_confidence": 0.5362,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "HOU",
+      "recommendation_confidence": 0.5362
     },
     {
       "home_team": "JAX",
@@ -577,7 +605,14 @@
       "away_moneyline": 130.0,
       "market_home_win_prob": 0.583,
       "blend_home_win_prob": 0.577,
-      "blend_predicted_margin": 2.8
+      "blend_predicted_margin": 2.8,
+      "ats_edge": -0.2,
+      "ats_cover_prob_home": 0.4928,
+      "ats_confidence": 0.5072,
+      "moneyline_confidence": 0.577,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "JAX",
+      "recommendation_confidence": 0.577
     },
     {
       "home_team": "MIA",
@@ -615,7 +650,14 @@
       "away_moneyline": -535.0,
       "market_home_win_prob": 0.1918,
       "blend_home_win_prob": 0.2097,
-      "blend_predicted_margin": -8.8
+      "blend_predicted_margin": -8.8,
+      "ats_edge": 0.7,
+      "ats_cover_prob_home": 0.5221,
+      "ats_confidence": 0.5221,
+      "moneyline_confidence": 0.7903,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "KC",
+      "recommendation_confidence": 0.7903
     },
     {
       "home_team": "NYG",
@@ -653,7 +695,14 @@
       "away_moneyline": 110.0,
       "market_home_win_prob": 0.5427,
       "blend_home_win_prob": 0.5492,
-      "blend_predicted_margin": 2.7
+      "blend_predicted_margin": 2.7,
+      "ats_edge": 0.2,
+      "ats_cover_prob_home": 0.505,
+      "ats_confidence": 0.505,
+      "moneyline_confidence": 0.5492,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "NYG",
+      "recommendation_confidence": 0.5492
     },
     {
       "home_team": "PIT",
@@ -691,7 +740,14 @@
       "away_moneyline": -185.0,
       "market_home_win_prob": 0.3775,
       "blend_home_win_prob": 0.3901,
-      "blend_predicted_margin": -3.1
+      "blend_predicted_margin": -3.1,
+      "ats_edge": 0.4,
+      "ats_cover_prob_home": 0.512,
+      "ats_confidence": 0.512,
+      "moneyline_confidence": 0.6099,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "CIN",
+      "recommendation_confidence": 0.6099
     },
     {
       "home_team": "WAS",
@@ -729,7 +785,14 @@
       "away_moneyline": -395.0,
       "market_home_win_prob": 0.2341,
       "blend_home_win_prob": 0.2359,
-      "blend_predicted_margin": -8.5
+      "blend_predicted_margin": -8.5,
+      "ats_edge": 0.0,
+      "ats_cover_prob_home": 0.5007,
+      "ats_confidence": 0.5007,
+      "moneyline_confidence": 0.7641,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "SEA",
+      "recommendation_confidence": 0.7641
     },
     {
       "home_team": "SF",
@@ -767,7 +830,14 @@
       "away_moneyline": 310.0,
       "market_home_win_prob": 0.7659,
       "blend_home_win_prob": 0.7656,
-      "blend_predicted_margin": 7.6
+      "blend_predicted_margin": 7.6,
+      "ats_edge": 0.1,
+      "ats_cover_prob_home": 0.5046,
+      "ats_confidence": 0.5046,
+      "moneyline_confidence": 0.7656,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "SF",
+      "recommendation_confidence": 0.7656
     },
     {
       "home_team": "TB",
@@ -805,7 +875,14 @@
       "away_moneyline": -115.0,
       "market_home_win_prob": 0.4892,
       "blend_home_win_prob": 0.4866,
-      "blend_predicted_margin": -1.5
+      "blend_predicted_margin": -1.5,
+      "ats_edge": 0.0,
+      "ats_cover_prob_home": 0.5007,
+      "ats_confidence": 0.5007,
+      "moneyline_confidence": 0.5134,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "MIN",
+      "recommendation_confidence": 0.5134
     },
     {
       "home_team": "DAL",
@@ -843,7 +920,14 @@
       "away_moneyline": -170.0,
       "market_home_win_prob": 0.3962,
       "blend_home_win_prob": 0.4063,
-      "blend_predicted_margin": -3.2
+      "blend_predicted_margin": -3.2,
+      "ats_edge": 0.3,
+      "ats_cover_prob_home": 0.5109,
+      "ats_confidence": 0.5109,
+      "moneyline_confidence": 0.5937,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "BAL",
+      "recommendation_confidence": 0.5937
     },
     {
       "home_team": "NO",
@@ -881,7 +965,14 @@
       "away_moneyline": 164.0,
       "market_home_win_prob": 0.6369,
       "blend_home_win_prob": 0.6358,
-      "blend_predicted_margin": 3.5
+      "blend_predicted_margin": 3.5,
+      "ats_edge": 0.0,
+      "ats_cover_prob_home": 0.5013,
+      "ats_confidence": 0.5013,
+      "moneyline_confidence": 0.6358,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "NO",
+      "recommendation_confidence": 0.6358
     },
     {
       "home_team": "DEN",
@@ -919,7 +1010,14 @@
       "away_moneyline": -130.0,
       "market_home_win_prob": 0.4573,
       "blend_home_win_prob": 0.4701,
-      "blend_predicted_margin": -1.1
+      "blend_predicted_margin": -1.1,
+      "ats_edge": 0.4,
+      "ats_cover_prob_home": 0.5131,
+      "ats_confidence": 0.5131,
+      "moneyline_confidence": 0.5299,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "LA",
+      "recommendation_confidence": 0.5299
     },
     {
       "home_team": "CHI",
@@ -957,7 +1055,14 @@
       "away_moneyline": -198.0,
       "market_home_win_prob": 0.3631,
       "blend_home_win_prob": 0.3713,
-      "blend_predicted_margin": -3.2
+      "blend_predicted_margin": -3.2,
+      "ats_edge": 0.3,
+      "ats_cover_prob_home": 0.5086,
+      "ats_confidence": 0.5086,
+      "moneyline_confidence": 0.6287,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "PHI",
+      "recommendation_confidence": 0.6287
     },
     {
       "home_team": "CLE",
@@ -995,7 +1100,14 @@
       "away_moneyline": -148.0,
       "market_home_win_prob": 0.4279,
       "blend_home_win_prob": 0.4327,
-      "blend_predicted_margin": -2.8
+      "blend_predicted_margin": -2.8,
+      "ats_edge": 0.2,
+      "ats_cover_prob_home": 0.5074,
+      "ats_confidence": 0.5074,
+      "moneyline_confidence": 0.5673,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "PIT",
+      "recommendation_confidence": 0.5673
     },
     {
       "home_team": "WAS",
@@ -1033,7 +1145,14 @@
       "away_moneyline": -205.0,
       "market_home_win_prob": 0.3553,
       "blend_home_win_prob": 0.3757,
-      "blend_predicted_margin": -3.8
+      "blend_predicted_margin": -3.8,
+      "ats_edge": 0.7,
+      "ats_cover_prob_home": 0.5209,
+      "ats_confidence": 0.5209,
+      "moneyline_confidence": 0.6243,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "IND",
+      "recommendation_confidence": 0.6243
     },
     {
       "home_team": "BAL",
@@ -1071,7 +1190,14 @@
       "away_moneyline": 425.0,
       "market_home_win_prob": 0.8173,
       "blend_home_win_prob": 0.8147,
-      "blend_predicted_margin": 10.5
+      "blend_predicted_margin": 10.5,
+      "ats_edge": -0.0,
+      "ats_cover_prob_home": 0.4988,
+      "ats_confidence": 0.5012,
+      "moneyline_confidence": 0.8147,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "BAL",
+      "recommendation_confidence": 0.8147
     },
     {
       "home_team": "BUF",
@@ -1109,7 +1235,14 @@
       "away_moneyline": 205.0,
       "market_home_win_prob": 0.6854,
       "blend_home_win_prob": 0.6761,
-      "blend_predicted_margin": 5.2
+      "blend_predicted_margin": 5.2,
+      "ats_edge": -0.3,
+      "ats_cover_prob_home": 0.4914,
+      "ats_confidence": 0.5086,
+      "moneyline_confidence": 0.6761,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "BUF",
+      "recommendation_confidence": 0.6761
     },
     {
       "home_team": "CHI",
@@ -1147,7 +1280,14 @@
       "away_moneyline": 140.0,
       "market_home_win_prob": 0.5996,
       "blend_home_win_prob": 0.6047,
-      "blend_predicted_margin": 3.2
+      "blend_predicted_margin": 3.2,
+      "ats_edge": 0.2,
+      "ats_cover_prob_home": 0.5077,
+      "ats_confidence": 0.5077,
+      "moneyline_confidence": 0.6047,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "CHI",
+      "recommendation_confidence": 0.6047
     },
     {
       "home_team": "CIN",
@@ -1185,7 +1325,14 @@
       "away_moneyline": 136.0,
       "market_home_win_prob": 0.5934,
       "blend_home_win_prob": 0.589,
-      "blend_predicted_margin": 2.9
+      "blend_predicted_margin": 2.9,
+      "ats_edge": -0.1,
+      "ats_cover_prob_home": 0.4954,
+      "ats_confidence": 0.5046,
+      "moneyline_confidence": 0.589,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "CIN",
+      "recommendation_confidence": 0.589
     },
     {
       "home_team": "HOU",
@@ -1223,7 +1370,14 @@
       "away_moneyline": 136.0,
       "market_home_win_prob": 0.5934,
       "blend_home_win_prob": 0.5998,
-      "blend_predicted_margin": 3.2
+      "blend_predicted_margin": 3.2,
+      "ats_edge": 0.2,
+      "ats_cover_prob_home": 0.506,
+      "ats_confidence": 0.506,
+      "moneyline_confidence": 0.5998,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "HOU",
+      "recommendation_confidence": 0.5998
     },
     {
       "home_team": "NYG",
@@ -1261,7 +1415,14 @@
       "away_moneyline": 114.0,
       "market_home_win_prob": 0.5514,
       "blend_home_win_prob": 0.5457,
-      "blend_predicted_margin": 2.3
+      "blend_predicted_margin": 2.3,
+      "ats_edge": -0.2,
+      "ats_cover_prob_home": 0.4942,
+      "ats_confidence": 0.5058,
+      "moneyline_confidence": 0.5457,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "NYG",
+      "recommendation_confidence": 0.5457
     },
     {
       "home_team": "PHI",
@@ -1299,7 +1460,14 @@
       "away_moneyline": -135.0,
       "market_home_win_prob": 0.4486,
       "blend_home_win_prob": 0.4591,
-      "blend_predicted_margin": -2.1
+      "blend_predicted_margin": -2.1,
+      "ats_edge": 0.4,
+      "ats_cover_prob_home": 0.5129,
+      "ats_confidence": 0.5129,
+      "moneyline_confidence": 0.5409,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "LA",
+      "recommendation_confidence": 0.5409
     },
     {
       "home_team": "TB",
@@ -1337,7 +1505,14 @@
       "away_moneyline": -116.0,
       "market_home_win_prob": 0.4846,
       "blend_home_win_prob": 0.4898,
-      "blend_predicted_margin": -1.2
+      "blend_predicted_margin": -1.2,
+      "ats_edge": 0.3,
+      "ats_cover_prob_home": 0.5079,
+      "ats_confidence": 0.5079,
+      "moneyline_confidence": 0.5102,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "GB",
+      "recommendation_confidence": 0.5102
     },
     {
       "home_team": "MIN",
@@ -1375,7 +1550,14 @@
       "away_moneyline": 500.0,
       "market_home_win_prob": 0.84,
       "blend_home_win_prob": 0.829,
-      "blend_predicted_margin": 10.2
+      "blend_predicted_margin": 10.2,
+      "ats_edge": -0.3,
+      "ats_cover_prob_home": 0.4903,
+      "ats_confidence": 0.5097,
+      "moneyline_confidence": 0.829,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "MIN",
+      "recommendation_confidence": 0.829
     },
     {
       "home_team": "LV",
@@ -1413,7 +1595,14 @@
       "away_moneyline": -258.0,
       "market_home_win_prob": 0.3092,
       "blend_home_win_prob": 0.321,
-      "blend_predicted_margin": -5.6
+      "blend_predicted_margin": -5.6,
+      "ats_edge": 0.4,
+      "ats_cover_prob_home": 0.5129,
+      "ats_confidence": 0.5129,
+      "moneyline_confidence": 0.679,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "KC",
+      "recommendation_confidence": 0.679
     },
     {
       "home_team": "SEA",
@@ -1451,7 +1640,14 @@
       "away_moneyline": 230.0,
       "market_home_win_prob": 0.7095,
       "blend_home_win_prob": 0.7249,
-      "blend_predicted_margin": 7.1
+      "blend_predicted_margin": 7.1,
+      "ats_edge": 0.6,
+      "ats_cover_prob_home": 0.519,
+      "ats_confidence": 0.519,
+      "moneyline_confidence": 0.7249,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "SEA",
+      "recommendation_confidence": 0.7249
     },
     {
       "home_team": "SF",
@@ -1489,7 +1685,14 @@
       "away_moneyline": 145.0,
       "market_home_win_prob": 0.6092,
       "blend_home_win_prob": 0.6105,
-      "blend_predicted_margin": 3.1
+      "blend_predicted_margin": 3.1,
+      "ats_edge": 0.1,
+      "ats_cover_prob_home": 0.5025,
+      "ats_confidence": 0.5025,
+      "moneyline_confidence": 0.6105,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "SF",
+      "recommendation_confidence": 0.6105
     },
     {
       "home_team": "CAR",
@@ -1527,7 +1730,14 @@
       "away_moneyline": -155.0,
       "market_home_win_prob": 0.417,
       "blend_home_win_prob": 0.4246,
-      "blend_predicted_margin": -2.7
+      "blend_predicted_margin": -2.7,
+      "ats_edge": 0.3,
+      "ats_cover_prob_home": 0.5088,
+      "ats_confidence": 0.5088,
+      "moneyline_confidence": 0.5754,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "DET",
+      "recommendation_confidence": 0.5754
     },
     {
       "home_team": "NO",
@@ -1565,7 +1775,14 @@
       "away_moneyline": 146.0,
       "market_home_win_prob": 0.6097,
       "blend_home_win_prob": 0.605,
-      "blend_predicted_margin": 3.3
+      "blend_predicted_margin": 3.3,
+      "ats_edge": -0.2,
+      "ats_cover_prob_home": 0.495,
+      "ats_confidence": 0.505,
+      "moneyline_confidence": 0.605,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "NO",
+      "recommendation_confidence": 0.605
     },
     {
       "home_team": "DAL",
@@ -8250,6 +8467,14 @@
       "accuracy": 0.6607843137254902,
       "brier_score": 0.21187816460784342,
       "spread_mae": 9.834117647058827
+    },
+    "recommendation": {
+      "games": 3060,
+      "ats_recommended": 62,
+      "moneyline_recommended": 2998,
+      "accuracy": 0.661437908496732,
+      "ats_accuracy": 0.532258064516129,
+      "moneyline_accuracy": 0.6641094062708472
     }
   },
   "client_model": {

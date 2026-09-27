@@ -170,6 +170,31 @@ function favoriteLineHtml(homeCode, homeNameZh, awayCode, awayNameZh, homeProb) 
   return `<div class="favorite-line">預測勝方：<strong>${nameZh}（${code}）</strong> — 獲勝機率 <strong>${fmtPct(prob)}</strong></div>`;
 }
 
+// "本場推薦" — automatically picks whichever bet type we're more confident
+// about: the straight-up ("不讓分") moneyline pick, or the against-the-
+// spread ("讓分") pick. Both confidences are computed server-side (see
+// pick_recommendation() in advanced_model.py) and whichever is higher wins;
+// this line surfaces that choice up front, with the underlying favourite/
+// spread/blend lines still shown below for full transparency.
+function recommendationLineHtml(g) {
+  if (!g.recommendation_type) return "";
+  const isAts = g.recommendation_type === "ats";
+  const pick = g.recommendation_team;
+  const confidence = fmtPct(g.recommendation_confidence);
+  const typeLabel = isAts ? "讓分" : "不讓分";
+  let detail;
+  if (isAts) {
+    const spreadStr = formatSpread(g.home_team, g.away_team, g.market_spread);
+    detail = `${pick} 讓分過盤（盤口 ${spreadStr}）`;
+  } else {
+    detail = `${pick} 直接獲勝`;
+  }
+  return `
+    <div class="recommend-line">
+      本場推薦（${typeLabel}）：<strong>${detail}</strong> — 信心 <strong>${confidence}</strong>
+    </div>`;
+}
+
 function probBarHtml(homeCode, awayCode, homeProb, awayProb) {
   const homePct = Math.max(homeProb * 100, 4);
   const awayPct = Math.max(awayProb * 100, 4);
@@ -240,6 +265,7 @@ function renderGamesForWeek(upcoming, weekKey) {
       <div class="matchup"><span>${g.away_team}</span><span>@</span><span>${g.home_team}</span></div>
       <div class="matchup-zh">${g.away_name_zh ?? g.away_name} @ ${g.home_name_zh ?? g.home_name}</div>
       ${probBarHtml(g.home_team, g.away_team, g.home_win_prob, g.away_win_prob)}
+      ${recommendationLineHtml(g)}
       ${favoriteLineHtml(g.home_team, g.home_name_zh ?? g.home_name, g.away_team, g.away_name_zh ?? g.away_name, g.home_win_prob)}
       ${blendLineHtml(g.home_team, g.away_team, g.blend_home_win_prob)}
       ${scoreLineHtml(g.home_team, g.away_team, g.predicted_home_score, g.predicted_away_score)}
@@ -290,6 +316,25 @@ function renderPerformance(performance) {
     }
     body.appendChild(tr);
   }
+  renderRecommendationSummary(performance.recommendation);
+}
+
+function renderRecommendationSummary(r) {
+  const el = document.getElementById("recommendation-summary-note");
+  if (!el) return;
+  if (!r || r.error) {
+    el.textContent = "「智慧推薦」（自動在讓分／不讓分之間選信心較高者）目前尚無足夠資料可回測。";
+    return;
+  }
+  const atsAcc = r.ats_accuracy !== null && r.ats_accuracy !== undefined ? fmtPct(r.ats_accuracy) : "無資料";
+  const mlAcc = r.moneyline_accuracy !== null && r.moneyline_accuracy !== undefined ? fmtPct(r.moneyline_accuracy) : "無資料";
+  el.innerHTML = `
+    「智慧推薦」白話說明：每場比賽自動比較「不讓分」（猜贏家）跟「讓分」（猜誰能過盤）兩種推薦
+    各自的信心，選信心較高的那一種顯示。回測結果：共 ${r.games} 場比賽中，選了 ${r.ats_recommended}
+    場「讓分」推薦（命中率 ${atsAcc}）、${r.moneyline_recommended} 場「不讓分」推薦（命中率 ${mlAcc}），
+    整體命中率 <strong>${fmtPct(r.accuracy)}</strong>。誠實說：這只是「自動選擇信心較高的一種」，
+    不代表能穩定打敗市場。
+  `;
 }
 
 // ---- client-side replica of the advanced model (logistic + linear) ----
@@ -405,6 +450,20 @@ function marketCell(homeCode, awayCode, homeProb, spread, correct) {
   return spreadStr ? `${base}（讓分 ${spreadStr}）` : base;
 }
 
+function recommendationCell(r) {
+  if (!r.recommendation_type) {
+    return `<span class="pred-na">尚無資料</span>`;
+  }
+  const typeLabel = r.recommendation_type === "ats" ? "讓分" : "不讓分";
+  const conf = fmtPct(r.recommendation_confidence);
+  const icon = r.recommendation_correct === null || r.recommendation_correct === undefined
+    ? `<span class="pred-na">—</span>`
+    : r.recommendation_correct
+      ? `<span class="pred-correct">✓</span>`
+      : `<span class="pred-wrong">✗</span>`;
+  return `${r.recommendation_team}（${typeLabel}）${conf} ${icon}`;
+}
+
 function applyHistoryFilters() {
   const seasonSel = document.getElementById("history-season-select");
   const filterSel = document.getElementById("history-filter-select");
@@ -444,6 +503,7 @@ function renderHistoryPage() {
       <td>${pickCell(r.home_team, r.away_team, r.adv_home_win_prob, r.adv_correct)}</td>
       <td>${marketCell(r.home_team, r.away_team, r.market_home_win_prob, r.market_spread, r.market_correct)}</td>
       <td>${pickCell(r.home_team, r.away_team, r.blend_home_win_prob, r.blend_correct)}</td>
+      <td>${recommendationCell(r)}</td>
     </tr>
   `).join("");
 

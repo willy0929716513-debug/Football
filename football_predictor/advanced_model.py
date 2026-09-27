@@ -309,6 +309,85 @@ def blend_prediction(model_home_win_prob: float, market_home_win_prob: float,
     return blend_prob, blend_margin
 
 
+# Minimum number of prior blend-eligible games needed before we trust an
+# empirical residual standard deviation enough to compute an against-the-
+# spread ("讓分") cover probability. Below this, ats_confidence is left as
+# None and the recommendation always falls back to the moneyline pick.
+MIN_RESIDUAL_SAMPLES = 20
+
+
+def _normal_cdf(x: float) -> float:
+    return 0.5 * (1.0 + math.erf(x / math.sqrt(2.0)))
+
+
+def pick_recommendation(blend_home_win_prob: float, blend_predicted_margin: float,
+                         market_spread: float, residual_std: float | None,
+                         home_team: str, away_team: str) -> dict:
+    """Compare two different bets for the same game — the straight-up
+    ("不讓分") moneyline pick vs. the against-the-spread ("讓分") pick — and
+    recommend whichever one we're more confident about.
+
+    Moneyline confidence is just how far the blended win probability sits
+    from a coin flip. ATS confidence needs a probability that the blend's
+    predicted margin beats the market's spread line by enough to "cover":
+    treating the model's historical (actual margin - blend margin) errors
+    as roughly normal with standard deviation `residual_std`, the chance
+    the home side covers is the normal CDF of the edge (blend margin minus
+    spread line) scaled by that standard deviation. Whichever bet has the
+    higher confidence is the one surfaced as "the" recommendation; both
+    numbers are still reported so nothing is hidden.
+    """
+    moneyline_confidence = max(blend_home_win_prob, 1.0 - blend_home_win_prob)
+    moneyline_pick = home_team if blend_home_win_prob >= 0.5 else away_team
+
+    ats_edge = blend_predicted_margin - market_spread
+    if residual_std is not None and residual_std > 0:
+        ats_cover_prob_home = _normal_cdf(ats_edge / residual_std)
+        ats_confidence = max(ats_cover_prob_home, 1.0 - ats_cover_prob_home)
+        ats_pick = home_team if ats_edge >= 0 else away_team
+    else:
+        ats_cover_prob_home = None
+        ats_confidence = None
+        ats_pick = None
+
+    if ats_confidence is not None and ats_confidence > moneyline_confidence:
+        recommendation_type = "ats"
+        recommendation_team = ats_pick
+        recommendation_confidence = ats_confidence
+    else:
+        recommendation_type = "moneyline"
+        recommendation_team = moneyline_pick
+        recommendation_confidence = moneyline_confidence
+
+    return {
+        "ats_edge": round(ats_edge, 1),
+        "ats_cover_prob_home": round(ats_cover_prob_home, 4) if ats_cover_prob_home is not None else None,
+        "ats_confidence": round(ats_confidence, 4) if ats_confidence is not None else None,
+        "moneyline_confidence": round(moneyline_confidence, 4),
+        "recommendation_type": recommendation_type,
+        "recommendation_team": recommendation_team,
+        "recommendation_confidence": round(recommendation_confidence, 4),
+    }
+
+
+def blend_residual_std(history: list[dict]) -> float | None:
+    """Standard deviation of (actual margin - blend predicted margin) over
+    every game in a `backtest_history()` result that had a blend
+    prediction, used to score against-the-spread confidence for *future*
+    (upcoming, not-yet-played) games. Using the whole history is fine here
+    — unlike inside `backtest_history` itself, an upcoming game is strictly
+    after every game in the history, so this carries no look-ahead bias."""
+    errors = [
+        (r["home_score"] - r["away_score"]) - r["blend_predicted_margin"]
+        for r in history if r["blend_predicted_margin"] is not None
+    ]
+    if len(errors) < MIN_RESIDUAL_SAMPLES:
+        return None
+    mean = sum(errors) / len(errors)
+    variance = sum((e - mean) ** 2 for e in errors) / len(errors)
+    return math.sqrt(max(variance, 1e-6))
+
+
 def market_backtest(games: list[Game], start_season: int) -> MarketBacktestResult:
     """Benchmark the closing Vegas line itself, for games where it's
     available, so the model's accuracy can be read against a real
@@ -370,6 +449,14 @@ def backtest_history(games: list[Game], start_season: int, config: EloConfig | N
 
     current_season: int | None = None
     history: list[dict] = []
+
+    # Running (walk-forward: only games strictly before the one being
+    # scored) mean/variance of blend margin errors, used to score
+    # against-the-spread confidence for each historical game without any
+    # look-ahead — see `pick_recommendation`.
+    blend_error_n = 0
+    blend_error_sum = 0.0
+    blend_error_sumsq = 0.0
 
     for game in games:
         if game.season != current_season:
@@ -437,10 +524,48 @@ def backtest_history(games: list[Game], start_season: int, config: EloConfig | N
                 record["blend_home_win_prob"] = round(blend_prob, 4)
                 record["blend_predicted_margin"] = round(blend_margin, 1)
                 record["blend_correct"] = (blend_prob >= 0.5) == actual_winner_home
+
+                residual_std = None
+                if blend_error_n >= MIN_RESIDUAL_SAMPLES:
+                    mean = blend_error_sum / blend_error_n
+                    variance = max(blend_error_sumsq / blend_error_n - mean * mean, 1e-6)
+                    residual_std = math.sqrt(variance)
+
+                rec_fields = pick_recommendation(
+                    blend_prob, blend_margin, record["market_spread"], residual_std,
+                    game.home_team, game.away_team,
+                )
+                record.update(rec_fields)
+
+                actual_margin = game.margin
+                if record["recommendation_type"] == "ats":
+                    if actual_margin == record["market_spread"]:
+                        record["recommendation_correct"] = None  # push
+                    else:
+                        home_covered = actual_margin > record["market_spread"]
+                        record["recommendation_correct"] = (
+                            (record["recommendation_team"] == game.home_team) == home_covered
+                        )
+                else:
+                    winner = game.home_team if actual_winner_home else game.away_team
+                    record["recommendation_correct"] = record["recommendation_team"] == winner
+
+                error = actual_margin - blend_margin
+                blend_error_n += 1
+                blend_error_sum += error
+                blend_error_sumsq += error * error
             else:
                 record["blend_home_win_prob"] = None
                 record["blend_predicted_margin"] = None
                 record["blend_correct"] = None
+                record["ats_edge"] = None
+                record["ats_cover_prob_home"] = None
+                record["ats_confidence"] = None
+                record["moneyline_confidence"] = None
+                record["recommendation_type"] = None
+                record["recommendation_team"] = None
+                record["recommendation_confidence"] = None
+                record["recommendation_correct"] = None
 
             history.append(record)
 
@@ -495,4 +620,36 @@ def blend_summary_from_history(history: list[dict]) -> BlendBacktestResult:
         accuracy=correct / n,
         brier_score=brier_sum / n,
         spread_mae=spread_error_sum / n,
+    )
+
+
+@dataclass
+class RecommendationSummaryResult:
+    games: int
+    ats_recommended: int
+    moneyline_recommended: int
+    accuracy: float
+    ats_accuracy: float | None
+    moneyline_accuracy: float | None
+
+
+def recommendation_summary_from_history(history: list[dict]) -> RecommendationSummaryResult:
+    """Honest backtest of the "pick whichever bet type we're more confident
+    about" strategy itself: how often it chose the against-the-spread pick
+    vs. the plain moneyline pick, and how each performed."""
+    records = [r for r in history if r["recommendation_type"] is not None]
+    if not records:
+        raise ValueError("no games with a recommendation decision (need blend data to be available)")
+
+    scored = [r for r in records if r["recommendation_correct"] is not None]
+    ats_scored = [r for r in scored if r["recommendation_type"] == "ats"]
+    ml_scored = [r for r in scored if r["recommendation_type"] == "moneyline"]
+
+    return RecommendationSummaryResult(
+        games=len(records),
+        ats_recommended=sum(1 for r in records if r["recommendation_type"] == "ats"),
+        moneyline_recommended=sum(1 for r in records if r["recommendation_type"] == "moneyline"),
+        accuracy=(sum(1 for r in scored if r["recommendation_correct"]) / len(scored)) if scored else 0.0,
+        ats_accuracy=(sum(1 for r in ats_scored if r["recommendation_correct"]) / len(ats_scored)) if ats_scored else None,
+        moneyline_accuracy=(sum(1 for r in ml_scored if r["recommendation_correct"]) / len(ml_scored)) if ml_scored else None,
     )
