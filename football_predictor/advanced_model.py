@@ -264,6 +264,51 @@ def _american_odds_to_prob(odds: float) -> float:
     return 100 / (odds + 100)
 
 
+def _market_implied_prob(home_moneyline: float, away_moneyline: float) -> float:
+    """Vig-free home win probability implied by the two moneylines."""
+    home_implied = _american_odds_to_prob(home_moneyline)
+    away_implied = _american_odds_to_prob(away_moneyline)
+    overround = home_implied + away_implied
+    return home_implied / overround if overround > 0 else 0.5
+
+
+def _logit(p: float) -> float:
+    p = min(max(p, 1e-6), 1 - 1e-6)
+    return math.log(p / (1 - p))
+
+
+def _sigmoid(z: float) -> float:
+    return 1.0 / (1.0 + math.exp(-z))
+
+
+# How much weight the blended prediction gives to our own model vs. the
+# market, in log-odds space. Chosen by a walk-forward grid search (weights
+# 0.00-1.00 in steps of 0.05) tuned on 2010-2020 and confirmed on a held-out
+# 2021+ window: the market alone was consistently hard to beat, and any
+# weight above ~0.10-0.15 on our own model made the blend *worse* on both
+# windows. 0.10 keeps a small, genuine contribution from our own model
+# (rest/QB/weather signals the market may weight differently) while staying
+# close to the empirically-best pure-market end of the curve. See README's
+# "參數是怎麼選出來的？" section for the full honest write-up.
+BLEND_MODEL_WEIGHT = 0.10
+
+
+def blend_prediction(model_home_win_prob: float, market_home_win_prob: float,
+                      model_margin: float, market_spread: float,
+                      weight: float = BLEND_MODEL_WEIGHT) -> tuple[float, float]:
+    """Combine our own model's prediction with the real market line.
+
+    Win probability is pooled in log-odds space (logistic/log-linear
+    pooling), the standard way to combine two probabilistic forecasts —
+    a plain average of probabilities is not well-calibrated. The margin
+    is a simple weighted average since both are already point-scales.
+    """
+    blend_logit = weight * _logit(model_home_win_prob) + (1 - weight) * _logit(market_home_win_prob)
+    blend_prob = _sigmoid(blend_logit)
+    blend_margin = weight * model_margin + (1 - weight) * market_spread
+    return blend_prob, blend_margin
+
+
 def market_backtest(games: list[Game], start_season: int) -> MarketBacktestResult:
     """Benchmark the closing Vegas line itself, for games where it's
     available, so the model's accuracy can be read against a real
@@ -375,10 +420,7 @@ def backtest_history(games: list[Game], start_season: int, config: EloConfig | N
                 record["adv_correct"] = None
 
             if game.spread_line is not None and game.home_moneyline is not None and game.away_moneyline is not None:
-                home_implied = _american_odds_to_prob(game.home_moneyline)
-                away_implied = _american_odds_to_prob(game.away_moneyline)
-                overround = home_implied + away_implied
-                market_prob = home_implied / overround if overround > 0 else 0.5
+                market_prob = _market_implied_prob(game.home_moneyline, game.away_moneyline)
                 record["market_home_win_prob"] = round(market_prob, 4)
                 record["market_spread"] = game.spread_line
                 record["market_correct"] = (market_prob >= 0.5) == actual_winner_home
@@ -386,6 +428,19 @@ def backtest_history(games: list[Game], start_season: int, config: EloConfig | N
                 record["market_home_win_prob"] = None
                 record["market_spread"] = None
                 record["market_correct"] = None
+
+            if record["adv_home_win_prob"] is not None and record["market_home_win_prob"] is not None:
+                blend_prob, blend_margin = blend_prediction(
+                    record["adv_home_win_prob"], record["market_home_win_prob"],
+                    record["adv_predicted_margin"], record["market_spread"],
+                )
+                record["blend_home_win_prob"] = round(blend_prob, 4)
+                record["blend_predicted_margin"] = round(blend_margin, 1)
+                record["blend_correct"] = (blend_prob >= 0.5) == actual_winner_home
+            else:
+                record["blend_home_win_prob"] = None
+                record["blend_predicted_margin"] = None
+                record["blend_correct"] = None
 
             history.append(record)
 
@@ -407,3 +462,37 @@ def backtest_history(games: list[Game], start_season: int, config: EloConfig | N
         elo_diffs.append(elo_diff)
 
     return history
+
+
+@dataclass
+class BlendBacktestResult:
+    games: int
+    accuracy: float
+    brier_score: float
+    spread_mae: float
+
+
+def blend_summary_from_history(history: list[dict]) -> BlendBacktestResult:
+    """Aggregate the per-game `blend_*` fields a `backtest_history()` call
+    already computed, for the same walk-forward games where both the
+    advanced model and the market line were available. Reuses those
+    records rather than re-running a separate backtest pass."""
+    records = [r for r in history if r["blend_correct"] is not None]
+    if not records:
+        raise ValueError("no games with both an advanced-model and a market prediction to blend")
+
+    correct = sum(1 for r in records if r["blend_correct"])
+    brier_sum = 0.0
+    spread_error_sum = 0.0
+    for r in records:
+        actual = 1.0 if r["home_score"] > r["away_score"] else (0.0 if r["home_score"] < r["away_score"] else 0.5)
+        brier_sum += (r["blend_home_win_prob"] - actual) ** 2
+        spread_error_sum += abs(r["blend_predicted_margin"] - (r["home_score"] - r["away_score"]))
+
+    n = len(records)
+    return BlendBacktestResult(
+        games=n,
+        accuracy=correct / n,
+        brier_score=brier_sum / n,
+        spread_mae=spread_error_sum / n,
+    )

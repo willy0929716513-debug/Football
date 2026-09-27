@@ -15,7 +15,10 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-from .advanced_model import AdvancedPredictor, advanced_backtest, backtest_history, market_backtest
+from .advanced_model import (
+    AdvancedPredictor, advanced_backtest, backtest_history, blend_prediction,
+    blend_summary_from_history, market_backtest, _market_implied_prob,
+)
 from .data import (
     load_games, load_upcoming_games, normalize_team, team_display_name, team_display_name_zh,
     TEAM_NAMES, TEAM_NAMES_ZH,
@@ -197,6 +200,12 @@ def cmd_backtest(args: argparse.Namespace) -> int:
             results["market"] = vars(market_backtest(games, start_season=args.start_season))
         except ValueError as exc:
             results["market"] = {"error": str(exc)}
+    if args.model in ("blend", "all"):
+        try:
+            history = backtest_history(games, start_season=args.start_season, config=config)
+            results["blend"] = vars(blend_summary_from_history(history))
+        except ValueError as exc:
+            results["blend"] = {"error": str(exc)}
 
     if args.json:
         print(json.dumps(results, indent=2))
@@ -234,6 +243,8 @@ def cmd_export_site(args: argparse.Namespace) -> int:
 
     print(f"trained elo + advanced models on {len(games)} completed games")
 
+    history = backtest_history(games, start_season=args.start_season, config=config)
+
     performance = {"start_season": args.start_season}
     try:
         performance["elo"] = vars(elo_backtest(games, start_season=args.start_season, config=config))
@@ -247,6 +258,10 @@ def cmd_export_site(args: argparse.Namespace) -> int:
         performance["market"] = vars(market_backtest(games, start_season=args.start_season))
     except ValueError:
         performance["market"] = None
+    try:
+        performance["blend"] = vars(blend_summary_from_history(history))
+    except ValueError:
+        performance["blend"] = None
 
     rankings = advanced_predictor.power_rankings()
     power_rankings = [
@@ -273,6 +288,17 @@ def cmd_export_site(args: argparse.Namespace) -> int:
         })
         if game.spread_line is not None:
             entry["market_spread"] = game.spread_line
+        if game.home_moneyline is not None and game.away_moneyline is not None:
+            entry["home_moneyline"] = game.home_moneyline
+            entry["away_moneyline"] = game.away_moneyline
+        if game.spread_line is not None and game.home_moneyline is not None and game.away_moneyline is not None:
+            market_prob = _market_implied_prob(game.home_moneyline, game.away_moneyline)
+            blend_prob, blend_margin = blend_prediction(
+                prediction.home_win_prob, market_prob, prediction.predicted_margin, game.spread_line,
+            )
+            entry["market_home_win_prob"] = round(market_prob, 4)
+            entry["blend_home_win_prob"] = round(blend_prob, 4)
+            entry["blend_predicted_margin"] = round(blend_margin, 1)
         upcoming_predictions.append(entry)
 
     win_model = advanced_predictor.win_model
@@ -303,7 +329,6 @@ def cmd_export_site(args: argparse.Namespace) -> int:
     print(f"site data written to {data_path} ({len(upcoming_predictions)} upcoming games, "
           f"{len(power_rankings)} teams ranked)")
 
-    history = backtest_history(games, start_season=args.start_season, config=config)
     history_path = out_dir / "backtest_history.json"
     history_path.write_text(json.dumps({
         "start_season": args.start_season,
@@ -356,7 +381,7 @@ def build_parser() -> argparse.ArgumentParser:
     p_backtest.add_argument("--games", default=str(DEFAULT_GAMES_PATH), help="path to games CSV")
     p_backtest.add_argument("--start-season", type=int, default=DEFAULT_BACKTEST_START_SEASON,
                              help=f"first season to score (default: {DEFAULT_BACKTEST_START_SEASON})")
-    p_backtest.add_argument("--model", choices=["elo", "advanced", "market", "all"], default="all")
+    p_backtest.add_argument("--model", choices=["elo", "advanced", "market", "blend", "all"], default="all")
     p_backtest.add_argument("--json", action="store_true", help="output machine-readable JSON")
     _add_elo_args(p_backtest)
     p_backtest.set_defaults(func=cmd_backtest)
