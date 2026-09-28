@@ -1,7 +1,7 @@
 from football_predictor.advanced_model import (
     AdvancedPredictor, advanced_backtest, backtest_history, blend_prediction,
-    blend_residual_std, blend_summary_from_history, market_backtest, pick_recommendation,
-    recommendation_summary_from_history,
+    blend_residual_std, blend_summary_from_history, combined_parlay_probability, market_backtest,
+    parlay_summary_from_history, pick_parlay_legs, pick_recommendation, recommendation_summary_from_history,
 )
 from football_predictor.data import Game
 from football_predictor.features import SituationalContext
@@ -324,6 +324,96 @@ def test_blend_residual_std_none_below_minimum_sample_size():
 
     history = backtest_history(patched, start_season=2019)
     assert blend_residual_std(history) is None
+
+
+def test_pick_parlay_legs_selects_top_n_by_confidence_above_threshold():
+    games = [
+        {"recommendation_confidence": 0.9},
+        {"recommendation_confidence": 0.5},  # below the 0.6 threshold — excluded
+        {"recommendation_confidence": 0.7},
+        {"recommendation_confidence": 0.65},
+        {"recommendation_confidence": 0.6},  # qualifies but only top 3 are kept
+    ]
+    legs = pick_parlay_legs(games, legs=3, min_confidence=0.6)
+    assert [g["recommendation_confidence"] for g in legs] == [0.9, 0.7, 0.65]
+
+
+def test_pick_parlay_legs_returns_fewer_than_requested_when_not_enough_qualify():
+    games = [{"recommendation_confidence": 0.9}, {"recommendation_confidence": 0.4}]
+    legs = pick_parlay_legs(games, legs=3, min_confidence=0.6)
+    assert len(legs) == 1
+
+
+def test_pick_parlay_legs_ignores_games_without_a_recommendation():
+    games = [{"recommendation_confidence": 0.9}, {"recommendation_confidence": None}, {}]
+    legs = pick_parlay_legs(games, legs=3, min_confidence=0.6)
+    assert len(legs) == 1
+
+
+def test_combined_parlay_probability_multiplies_confidences():
+    legs = [{"recommendation_confidence": 0.8}, {"recommendation_confidence": 0.7}, {"recommendation_confidence": 0.6}]
+    assert abs(combined_parlay_probability(legs) - 0.8 * 0.7 * 0.6) < 1e-9
+
+
+def _games_with_multi_game_weeks():
+    # 18 seasons of warm-up (a single AAA-vs-BBB matchup per week, so the
+    # advanced model's regression clears its >=200-game warm-up) followed by
+    # 2 tail seasons with 4 *different* matchups per week (so a given week
+    # actually has enough games to fill a 3-leg parlay from).
+    games = []
+    for season in range(2000, 2018):
+        for week in range(1, 17):
+            games.append(Game(
+                season=season, week=str(week), game_type="REG", date=f"{season}-09-{week:02d}",
+                home_team="AAA", away_team="BBB", home_score=27, away_score=13,
+                home_rest=7, away_rest=7,
+            ))
+    matchups = [("AAA", "BBB"), ("CCC", "DDD"), ("EEE", "FFF"), ("GGG", "HHH")]
+    for season in range(2018, 2020):
+        for week in range(1, 17):
+            for home, away in matchups:
+                games.append(Game(
+                    season=season, week=str(week), game_type="REG", date=f"{season}-09-{week:02d}",
+                    home_team=home, away_team=away, home_score=35, away_score=10,
+                    home_rest=7, away_rest=7,
+                    spread_line=10.0, home_moneyline=-300.0, away_moneyline=250.0,
+                ))
+    return games
+
+
+def test_parlay_summary_from_history_matches_manual_aggregate():
+    history = backtest_history(_games_with_multi_game_weeks(), start_season=2018)
+    summary = parlay_summary_from_history(history, legs=3, min_confidence=0.5)
+
+    weeks: dict = {}
+    for r in history:
+        if r["recommendation_type"] is not None and r["recommendation_correct"] is not None:
+            weeks.setdefault((r["season"], r["week"]), []).append(r)
+
+    formed = 0
+    hit = 0
+    for week_games in weeks.values():
+        chosen = pick_parlay_legs(week_games, legs=3, min_confidence=0.5)
+        if len(chosen) < 3:
+            continue
+        formed += 1
+        if all(g["recommendation_correct"] for g in chosen):
+            hit += 1
+
+    assert summary.weeks == len(weeks)
+    assert summary.parlays_formed == formed
+    assert summary.parlays_hit == hit
+    assert abs(summary.hit_rate - (hit / formed if formed else 0.0)) < 1e-9
+
+
+def test_parlay_summary_from_history_raises_without_enough_qualifying_weeks():
+    games = _synthetic_games(n_seasons=5, games_per_season=16)
+    history = backtest_history(games, start_season=2001)
+    try:
+        parlay_summary_from_history(history)
+        assert False, "expected ValueError when no week can form a full parlay"
+    except ValueError:
+        pass
 
 
 def test_blend_residual_std_positive_once_warmed_up():

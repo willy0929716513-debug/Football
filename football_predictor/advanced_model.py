@@ -653,3 +653,94 @@ def recommendation_summary_from_history(history: list[dict]) -> RecommendationSu
         ats_accuracy=(sum(1 for r in ats_scored if r["recommendation_correct"]) / len(ats_scored)) if ats_scored else None,
         moneyline_accuracy=(sum(1 for r in ml_scored if r["recommendation_correct"]) / len(ml_scored)) if ml_scored else None,
     )
+
+
+# Defaults for the "串關" (parlay) builder: combine a week's most confident
+# recommendations into a single all-or-nothing bet. 3 legs is a common,
+# conservative parlay size; 0.6 confidence keeps weak, coin-flip-ish picks
+# out of it (a genuinely uncertain week may then come up short of `legs`
+# candidates, and is honestly reported as such rather than padded out).
+DEFAULT_PARLAY_LEGS = 3
+DEFAULT_PARLAY_MIN_CONFIDENCE = 0.6
+
+
+def pick_parlay_legs(games: list[dict], legs: int = DEFAULT_PARLAY_LEGS,
+                      min_confidence: float = DEFAULT_PARLAY_MIN_CONFIDENCE) -> list[dict]:
+    """Pick the `legs` games with the highest recommendation confidence —
+    the ones least likely to be an upset — out of a single week's games, to
+    combine into a parlay. Only games whose recommendation confidence
+    clears `min_confidence` are eligible, so a weak week doesn't get padded
+    with low-conviction picks: the result can have fewer than `legs`
+    entries (even zero) when the week just doesn't have that many strong
+    picks. Works on both `backtest_history()` records and `export-site`
+    upcoming-game entries, since both carry the same recommendation_*
+    fields from `pick_recommendation`.
+    """
+    eligible = [
+        g for g in games
+        if g.get("recommendation_confidence") is not None and g["recommendation_confidence"] >= min_confidence
+    ]
+    eligible.sort(key=lambda g: g["recommendation_confidence"], reverse=True)
+    return eligible[:legs]
+
+
+def combined_parlay_probability(legs: list[dict]) -> float:
+    """The parlay's all-legs-correct probability, treating games as
+    independent (a simplifying assumption — two games can share a common
+    cause, like weather across a slate — that's disclosed on the site
+    rather than modeled away)."""
+    probability = 1.0
+    for leg in legs:
+        probability *= leg["recommendation_confidence"]
+    return probability
+
+
+@dataclass
+class ParlaySummaryResult:
+    weeks: int
+    parlays_formed: int
+    parlays_hit: int
+    hit_rate: float
+    avg_legs: float
+    avg_combined_probability: float
+
+
+def parlay_summary_from_history(history: list[dict], legs: int = DEFAULT_PARLAY_LEGS,
+                                 min_confidence: float = DEFAULT_PARLAY_MIN_CONFIDENCE) -> ParlaySummaryResult:
+    """Honest backtest of the "combine the week's most confident picks into
+    a parlay" strategy: group historical games by (season, week), form the
+    same `legs`-sized parlay `pick_parlay_legs` would have picked using only
+    information available that week, and check whether every leg actually
+    hit. A parlay only pays out if *all* legs are correct, so this is a much
+    harder bar than any single recommendation's own accuracy — expect the
+    hit rate here to be noticeably lower."""
+    weeks: dict[tuple, list[dict]] = {}
+    for r in history:
+        if r["recommendation_type"] is not None and r["recommendation_correct"] is not None:
+            weeks.setdefault((r["season"], r["week"]), []).append(r)
+
+    formed = 0
+    hit = 0
+    leg_counts: list[int] = []
+    combined_probs: list[float] = []
+    for week_games in weeks.values():
+        chosen = pick_parlay_legs(week_games, legs=legs, min_confidence=min_confidence)
+        if len(chosen) < legs:
+            continue
+        formed += 1
+        leg_counts.append(len(chosen))
+        combined_probs.append(combined_parlay_probability(chosen))
+        if all(g["recommendation_correct"] for g in chosen):
+            hit += 1
+
+    if formed == 0:
+        raise ValueError("no week had enough qualifying games to form a parlay")
+
+    return ParlaySummaryResult(
+        weeks=len(weeks),
+        parlays_formed=formed,
+        parlays_hit=hit,
+        hit_rate=hit / formed,
+        avg_legs=sum(leg_counts) / formed,
+        avg_combined_probability=sum(combined_probs) / formed,
+    )

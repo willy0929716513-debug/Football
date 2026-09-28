@@ -136,6 +136,9 @@ def test_export_site_writes_data_and_history_with_blend_fields(tmp_path, capsys)
 
     data = json.loads((out_dir / "data.json").read_text())
     assert data["model_performance"]["blend"]["games"] > 0
+    # this synthetic dataset only ever has one game per week, so a 3-leg
+    # parlay can never be formed — the key should still be present (as None)
+    assert "parlay" in data["model_performance"]
     upcoming = data["upcoming"]
     assert len(upcoming) == 1
     assert upcoming[0]["blend_home_win_prob"] is not None

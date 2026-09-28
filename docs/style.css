@@ -362,6 +362,29 @@ button#predict-btn:hover { filter: brightness(1.08); }
   margin: 6px 0 8px;
 }
 
+.parlay-legs {
+  margin: 0 0 12px;
+  padding-left: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.parlay-legs li {
+  font-size: 0.92rem;
+}
+
+.parlay-combined {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--good);
+  background: var(--accent-soft);
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: inline-block;
+  margin: 0 0 10px;
+}
+
 .week-picker {
   font-size: 0.85rem;
   color: var(--text-muted);

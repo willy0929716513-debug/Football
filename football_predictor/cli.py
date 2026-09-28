@@ -17,8 +17,8 @@ from pathlib import Path
 
 from .advanced_model import (
     AdvancedPredictor, advanced_backtest, backtest_history, blend_prediction,
-    blend_residual_std, blend_summary_from_history, market_backtest, pick_recommendation,
-    recommendation_summary_from_history, _market_implied_prob,
+    blend_residual_std, blend_summary_from_history, market_backtest, parlay_summary_from_history,
+    pick_recommendation, recommendation_summary_from_history, _market_implied_prob,
 )
 from .data import (
     load_games, load_upcoming_games, normalize_team, team_display_name, team_display_name_zh,
@@ -267,6 +267,10 @@ def cmd_export_site(args: argparse.Namespace) -> int:
         performance["recommendation"] = vars(recommendation_summary_from_history(history))
     except ValueError:
         performance["recommendation"] = None
+    try:
+        performance["parlay"] = vars(parlay_summary_from_history(history))
+    except ValueError:
+        performance["parlay"] = None
 
     residual_std = blend_residual_std(history)
 

@@ -245,6 +245,8 @@ function renderGamesForWeek(upcoming, weekKey) {
       return (a.gametime || "").localeCompare(b.gametime || "");
     });
 
+  renderParlay(games);
+
   const grid = document.getElementById("games-grid");
   grid.innerHTML = "";
   if (!games.length) {
@@ -275,6 +277,66 @@ function renderGamesForWeek(upcoming, weekKey) {
     `;
     grid.appendChild(card);
   }
+}
+
+// ------------------------------------------------------------- 串關 (parlay) --
+
+// Kept in sync with DEFAULT_PARLAY_LEGS / DEFAULT_PARLAY_MIN_CONFIDENCE in
+// advanced_model.py, so the live weekly parlay shown here (computed
+// client-side from the already-exported recommendation fields) matches the
+// exact same rule the honest historical backtest in `model_performance.parlay`
+// is scored against.
+const PARLAY_LEGS = 3;
+const PARLAY_MIN_CONFIDENCE = 0.6;
+
+function pickParlayLegs(games, legs = PARLAY_LEGS, minConfidence = PARLAY_MIN_CONFIDENCE) {
+  return games
+    .filter((g) => g.recommendation_confidence !== undefined && g.recommendation_confidence !== null
+      && g.recommendation_confidence >= minConfidence)
+    .sort((a, b) => b.recommendation_confidence - a.recommendation_confidence)
+    .slice(0, legs);
+}
+
+function combinedParlayProbability(legs) {
+  return legs.reduce((acc, g) => acc * g.recommendation_confidence, 1);
+}
+
+function parlayLegDetail(g) {
+  if (g.recommendation_type === "ats") {
+    const spreadStr = formatSpread(g.home_team, g.away_team, g.market_spread);
+    return `${g.recommendation_team} 讓分過盤（${spreadStr}）`;
+  }
+  return `${g.recommendation_team} 直接獲勝`;
+}
+
+function renderParlay(games) {
+  const body = document.getElementById("parlay-body");
+  const label = document.getElementById("parlay-legs-label");
+  if (label) label.textContent = String(PARLAY_LEGS);
+  if (!body) return;
+
+  const legs = pickParlayLegs(games);
+  if (legs.length < PARLAY_LEGS) {
+    body.innerHTML = `<p class="section-note">這週信心達 ${fmtPct(PARLAY_MIN_CONFIDENCE)} 以上的比賽不到 ${PARLAY_LEGS} 場，暫不建議湊成串關。</p>`;
+    return;
+  }
+
+  const combined = combinedParlayProbability(legs);
+  const fairOdds = (1 / combined).toFixed(2);
+  const legsHtml = legs.map((g) => {
+    const typeLabel = g.recommendation_type === "ats" ? "讓分" : "不讓分";
+    return `<li><strong>${g.away_team} @ ${g.home_team}</strong>（${typeLabel}）：${parlayLegDetail(g)} — 信心 ${fmtPct(g.recommendation_confidence)}</li>`;
+  }).join("");
+
+  body.innerHTML = `
+    <ol class="parlay-legs">${legsHtml}</ol>
+    <p class="parlay-combined">全部命中機率（假設各場獨立）：<strong>${fmtPct(combined)}</strong>　公平賠率約 <strong>${fairOdds}</strong> 倍</p>
+    <p class="section-note">
+      誠實提醒：串關只要有一場沒中，整組就不算贏 — 就算每一場單獨看都有六七成信心，串在一起的整體
+      機率還是會掉很多。上面的機率是假設「各場比賽互相獨立」乘出來的簡化估計，實際上同一週的比賽可能有
+      共通因素（例如同樣的天氣系統）。這個策略本身過去的真實命中率，請見下方「模型準確度與市場比較」。
+    </p>
+  `;
 }
 
 function renderRankings(rankings) {
@@ -317,6 +379,7 @@ function renderPerformance(performance) {
     body.appendChild(tr);
   }
   renderRecommendationSummary(performance.recommendation);
+  renderParlaySummary(performance.parlay);
 }
 
 function renderRecommendationSummary(r) {
@@ -334,6 +397,23 @@ function renderRecommendationSummary(r) {
     場「讓分」推薦（命中率 ${atsAcc}）、${r.moneyline_recommended} 場「不讓分」推薦（命中率 ${mlAcc}），
     整體命中率 <strong>${fmtPct(r.accuracy)}</strong>。誠實說：這只是「自動選擇信心較高的一種」，
     不代表能穩定打敗市場。
+  `;
+}
+
+function renderParlaySummary(r) {
+  const el = document.getElementById("parlay-summary-note");
+  if (!el) return;
+  if (!r || r.error) {
+    el.textContent = `「本週串關推薦」（每週信心最高的 ${PARLAY_LEGS} 場湊成一組）目前尚無足夠資料可回測。`;
+    return;
+  }
+  el.innerHTML = `
+    「本週串關推薦」白話說明：每週從當時信心最高、達到門檻的比賽中選 ${r.avg_legs.toFixed(1)}
+    場（平均）湊成一組串關，全部命中才算贏。誠實回測：${r.weeks} 週裡有 ${r.parlays_formed}
+    週湊得出一組完整的串關，其中真正全部命中的有 ${r.parlays_hit} 週，命中率
+    <strong>${fmtPct(r.hit_rate)}</strong>（平均事前估計的全部命中機率約 ${fmtPct(r.avg_combined_probability)}）。
+    誠實說：串關本來就是「一場沒中全組泡湯」的高風險玩法，命中率一定會比單場推薦低很多，這裡如實
+    呈現，不是每週都湊得出來、也不是每次湊出來都會中。
   `;
 }
 
