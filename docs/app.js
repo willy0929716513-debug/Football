@@ -104,6 +104,22 @@ function renderPredictionsUpdatedAt(iso) {
   el.textContent = `這份預測資料更新於：${formatUpdatedAt(iso)}（每天台灣時間晚上 6 點自動更新）`;
 }
 
+// Headline stat at the very top of the page: the "本場推薦" (auto-pick
+// between 讓分/不讓分) strategy's overall historical hit rate, taken straight
+// from the same honest backtest numbers shown lower down in the performance
+// table (recommendation_summary_from_history in advanced_model.py) — just
+// surfaced up front so it doesn't require scrolling to find.
+function renderHeroRecommendationStat(performance) {
+  const el = document.getElementById("hero-recommendation-stat");
+  if (!el) return;
+  const r = performance && performance.recommendation;
+  if (!r || r.error) {
+    el.textContent = "總推薦勝率：尚無足夠資料可回測";
+    return;
+  }
+  el.innerHTML = `總推薦勝率：<strong>${fmtPct(r.accuracy)}</strong>（回測 ${r.games} 場，2015 年至今）`;
+}
+
 function populateTeamSelects(teams) {
   const homeSel = document.getElementById("home-select");
   const awaySel = document.getElementById("away-select");
@@ -734,12 +750,14 @@ async function main() {
   } catch (err) {
     document.getElementById("updated-at").textContent = "資料載入失敗，請稍後再試。";
     document.getElementById("predictions-updated-at").textContent = "資料載入失敗，請稍後再試。";
+    document.getElementById("hero-recommendation-stat").textContent = "資料載入失敗，請稍後再試。";
     console.error(err);
     return;
   }
 
   renderUpdatedAt(SITE_DATA.generated_at);
   renderPredictionsUpdatedAt(SITE_DATA.generated_at);
+  renderHeroRecommendationStat(SITE_DATA.model_performance);
   populateTeamSelects(SITE_DATA.teams);
   populateWeekSelect(SITE_DATA.upcoming);
   renderRankings(SITE_DATA.power_rankings);
