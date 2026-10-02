@@ -1,6 +1,6 @@
 {
   "start_season": 2015,
-  "generated_at": "2026-10-01T16:58:48Z",
+  "generated_at": "2026-10-02T16:11:25Z",
   "games": [
     {
       "season": 2015,
@@ -98432,6 +98432,38 @@
       "recommendation_type": "moneyline",
       "recommendation_team": "PHI",
       "recommendation_confidence": 0.6287,
+      "recommendation_correct": false
+    },
+    {
+      "season": 2026,
+      "week": "4",
+      "game_type": "REG",
+      "date": "2026-10-01",
+      "home_team": "CLE",
+      "away_team": "PIT",
+      "home_name_zh": "\u514b\u91cc\u592b\u862d\u5e03\u6717",
+      "away_name_zh": "\u5339\u8332\u5821\u92fc\u4eba",
+      "home_score": 27,
+      "away_score": 24,
+      "elo_home_win_prob": 0.4872,
+      "elo_predicted_margin": -0.4,
+      "elo_correct": false,
+      "adv_home_win_prob": 0.4753,
+      "adv_predicted_margin": -0.7,
+      "adv_correct": false,
+      "market_home_win_prob": 0.4279,
+      "market_spread": -2.5,
+      "market_correct": false,
+      "blend_home_win_prob": 0.4326,
+      "blend_predicted_margin": -2.3,
+      "blend_correct": false,
+      "ats_edge": 0.2,
+      "ats_cover_prob_home": 0.5056,
+      "ats_confidence": 0.5056,
+      "moneyline_confidence": 0.5674,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "PIT",
+      "recommendation_confidence": 0.5674,
       "recommendation_correct": false
     }
   ]
