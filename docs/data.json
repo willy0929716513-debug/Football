@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T15:30:30Z",
+  "generated_at": "2026-10-06T16:38:02Z",
   "teams": [
     {
       "code": "ARI",
@@ -420,19 +420,19 @@
       "away_name": "Tampa Bay Buccaneers",
       "home_name_zh": "\u9054\u62c9\u65af\u725b\u4ed4",
       "away_name_zh": "\u5766\u5e15\u7063\u6d77\u76dc",
-      "market_spread": 9.5,
-      "home_moneyline": -485.0,
-      "away_moneyline": 370.0,
-      "market_home_win_prob": 0.7958,
-      "blend_home_win_prob": 0.7846,
-      "blend_predicted_margin": 9.1,
-      "ats_edge": -0.4,
-      "ats_cover_prob_home": 0.4866,
-      "ats_confidence": 0.5134,
-      "moneyline_confidence": 0.7846,
+      "market_spread": 8.5,
+      "home_moneyline": -455.0,
+      "away_moneyline": 350.0,
+      "market_home_win_prob": 0.7867,
+      "blend_home_win_prob": 0.7762,
+      "blend_predicted_margin": 8.2,
+      "ats_edge": -0.3,
+      "ats_cover_prob_home": 0.4897,
+      "ats_confidence": 0.5103,
+      "moneyline_confidence": 0.7762,
       "recommendation_type": "moneyline",
       "recommendation_team": "DAL",
-      "recommendation_confidence": 0.7846
+      "recommendation_confidence": 0.7762
     },
     {
       "home_team": "JAX",
@@ -466,18 +466,18 @@
       "home_name_zh": "\u5091\u514b\u905c\u7dad\u723e\u7f8e\u6d32\u8c79",
       "away_name_zh": "\u8cbb\u57ce\u8001\u9df9",
       "market_spread": 6.5,
-      "home_moneyline": -278.0,
-      "away_moneyline": 225.0,
-      "market_home_win_prob": 0.705,
-      "blend_home_win_prob": 0.705,
+      "home_moneyline": -285.0,
+      "away_moneyline": 230.0,
+      "market_home_win_prob": 0.7095,
+      "blend_home_win_prob": 0.7091,
       "blend_predicted_margin": 6.5,
       "ats_edge": 0.0,
       "ats_cover_prob_home": 0.5004,
       "ats_confidence": 0.5004,
-      "moneyline_confidence": 0.705,
+      "moneyline_confidence": 0.7091,
       "recommendation_type": "moneyline",
       "recommendation_team": "JAX",
-      "recommendation_confidence": 0.705
+      "recommendation_confidence": 0.7091
     },
     {
       "home_team": "GB",
@@ -7253,7 +7253,7 @@
       "games": 3092,
       "accuracy": 0.6439197930142303,
       "brier_score": 0.2207037248171495,
-      "spread_mae": 10.169975203315836,
+      "spread_mae": 10.169975203315838,
       "seasons_refit": 12
     },
     "market": {
@@ -7355,14 +7355,14 @@
         0.20081295585411188
       ],
       "coef": [
-        0.7020352735083571,
-        0.062352646273045736,
-        -0.046398275402983934,
+        0.7020352735083573,
+        0.06235264627304574,
+        -0.04639827540298394,
         -0.12861091001382965,
         0.1042990938392065,
-        0.04013023076584159,
-        -0.011932034120868124,
-        0.0038767500197474805
+        0.04013023076584158,
+        -0.011932034120868113,
+        0.0038767500197474758
       ],
       "intercept": 0.28903214343005307
     },
@@ -7389,13 +7389,13 @@
       ],
       "coef": [
         5.333953089575268,
-        0.5410766877479471,
-        -0.31301888207320505,
-        -0.711664401954753,
-        0.7554004657623672,
-        0.19080709694304213,
-        -0.041117850098116256,
-        0.15892006004176087
+        0.5410766877479474,
+        -0.31301888207320583,
+        -0.7116644019547491,
+        0.7554004657623677,
+        0.19080709694304163,
+        -0.04111785009811587,
+        0.15892006004176049
       ],
       "intercept": 2.329564032697544
     }
