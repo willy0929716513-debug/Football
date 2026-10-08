@@ -7339,35 +7339,35 @@ season,week,game_type,gameday,weekday,gametime,home_team,away_team,home_score,aw
 2026,4,REG,2026-10-04,Sunday,16:25,SF,DEN,24,14,7,7,0,outdoors,grass,87,4,00-0037834,00-0039732,Brock Purdy,Bo Nix,Kyle Shanahan,Sean Payton,3,-166,140,48.5
 2026,4,REG,2026-10-04,Sunday,20:20,CAR,DET,32,26,7,7,0,outdoors,grass,66,2,00-0039150,00-0033106,Bryce Young,Jared Goff,Dave Canales,Dan Campbell,-4.5,185,-225,52.5
 2026,4,REG,2026-10-05,Monday,20:15,NO,ATL,24,45,8,11,1,dome,sportturf,,,00-0040743,00-0039917,Tyler Shough,Michael Penix Jr.,Kellen Moore,Raheem Morris,1.5,-118,-102,47.5
-2026,5,REG,2026-10-08,Thursday,20:15,DAL,TB,,,4,4,0,,matrixturf,,,00-0033077,00-0041251,Dak Prescott,Jalon Daniels,Brian Schottenheimer,Todd Bowles,8.5,-470,360,47.5
-2026,5,REG,2026-10-11,Sunday,09:30,JAX,PHI,,,7,7,0,outdoors,grass,,,00-0036971,00-0036389,Trevor Lawrence,Jalen Hurts,Liam Coen,Nick Sirianni,7,-355,280,42.5
-2026,5,REG,2026-10-11,Sunday,13:00,GB,CHI,,,7,7,1,outdoors,grass,,,00-0036264,00-0038416,Jordan Love,Tyson Bagent,Matt LaFleur,Ben Johnson,-2.5,120,-142,45.5
-2026,5,REG,2026-10-11,Sunday,13:00,MIA,CIN,,,7,7,0,outdoors,grass,,,00-0038128,00-0036442,Malik Willis,Joe Burrow,Jeff Hafley,Zac Taylor,-7,275,-345,42.5
+2026,5,REG,2026-10-08,Thursday,20:15,DAL,TB,,,4,4,0,,matrixturf,,,00-0033077,00-0041251,Dak Prescott,Jalon Daniels,Brian Schottenheimer,Todd Bowles,8.5,-470,360,48.5
+2026,5,REG,2026-10-11,Sunday,09:30,JAX,PHI,,,7,7,0,outdoors,grass,,,00-0036971,00-0036389,Trevor Lawrence,Jalen Hurts,Liam Coen,Nick Sirianni,7.5,-345,275,41.5
+2026,5,REG,2026-10-11,Sunday,13:00,GB,CHI,,,7,7,1,outdoors,grass,,,00-0036264,00-0038416,Jordan Love,Tyson Bagent,Matt LaFleur,Ben Johnson,-1.5,110,-130,45.5
+2026,5,REG,2026-10-11,Sunday,13:00,MIA,CIN,,,7,7,0,outdoors,grass,,,00-0038128,00-0036442,Malik Willis,Joe Burrow,Jeff Hafley,Zac Taylor,-6.5,260,-325,42.5
 2026,5,REG,2026-10-11,Sunday,13:00,NE,LV,,,7,7,0,outdoors,fieldturf,,,00-0039851,00-0029604,Drake Maye,Kirk Cousins,Mike Vrabel,Klint Kubliak,3.5,-198,164,45.5
-2026,5,REG,2026-10-11,Sunday,13:00,NO,MIN,,,6,7,0,dome,sportturf,,,00-0040743,00-0035228,Tyler Shough,Kyler Murray,Kellen Moore,Kevin O'Connell,-1.5,105,-125,42.5
-2026,5,REG,2026-10-11,Sunday,13:00,NYJ,CLE,,,7,10,0,outdoors,fieldturf,,,00-0030565,00-0033537,Geno Smith,Deshaun Watson,Aaron Glenn,Todd Monken,2.5,-130,110,39.5
-2026,5,REG,2026-10-11,Sunday,13:00,PIT,IND,,,10,7,0,outdoors,grass,,,00-0023459,00-0035710,Aaron Rodgers,Daniel Jones,Mike McCarthy,Shane Steichen,2.5,-148,124,44.5
-2026,5,REG,2026-10-11,Sunday,13:00,TEN,HOU,,,7,7,1,outdoors,grass,,,00-0040676,00-0039163,Cam Ward,C.J. Stroud,Robert Saleh,DeMeco Ryans,-7.5,295,-375,37.5
-2026,5,REG,2026-10-11,Sunday,13:00,WAS,NYG,,,7,7,1,outdoors,grass,,,00-0039910,00-0031503,Jayden Daniels,Jameis Winston,Dan Quinn,John Harbaugh,3.5,-180,150,43.5
-2026,5,REG,2026-10-11,Sunday,16:05,LAC,DEN,,,7,7,1,dome,matrixturf,,,00-0036355,00-0039732,Justin Herbert,Bo Nix,Jim Harbaugh,Sean Payton,-3.5,154,-185,42.5
+2026,5,REG,2026-10-11,Sunday,13:00,NO,MIN,,,6,7,0,dome,sportturf,,,00-0040743,00-0035228,Tyler Shough,Kyler Murray,Kellen Moore,Kevin O'Connell,-2.5,114,-135,41.5
+2026,5,REG,2026-10-11,Sunday,13:00,NYJ,CLE,,,7,10,0,outdoors,fieldturf,,,00-0030565,00-0033537,Geno Smith,Deshaun Watson,Aaron Glenn,Todd Monken,1.5,-125,105,39.5
+2026,5,REG,2026-10-11,Sunday,13:00,PIT,IND,,,10,7,0,outdoors,grass,,,00-0023459,00-0035710,Aaron Rodgers,Daniel Jones,Mike McCarthy,Shane Steichen,2.5,-142,120,44.5
+2026,5,REG,2026-10-11,Sunday,13:00,TEN,HOU,,,7,7,1,outdoors,grass,,,00-0040676,00-0039163,Cam Ward,C.J. Stroud,Robert Saleh,DeMeco Ryans,-7.5,330,-425,38.5
+2026,5,REG,2026-10-11,Sunday,13:00,WAS,NYG,,,7,7,1,outdoors,grass,,,00-0039910,00-0031503,Jayden Daniels,Jameis Winston,Dan Quinn,John Harbaugh,3.5,-185,154,41.5
+2026,5,REG,2026-10-11,Sunday,16:05,LAC,DEN,,,7,7,1,dome,matrixturf,,,00-0036355,00-0039732,Justin Herbert,Bo Nix,Jim Harbaugh,Sean Payton,-3.5,154,-185,41.5
 2026,5,REG,2026-10-11,Sunday,16:25,ARI,DET,,,7,7,0,,grass,,,00-0033119,00-0033106,Jacoby Brissett,Jared Goff,Jonathan Gannon,Dan Campbell,-5.5,210,-258,54.5
-2026,5,REG,2026-10-11,Sunday,16:25,SEA,SF,,,7,7,1,outdoors,fieldturf,,,00-0035704,00-0037834,Drew Lock,Brock Purdy,Mike Macdonald,Kyle Shanahan,2.5,-155,130,46.5
-2026,5,REG,2026-10-11,Sunday,20:20,ATL,BAL,,,6,7,0,,fieldturf,,,00-0039917,00-0034796,Michael Penix Jr.,Lamar Jackson,Raheem Morris,Jesse Minter,3.5,-175,145,43.5
-2026,5,REG,2026-10-12,Monday,20:15,LA,BUF,,,8,8,0,dome,matrixturf,,,00-0026498,00-0034857,Matthew Stafford,Josh Allen,Sean McVay,Sean McDermott,3,-162,136,54.5
+2026,5,REG,2026-10-11,Sunday,16:25,SEA,SF,,,7,7,1,outdoors,fieldturf,,,00-0035704,00-0037834,Drew Lock,Brock Purdy,Mike Macdonald,Kyle Shanahan,3,-162,136,45.5
+2026,5,REG,2026-10-11,Sunday,20:20,ATL,BAL,,,6,7,0,,fieldturf,,,00-0039917,00-0034796,Michael Penix Jr.,Lamar Jackson,Raheem Morris,Jesse Minter,3,-175,145,43.5
+2026,5,REG,2026-10-12,Monday,20:15,LA,BUF,,,8,8,0,dome,matrixturf,,,00-0026498,00-0034857,Matthew Stafford,Josh Allen,Sean McVay,Sean McDermott,3,-166,140,54.5
 2026,6,REG,2026-10-15,Thursday,20:15,DEN,SEA,,,4,4,0,outdoors,grass,,,,,,,Sean Payton,Mike Macdonald,-1.5,105,-125,42.5
 2026,6,REG,2026-10-18,Sunday,09:30,JAX,HOU,,,7,7,1,outdoors,grass,,,,,,,Liam Coen,DeMeco Ryans,3,-175,145,43.5
-2026,6,REG,2026-10-18,Sunday,13:00,ATL,CHI,,,7,7,0,,fieldturf,,,,,,,Raheem Morris,Ben Johnson,-1.5,102,-122,47.5
-2026,6,REG,2026-10-18,Sunday,13:00,CLE,BAL,,,7,7,1,outdoors,grass,,,,,,,Todd Monken,Jesse Minter,-2.5,120,-142,40.5
-2026,6,REG,2026-10-18,Sunday,13:00,IND,TEN,,,7,7,1,,fieldturf,,,,,,,Shane Steichen,Robert Saleh,6.5,-298,240,44.5
+2026,6,REG,2026-10-18,Sunday,13:00,ATL,CHI,,,7,7,0,,fieldturf,,,,,,,Raheem Morris,Ben Johnson,-1.5,105,-125,47.5
+2026,6,REG,2026-10-18,Sunday,13:00,CLE,BAL,,,7,7,1,outdoors,grass,,,,,,,Todd Monken,Jesse Minter,-2.5,130,-155,40.5
+2026,6,REG,2026-10-18,Sunday,13:00,IND,TEN,,,7,7,1,,fieldturf,,,,,,,Shane Steichen,Robert Saleh,6.5,-310,250,44.5
 2026,6,REG,2026-10-18,Sunday,13:00,NE,NYJ,,,7,7,1,outdoors,fieldturf,,,,,,,Mike Vrabel,Aaron Glenn,7,-340,270,43.5
 2026,6,REG,2026-10-18,Sunday,13:00,NYG,NO,,,7,7,0,outdoors,fieldturf,,,,,,,John Harbaugh,Kellen Moore,-1.5,-102,-118,45.5
 2026,6,REG,2026-10-18,Sunday,13:00,PHI,CAR,,,7,14,0,outdoors,grass,,,,,,,Nick Sirianni,Dave Canales,2.5,-135,114,43.5
 2026,6,REG,2026-10-18,Sunday,13:00,TB,PIT,,,10,7,0,outdoors,grass,,,,,,,Todd Bowles,Mike McCarthy,-3,130,-155,39.5
 2026,6,REG,2026-10-18,Sunday,16:05,LA,ARI,,,6,7,1,dome,matrixturf,,,,,,,Sean McVay,Jonathan Gannon,10.5,-625,455,51.5
-2026,6,REG,2026-10-18,Sunday,16:25,KC,LAC,,,14,7,1,outdoors,grass,,,,,,,Andy Reid,Jim Harbaugh,7.5,-395,310,45.5
-2026,6,REG,2026-10-18,Sunday,16:25,LV,BUF,,,7,6,0,dome,grass,,,,,,,Klint Kubliak,Sean McDermott,-4.5,185,-225,51.5
+2026,6,REG,2026-10-18,Sunday,16:25,KC,LAC,,,14,7,1,outdoors,grass,,,,,,,Andy Reid,Jim Harbaugh,7.5,-380,300,45.5
+2026,6,REG,2026-10-18,Sunday,16:25,LV,BUF,,,7,6,0,dome,grass,,,,,,,Klint Kubliak,Sean McDermott,-4.5,190,-230,51.5
 2026,6,REG,2026-10-18,Sunday,20:20,GB,DAL,,,7,10,0,outdoors,grass,,,,,,,Matt LaFleur,Brian Schottenheimer,-2.5,120,-142,50.5
-2026,6,REG,2026-10-19,Monday,20:15,SF,WAS,,,8,8,0,outdoors,grass,,,,,,,Kyle Shanahan,Dan Quinn,7.5,-425,330,50.5
+2026,6,REG,2026-10-19,Monday,20:15,SF,WAS,,,8,8,0,outdoors,grass,,,,,,,Kyle Shanahan,Dan Quinn,7.5,-410,320,50.5
 2026,7,REG,2026-10-22,Thursday,20:15,CHI,NE,,,4,4,0,outdoors,grass,,,,,,,Ben Johnson,Mike Vrabel,,,,
 2026,7,REG,2026-10-25,Sunday,09:30,NO,PIT,,,7,7,0,dome,sportturf,,,,,,,Kellen Moore,Mike McCarthy,,,,
 2026,7,REG,2026-10-25,Sunday,13:00,ATL,SF,,,7,6,0,,fieldturf,,,,,,,Raheem Morris,Kyle Shanahan,,,,
