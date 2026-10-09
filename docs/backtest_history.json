@@ -1,6 +1,6 @@
 {
   "start_season": 2015,
-  "generated_at": "2026-10-08T17:19:09Z",
+  "generated_at": "2026-10-09T16:55:09Z",
   "games": [
     {
       "season": 2015,
@@ -98944,6 +98944,38 @@
       "recommendation_type": "moneyline",
       "recommendation_team": "NO",
       "recommendation_confidence": 0.518,
+      "recommendation_correct": false
+    },
+    {
+      "season": 2026,
+      "week": "5",
+      "game_type": "REG",
+      "date": "2026-10-08",
+      "home_team": "DAL",
+      "away_team": "TB",
+      "home_name_zh": "\u9054\u62c9\u65af\u725b\u4ed4",
+      "away_name_zh": "\u5766\u5e15\u7063\u6d77\u76dc",
+      "home_score": 16,
+      "away_score": 24,
+      "elo_home_win_prob": 0.6555,
+      "elo_predicted_margin": 5.0,
+      "elo_correct": false,
+      "adv_home_win_prob": 0.6656,
+      "adv_predicted_margin": 5.3,
+      "adv_correct": false,
+      "market_home_win_prob": 0.8082,
+      "market_spread": 9.5,
+      "market_correct": false,
+      "blend_home_win_prob": 0.7963,
+      "blend_predicted_margin": 9.1,
+      "blend_correct": false,
+      "ats_edge": -0.4,
+      "ats_cover_prob_home": 0.4868,
+      "ats_confidence": 0.5132,
+      "moneyline_confidence": 0.7963,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "DAL",
+      "recommendation_confidence": 0.7963,
       "recommendation_correct": false
     }
   ]
