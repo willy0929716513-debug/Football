@@ -1,6 +1,6 @@
 {
   "start_season": 2015,
-  "generated_at": "2026-10-12T19:44:07Z",
+  "generated_at": "2026-10-13T17:29:19Z",
   "games": [
     {
       "season": 2015,
@@ -99392,6 +99392,38 @@
       "recommendation_type": "moneyline",
       "recommendation_team": "ATL",
       "recommendation_confidence": 0.6072,
+      "recommendation_correct": false
+    },
+    {
+      "season": 2026,
+      "week": "5",
+      "game_type": "REG",
+      "date": "2026-10-12",
+      "home_team": "LA",
+      "away_team": "BUF",
+      "home_name_zh": "\u6d1b\u6749\u78ef\u516c\u7f8a",
+      "away_name_zh": "\u6c34\u725b\u57ce\u6bd4\u723e",
+      "home_score": 34,
+      "away_score": 37,
+      "elo_home_win_prob": 0.5176,
+      "elo_predicted_margin": 0.6,
+      "elo_correct": false,
+      "adv_home_win_prob": 0.5298,
+      "adv_predicted_margin": 0.9,
+      "adv_correct": false,
+      "market_home_win_prob": 0.6225,
+      "market_spread": 3.5,
+      "market_correct": false,
+      "blend_home_win_prob": 0.6135,
+      "blend_predicted_margin": 3.2,
+      "blend_correct": false,
+      "ats_edge": -0.3,
+      "ats_cover_prob_home": 0.4918,
+      "ats_confidence": 0.5082,
+      "moneyline_confidence": 0.6135,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "LA",
+      "recommendation_confidence": 0.6135,
       "recommendation_correct": false
     }
   ]
