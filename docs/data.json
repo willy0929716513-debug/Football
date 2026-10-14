@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T14:58:17Z",
+  "generated_at": "2026-10-14T15:38:17Z",
   "teams": [
     {
       "code": "ARI",
@@ -465,19 +465,19 @@
       "away_name": "Houston Texans",
       "home_name_zh": "\u5091\u514b\u905c\u7dad\u723e\u7f8e\u6d32\u8c79",
       "away_name_zh": "\u4f11\u58eb\u9813\u5fb7\u5dde\u4eba",
-      "market_spread": 3.0,
-      "home_moneyline": -148.0,
-      "away_moneyline": 124.0,
-      "market_home_win_prob": 0.5721,
-      "blend_home_win_prob": 0.5843,
-      "blend_predicted_margin": 3.3,
-      "ats_edge": 0.3,
-      "ats_cover_prob_home": 0.5097,
-      "ats_confidence": 0.5097,
-      "moneyline_confidence": 0.5843,
+      "market_spread": 2.5,
+      "home_moneyline": -142.0,
+      "away_moneyline": 120.0,
+      "market_home_win_prob": 0.5635,
+      "blend_home_win_prob": 0.5766,
+      "blend_predicted_margin": 2.9,
+      "ats_edge": 0.4,
+      "ats_cover_prob_home": 0.5113,
+      "ats_confidence": 0.5113,
+      "moneyline_confidence": 0.5766,
       "recommendation_type": "moneyline",
       "recommendation_team": "JAX",
-      "recommendation_confidence": 0.5843
+      "recommendation_confidence": 0.5766
     },
     {
       "home_team": "ATL",
@@ -735,19 +735,19 @@
       "away_name": "Carolina Panthers",
       "home_name_zh": "\u8cbb\u57ce\u8001\u9df9",
       "away_name_zh": "\u5361\u7f85\u840a\u7d0d\u9ed1\u8c79",
-      "market_spread": 1.5,
+      "market_spread": -1.5,
       "home_moneyline": -110.0,
       "away_moneyline": -110.0,
       "market_home_win_prob": 0.5,
       "blend_home_win_prob": 0.5078,
-      "blend_predicted_margin": 1.6,
-      "ats_edge": 0.1,
-      "ats_cover_prob_home": 0.5021,
-      "ats_confidence": 0.5021,
+      "blend_predicted_margin": -1.1,
+      "ats_edge": 0.4,
+      "ats_cover_prob_home": 0.5115,
+      "ats_confidence": 0.5115,
       "moneyline_confidence": 0.5078,
-      "recommendation_type": "moneyline",
+      "recommendation_type": "ats",
       "recommendation_team": "PHI",
-      "recommendation_confidence": 0.5078
+      "recommendation_confidence": 0.5115
     },
     {
       "home_team": "TB",
@@ -7045,13 +7045,13 @@
       ],
       "coef": [
         0.7029734516381689,
-        0.06236192440466731,
-        -0.04625994362545645,
+        0.06236192440466732,
+        -0.046259943625456434,
         -0.1278218730250613,
-        0.10447888133463279,
-        0.04029939311394891,
-        -0.011514629808825623,
-        0.004034283796414988
+        0.10447888133463276,
+        0.04029939311394892,
+        -0.011514629808825628,
+        0.004034283796414985
       ],
       "intercept": 0.287293810913224
     },
@@ -7077,16 +7077,16 @@
         0.2006170694428328
       ],
       "coef": [
-        5.337682905775461,
-        0.541641141337525,
-        -0.31016580807158195,
-        -0.7089650024740297,
-        0.7623776326473447,
-        0.19089232378935503,
-        -0.03990749478060501,
-        0.15942436417036376
+        5.337682905775463,
+        0.541641141337526,
+        -0.31016580807158456,
+        -0.7089650024740223,
+        0.7623776326473467,
+        0.19089232378935542,
+        -0.03990749478060433,
+        0.15942436417036293
       ],
-      "intercept": 2.3220938137321516
+      "intercept": 2.3220938137321525
     }
   }
 }
