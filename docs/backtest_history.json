@@ -1,6 +1,6 @@
 {
   "start_season": 2015,
-  "generated_at": "2026-10-19T16:53:36Z",
+  "generated_at": "2026-10-20T14:53:22Z",
   "games": [
     {
       "season": 2015,
@@ -99840,6 +99840,38 @@
       "recommendation_type": "ats",
       "recommendation_team": "GB",
       "recommendation_confidence": 0.5195,
+      "recommendation_correct": true
+    },
+    {
+      "season": 2026,
+      "week": "6",
+      "game_type": "REG",
+      "date": "2026-10-19",
+      "home_team": "SF",
+      "away_team": "WAS",
+      "home_name_zh": "\u820a\u91d1\u5c7149\u4eba",
+      "away_name_zh": "\u83ef\u76db\u9813\u6307\u63ee\u5b98",
+      "home_score": 23,
+      "away_score": 17,
+      "elo_home_win_prob": 0.8293,
+      "elo_predicted_margin": 12.4,
+      "elo_correct": true,
+      "adv_home_win_prob": 0.8349,
+      "adv_predicted_margin": 12.4,
+      "adv_correct": true,
+      "market_home_win_prob": 0.7659,
+      "market_spread": 7.5,
+      "market_correct": true,
+      "blend_home_win_prob": 0.7736,
+      "blend_predicted_margin": 8.0,
+      "blend_correct": true,
+      "ats_edge": 0.5,
+      "ats_cover_prob_home": 0.5154,
+      "ats_confidence": 0.5154,
+      "moneyline_confidence": 0.7736,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "SF",
+      "recommendation_confidence": 0.7736,
       "recommendation_correct": true
     }
   ]
