@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T14:12:47Z",
+  "generated_at": "2026-10-25T15:32:45Z",
   "teams": [
     {
       "code": "ARI",
@@ -466,18 +466,18 @@
       "home_name_zh": "\u4e9e\u7279\u862d\u5927\u7375\u9df9",
       "away_name_zh": "\u820a\u91d1\u5c7149\u4eba",
       "market_spread": -2.5,
-      "home_moneyline": 124.0,
-      "away_moneyline": -148.0,
-      "market_home_win_prob": 0.4279,
-      "blend_home_win_prob": 0.4164,
+      "home_moneyline": 120.0,
+      "away_moneyline": -142.0,
+      "market_home_win_prob": 0.4365,
+      "blend_home_win_prob": 0.4241,
       "blend_predicted_margin": -2.8,
       "ats_edge": -0.3,
       "ats_cover_prob_home": 0.4898,
       "ats_confidence": 0.5102,
-      "moneyline_confidence": 0.5836,
+      "moneyline_confidence": 0.5759,
       "recommendation_type": "moneyline",
       "recommendation_team": "SF",
-      "recommendation_confidence": 0.5836
+      "recommendation_confidence": 0.5759
     },
     {
       "home_team": "BAL",
@@ -781,18 +781,18 @@
       "home_name_zh": "\u4e9e\u5229\u6851\u90a3\u7d05\u96c0",
       "away_name_zh": "\u4e39\u4f5b\u91ce\u99ac",
       "market_spread": -4.5,
-      "home_moneyline": 195.0,
-      "away_moneyline": -238.0,
-      "market_home_win_prob": 0.325,
-      "blend_home_win_prob": 0.3221,
+      "home_moneyline": 190.0,
+      "away_moneyline": -230.0,
+      "market_home_win_prob": 0.331,
+      "blend_home_win_prob": 0.3275,
       "blend_predicted_margin": -4.7,
       "ats_edge": -0.2,
       "ats_cover_prob_home": 0.4934,
       "ats_confidence": 0.5066,
-      "moneyline_confidence": 0.6779,
+      "moneyline_confidence": 0.6725,
       "recommendation_type": "moneyline",
       "recommendation_team": "DEN",
-      "recommendation_confidence": 0.6779
+      "recommendation_confidence": 0.6725
     },
     {
       "home_team": "DET",
@@ -871,18 +871,18 @@
       "home_name_zh": "\u62c9\u65af\u7dad\u52a0\u65af\u7a81\u8972\u8005",
       "away_name_zh": "\u6d1b\u6749\u78ef\u516c\u7f8a",
       "market_spread": -3.5,
-      "home_moneyline": 150.0,
-      "away_moneyline": -180.0,
-      "market_home_win_prob": 0.3836,
-      "blend_home_win_prob": 0.3885,
+      "home_moneyline": 154.0,
+      "away_moneyline": -185.0,
+      "market_home_win_prob": 0.3775,
+      "blend_home_win_prob": 0.3831,
       "blend_predicted_margin": -3.4,
       "ats_edge": 0.1,
       "ats_cover_prob_home": 0.5047,
       "ats_confidence": 0.5047,
-      "moneyline_confidence": 0.6115,
+      "moneyline_confidence": 0.6169,
       "recommendation_type": "moneyline",
       "recommendation_team": "LA",
-      "recommendation_confidence": 0.6115
+      "recommendation_confidence": 0.6169
     },
     {
       "home_team": "SEA",
@@ -6539,13 +6539,13 @@
       ],
       "coef": [
         0.7013803758340406,
-        0.0630295034737292,
-        -0.04669227475797999,
+        0.06302950347372918,
+        -0.04669227475797998,
         -0.1282142739098165,
-        0.10384554769096005,
-        0.040513894642586305,
-        -0.011109201860425733,
-        0.004189408230706224
+        0.10384554769096006,
+        0.04051389464258632,
+        -0.011109201860425732,
+        0.004189408230706228
       ],
       "intercept": 0.28625975743028387
     },
@@ -6571,16 +6571,16 @@
         0.2004217535575411
       ],
       "coef": [
-        5.329607272797765,
-        0.5470063286883337,
-        -0.31142412377763096,
-        -0.7113155751819072,
-        0.7613882924966111,
-        0.19225695126819575,
-        -0.03769170533163705,
-        0.15992418967743785
+        5.329607272797767,
+        0.5470063286883357,
+        -0.3114241237776328,
+        -0.7113155751819015,
+        0.7613882924966093,
+        0.1922569512681959,
+        -0.03769170533163719,
+        0.15992418967743655
       ],
-      "intercept": 2.317910447761189
+      "intercept": 2.3179104477611903
     }
   }
 }
