@@ -1,6 +1,6 @@
 {
   "start_season": 2015,
-  "generated_at": "2026-10-29T16:49:13Z",
+  "generated_at": "2026-10-30T16:37:57Z",
   "games": [
     {
       "season": 2015,
@@ -100320,6 +100320,38 @@
       "recommendation_type": "moneyline",
       "recommendation_team": "DAL",
       "recommendation_confidence": 0.6471,
+      "recommendation_correct": true
+    },
+    {
+      "season": 2026,
+      "week": "8",
+      "game_type": "REG",
+      "date": "2026-10-29",
+      "home_team": "GB",
+      "away_team": "CAR",
+      "home_name_zh": "\u7da0\u7063\u5305\u88dd\u5de5",
+      "away_name_zh": "\u5361\u7f85\u840a\u7d0d\u9ed1\u8c79",
+      "home_score": 27,
+      "away_score": 19,
+      "elo_home_win_prob": 0.6522,
+      "elo_predicted_margin": 4.9,
+      "elo_correct": true,
+      "adv_home_win_prob": 0.6624,
+      "adv_predicted_margin": 5.1,
+      "adv_correct": true,
+      "market_home_win_prob": 0.6309,
+      "market_spread": 3.5,
+      "market_correct": true,
+      "blend_home_win_prob": 0.6341,
+      "blend_predicted_margin": 3.7,
+      "blend_correct": true,
+      "ats_edge": 0.2,
+      "ats_cover_prob_home": 0.505,
+      "ats_confidence": 0.505,
+      "moneyline_confidence": 0.6341,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "GB",
+      "recommendation_confidence": 0.6341,
       "recommendation_correct": true
     }
   ]
