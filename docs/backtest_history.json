@@ -1,6 +1,6 @@
 {
   "start_season": 2015,
-  "generated_at": "2026-11-09T20:36:13Z",
+  "generated_at": "2026-11-10T17:38:10Z",
   "games": [
     {
       "season": 2015,
@@ -101216,6 +101216,38 @@
       "recommendation_type": "moneyline",
       "recommendation_team": "CHI",
       "recommendation_confidence": 0.7145,
+      "recommendation_correct": true
+    },
+    {
+      "season": 2026,
+      "week": "9",
+      "game_type": "REG",
+      "date": "2026-11-09",
+      "home_team": "MIN",
+      "away_team": "BUF",
+      "home_name_zh": "\u660e\u5c3c\u8607\u9054\u7dad\u4eac\u4eba",
+      "away_name_zh": "\u6c34\u725b\u57ce\u6bd4\u723e",
+      "home_score": 6,
+      "away_score": 23,
+      "elo_home_win_prob": 0.5126,
+      "elo_predicted_margin": 0.4,
+      "elo_correct": false,
+      "adv_home_win_prob": 0.4247,
+      "adv_predicted_margin": -1.5,
+      "adv_correct": true,
+      "market_home_win_prob": 0.3775,
+      "market_spread": -3.0,
+      "market_correct": true,
+      "blend_home_win_prob": 0.3821,
+      "blend_predicted_margin": -2.9,
+      "blend_correct": true,
+      "ats_edge": 0.1,
+      "ats_cover_prob_home": 0.5047,
+      "ats_confidence": 0.5047,
+      "moneyline_confidence": 0.6179,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "BUF",
+      "recommendation_confidence": 0.6179,
       "recommendation_correct": true
     }
   ]
