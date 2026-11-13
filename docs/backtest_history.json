@@ -1,6 +1,6 @@
 {
   "start_season": 2015,
-  "generated_at": "2026-11-12T18:03:57Z",
+  "generated_at": "2026-11-13T17:36:47Z",
   "games": [
     {
       "season": 2015,
@@ -101249,6 +101249,38 @@
       "recommendation_team": "BUF",
       "recommendation_confidence": 0.6179,
       "recommendation_correct": true
+    },
+    {
+      "season": 2026,
+      "week": "10",
+      "game_type": "REG",
+      "date": "2026-11-12",
+      "home_team": "NYG",
+      "away_team": "WAS",
+      "home_name_zh": "\u7d10\u7d04\u5de8\u4eba",
+      "away_name_zh": "\u83ef\u76db\u9813\u6307\u63ee\u5b98",
+      "home_score": 21,
+      "away_score": 24,
+      "elo_home_win_prob": 0.6637,
+      "elo_predicted_margin": 5.3,
+      "elo_correct": false,
+      "adv_home_win_prob": 0.652,
+      "adv_predicted_margin": 4.9,
+      "adv_correct": false,
+      "market_home_win_prob": 0.5261,
+      "market_spread": 1.5,
+      "market_correct": false,
+      "blend_home_win_prob": 0.5391,
+      "blend_predicted_margin": 1.8,
+      "blend_correct": false,
+      "ats_edge": 0.3,
+      "ats_cover_prob_home": 0.5107,
+      "ats_confidence": 0.5107,
+      "moneyline_confidence": 0.5391,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "NYG",
+      "recommendation_confidence": 0.5391,
+      "recommendation_correct": false
     }
   ]
 }
