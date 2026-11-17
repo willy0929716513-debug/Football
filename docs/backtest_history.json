@@ -1,6 +1,6 @@
 {
   "start_season": 2015,
-  "generated_at": "2026-11-16T20:12:35Z",
+  "generated_at": "2026-11-17T19:01:45Z",
   "games": [
     {
       "season": 2015,
@@ -101665,6 +101665,38 @@
       "recommendation_team": "CIN",
       "recommendation_confidence": 0.6461,
       "recommendation_correct": true
+    },
+    {
+      "season": 2026,
+      "week": "10",
+      "game_type": "REG",
+      "date": "2026-11-16",
+      "home_team": "BAL",
+      "away_team": "LAC",
+      "home_name_zh": "\u5df4\u723e\u7684\u6469\u70cf\u9d09",
+      "away_name_zh": "\u6d1b\u6749\u78ef\u96fb\u5149",
+      "home_score": 20,
+      "away_score": 23,
+      "elo_home_win_prob": 0.7037,
+      "elo_predicted_margin": 6.8,
+      "elo_correct": false,
+      "adv_home_win_prob": 0.6407,
+      "adv_predicted_margin": 5.3,
+      "adv_correct": false,
+      "market_home_win_prob": 0.6636,
+      "market_spread": 4.5,
+      "market_correct": false,
+      "blend_home_win_prob": 0.6613,
+      "blend_predicted_margin": 4.6,
+      "blend_correct": false,
+      "ats_edge": 0.1,
+      "ats_cover_prob_home": 0.5025,
+      "ats_confidence": 0.5025,
+      "moneyline_confidence": 0.6613,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "BAL",
+      "recommendation_confidence": 0.6613,
+      "recommendation_correct": false
     }
   ]
 }
