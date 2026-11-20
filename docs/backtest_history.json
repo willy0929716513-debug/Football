@@ -1,6 +1,6 @@
 {
   "start_season": 2015,
-  "generated_at": "2026-11-19T18:56:33Z",
+  "generated_at": "2026-11-20T18:27:23Z",
   "games": [
     {
       "season": 2015,
@@ -101697,6 +101697,38 @@
       "recommendation_team": "BAL",
       "recommendation_confidence": 0.6613,
       "recommendation_correct": false
+    },
+    {
+      "season": 2026,
+      "week": "11",
+      "game_type": "REG",
+      "date": "2026-11-19",
+      "home_team": "HOU",
+      "away_team": "IND",
+      "home_name_zh": "\u4f11\u58eb\u9813\u5fb7\u5dde\u4eba",
+      "away_name_zh": "\u5370\u7b2c\u5b89\u7d0d\u6ce2\u5229\u65af\u5c0f\u99ac",
+      "home_score": 26,
+      "away_score": 3,
+      "elo_home_win_prob": 0.716,
+      "elo_predicted_margin": 7.2,
+      "elo_correct": true,
+      "adv_home_win_prob": 0.705,
+      "adv_predicted_margin": 6.7,
+      "adv_correct": true,
+      "market_home_win_prob": 0.8481,
+      "market_spread": 12.5,
+      "market_correct": true,
+      "blend_home_win_prob": 0.8368,
+      "blend_predicted_margin": 11.9,
+      "blend_correct": true,
+      "ats_edge": -0.6,
+      "ats_cover_prob_home": 0.4818,
+      "ats_confidence": 0.5182,
+      "moneyline_confidence": 0.8368,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "HOU",
+      "recommendation_confidence": 0.8368,
+      "recommendation_correct": true
     }
   ]
 }
