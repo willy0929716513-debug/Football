@@ -1,6 +1,6 @@
 {
   "start_season": 2015,
-  "generated_at": "2026-11-23T21:58:14Z",
+  "generated_at": "2026-11-24T20:34:40Z",
   "games": [
     {
       "season": 2015,
@@ -102081,6 +102081,38 @@
       "recommendation_team": "SF",
       "recommendation_confidence": 0.6413,
       "recommendation_correct": true
+    },
+    {
+      "season": 2026,
+      "week": "11",
+      "game_type": "REG",
+      "date": "2026-11-23",
+      "home_team": "WAS",
+      "away_team": "CIN",
+      "home_name_zh": "\u83ef\u76db\u9813\u6307\u63ee\u5b98",
+      "away_name_zh": "\u8f9b\u8f9b\u90a3\u63d0\u5b5f\u52a0\u62c9\u864e",
+      "home_score": 22,
+      "away_score": 20,
+      "elo_home_win_prob": 0.3305,
+      "elo_predicted_margin": -5.5,
+      "elo_correct": false,
+      "adv_home_win_prob": 0.3588,
+      "adv_predicted_margin": -4.3,
+      "adv_correct": false,
+      "market_home_win_prob": 0.2843,
+      "market_spread": -6.0,
+      "market_correct": false,
+      "blend_home_win_prob": 0.2913,
+      "blend_predicted_margin": -5.8,
+      "blend_correct": false,
+      "ats_edge": 0.2,
+      "ats_cover_prob_home": 0.5053,
+      "ats_confidence": 0.5053,
+      "moneyline_confidence": 0.7087,
+      "recommendation_type": "moneyline",
+      "recommendation_team": "CIN",
+      "recommendation_confidence": 0.7087,
+      "recommendation_correct": false
     }
   ]
 }
